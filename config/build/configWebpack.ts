@@ -22,13 +22,6 @@ export function configWebpack(options: BuildOptions): webpack.Configuration {
         resolve: buildResolvers(options),
         devtool: isDev ? "inline-source-map" : undefined,
         devServer: isDev ? buildDevServer(options) : undefined,
-        ignoreWarnings: [
-            {
-                module: /node_modules\/package-name/, // Ignore by module path
-            },
-            {
-                message: /deprecated/, // Ignore by warning message content
-            },
-        ],
+
     };
 }

@@ -6,6 +6,9 @@
 .page {
   display: flex;
 }
+.app {
+  background: var(--bg-color);
+}
 
 .page-wrapper {
   flex-grow: 1;

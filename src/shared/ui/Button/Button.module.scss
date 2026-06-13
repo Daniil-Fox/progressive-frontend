@@ -1,10 +1,17 @@
 .button {
   height: 40px;
   padding: 0 20px;
+  cursor: pointer;
 }
 
 .clear {
   background: none;
   border: none;
-  cursor: pointer;
+}
+
+.outline {
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background: none;
 }

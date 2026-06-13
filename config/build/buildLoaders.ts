@@ -2,6 +2,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import webpack from "webpack";
 import { BuildOptions } from "./types/buildOptions";
 import ReactRefreshTypeScript from "react-refresh-typescript";
+import {buildCssLoaders} from "./loaders/buildCssLoaders";
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const { isDev } = options;
     const tsLoader = {
@@ -35,25 +36,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     };
 
 
-    const styleLoader = {
-        test: /\.s[ac]ss$/i,
-        use: [
-            isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-            {
-                loader: "css-loader",
-                options: {
-                    esModule: false,
-                    modules: {
-                        auto: (resPath: string) => Boolean(resPath.includes(".module.")),
-                        localIdentName: isDev
-                            ? "[path][name]__[local]--[hash:base64:5]"
-                            : "[hash:base64:8]",
-                    },
-                },
-            },
-            "sass-loader",
-        ],
-    };
+    const styleLoader = buildCssLoaders(isDev)
 
     return [styleLoader, tsLoader, svgLoader, fileLoader];
 }
