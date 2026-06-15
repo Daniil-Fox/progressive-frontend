@@ -14,16 +14,14 @@ export default (env: EnvOptions) => {
     const paths: BuildPaths = {
         entry: path.resolve(rootDir, "src", "index.tsx"),
         output: path.resolve(rootDir, "build"),
-        html: "public/index.html",
+        html: path.resolve(rootDir, "public/index.html"),
         src: path.resolve(rootDir, "src"),
     };
 
-    const config: webpack.Configuration = configWebpack({
+    return configWebpack({
         mode,
         paths: paths,
         isDev,
         port: PORT,
     });
-
-    return config;
 };
