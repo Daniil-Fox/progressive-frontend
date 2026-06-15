@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from '@storybook/react-webpack5';
 
 import {fn} from 'storybook/test';
 
-import {Button, ButtonTheme} from './Button';
+import {Button, ButtonSize, ButtonTheme} from './Button';
 
 
 const meta = {
@@ -28,5 +28,36 @@ export const Clear: Story = {
 export const Outline: Story = {
     args: {
         theme: ButtonTheme.OUTLINE
+    },
+};
+export const Background: Story = {
+    args: {
+        theme: ButtonTheme.BACKGROUND
+    },
+};
+export const BackgroundInverted: Story = {
+    args: {
+        theme: ButtonTheme.BACKGROUND_INVERTED
+    },
+};
+export const BackgroundSquare: Story = {
+    args: {
+        square: true,
+        children: '>'
+    },
+};
+export const BackgroundM: Story = {
+    args: {
+        size: ButtonSize.M
+    },
+};
+export const BackgroundL: Story = {
+    args: {
+        size: ButtonSize.L
+    },
+};
+export const BackgroundXL: Story = {
+    args: {
+        size: ButtonSize.XL
     },
 };

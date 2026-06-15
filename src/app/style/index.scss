@@ -1,14 +1,12 @@
-@import "./reset";
-@import "./variables/global";
-@import "./themes/dark";
-@import "./themes/normal";
+@use "./reset";
+@use "./variables/global";
+@use "./themes/dark";
+@use "./themes/normal";
 
 .page {
   display: flex;
 }
-.app {
-  background: var(--bg-color);
-}
+
 
 .page-wrapper {
   flex-grow: 1;

@@ -31,4 +31,10 @@ describe('classNames', () => {
         const expected = classNames("class", {hovered: true, red: false}, ["extra"])
         expect(expected).toBe(result)
     })
+
+    test('testing with mods and false mods', () => {
+        const result = "class extra super puper hovered"
+        const expected = classNames("class", {hovered: true, red: false}, ["extra", "super", "puper"])
+        expect(expected).toBe(result)
+    })
 })

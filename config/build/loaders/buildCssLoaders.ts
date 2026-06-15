@@ -1,4 +1,3 @@
-import {BuildOptions} from "../types/buildOptions";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export function buildCssLoaders(isDev: boolean){
@@ -13,6 +12,7 @@ export function buildCssLoaders(isDev: boolean){
                     esModule: false,
                     modules: {
                         auto: (resPath: string) => Boolean(resPath.includes(".module.")),
+                        exportLocalsConvention: "as-is",
                         localIdentName: isDev
                             ? "[path][name]__[local]--[hash:base64:5]"
                             : "[hash:base64:8]",
