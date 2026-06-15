@@ -1,27 +1,32 @@
 name: testing, building
+
 on:
   push:
     branches: [master]
   pull_request:
     branches: [master]
+
 jobs:
   pipeline:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [22.x]
 
     steps:
       - uses: actions/checkout@v4
-      - name: Clear npm cache
-        run: npm cache clean --force
-      - name: Staring Node.js ${{ matrix.node-version }}
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: install modules
-        run: npm install
-      - name: build project
-        run: npm run build:prod
-      - name: unit testing
+          node-version: 22.x
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify required static files
+        run: test -f public/index.html
+
+      - name: Unit testing
         run: npm run unit
+
+      - name: Build project
+        run: npm run build:prod

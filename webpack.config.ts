@@ -3,6 +3,8 @@ import webpack from "webpack";
 import { BuildPaths, EnvOptions } from "./config/build/types/buildOptions";
 import { configWebpack } from "./config/build/configWebpack";
 
+const rootDir = process.cwd();
+
 export default (env: EnvOptions) => {
     const mode = env.mode || "development";
     const PORT = env.port || 3000;
@@ -10,10 +12,10 @@ export default (env: EnvOptions) => {
     const isDev = mode === "development";
 
     const paths: BuildPaths = {
-        entry: path.resolve(__dirname, "src", "index.tsx"),
-        output: path.resolve(__dirname, "build"),
-        html: path.resolve(__dirname, "public/index.html"),
-        src: path.resolve(__dirname, "src"),
+        entry: path.resolve(rootDir, "src", "index.tsx"),
+        output: path.resolve(rootDir, "build"),
+        html: path.resolve(rootDir, "public", "index.html"),
+        src: path.resolve(rootDir, "src"),
     };
 
     const config: webpack.Configuration = configWebpack({
