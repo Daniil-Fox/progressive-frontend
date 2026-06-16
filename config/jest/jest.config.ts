@@ -28,10 +28,9 @@ const config: Config = {
   moduleDirectories: ["node_modules"],
 
   moduleNameMapper: {
-    // "\\.(css|scss|sass)$": "<rootDir>config/jest/styleMock.ts",
-     "^(shared|widgets|features|entities|pages|app)/(.*)$": "<rootDir>src/$1/$2",
-    '.(s?css)$': 'identity-obj-proxy',
-    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
+    "\\.(css|scss|sass)$": "identity-obj-proxy",
+    "\\.svg$": "<rootDir>config/jest/jestEmptyComponent.tsx",
+    "^(shared|widgets|features|entities|pages|app)/(.*)$": "<rootDir>src/$1/$2",
   },
 
   moduleFileExtensions: [

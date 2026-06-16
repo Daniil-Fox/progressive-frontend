@@ -28,11 +28,11 @@ export const Sidebar: FC = ({ className }: SidebarProps) => {
             ])}
         >
             <div className={cls.links}>
-                <AppLink className={cls.sidebarLink} theme={AppLinkTheme.SECONDARY} to="/">
+                <AppLink data-testid="main-page-link" className={cls.sidebarLink} theme={AppLinkTheme.SECONDARY} to="/">
                     <HomeIcon/>
                     <span>{t("main")}</span>
                 </AppLink>
-                <AppLink className={cls.sidebarLink} theme={AppLinkTheme.SECONDARY} to="/about">
+                <AppLink data-testid="main-page-link" className={cls.sidebarLink} theme={AppLinkTheme.SECONDARY} to="/about">
                     <AboutIcon/>
                     <span>{t("about")}</span>
                 </AppLink>
