@@ -11,11 +11,16 @@
 
 .outline {
   padding: 10px;
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color);
+  border: 1px solid var(--inverted-primary-color);
+  color: var(--inverted-primary-color);
   background: none;
 }
-
+.outline_red {
+  padding: 10px;
+  border: 1px solid var(--error-color);
+  color: var(--error-color);
+  background: none;
+}
 .background {
   background: var(--bg-color);
   color: var(--primary-color);
@@ -57,4 +62,8 @@
 }
 .size_xl {
   font: var(--font-xl);
+}
+
+.disabled {
+  opacity: 0.5;
 }

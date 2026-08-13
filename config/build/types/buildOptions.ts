@@ -12,9 +12,12 @@ export type BuildOptions = {
   paths: BuildPaths;
   isDev: boolean;
   port: number;
+  apiUrl: string;
+  project: "storybook" | "frontend" | "jest"
 };
 
 export type EnvOptions = {
   port: number;
   mode: Mode;
+  apiUrl: string;
 };

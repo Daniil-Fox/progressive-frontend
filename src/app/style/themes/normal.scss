@@ -1,12 +1,18 @@
-.app {
-  --bg-color: #e8e8ea;
-  --inverted-bg-color: #090949;
+.app_light_theme {
+  color: var(--text-color);
+  background-color: var(--bg-color);
 
-  --primary-color: #0232c2;
-  --inverted-primary-color: #7fa87f;
-  --secondary-color: #04ff04;
-  --inverted-secondary-color: #049604;
+  --bg-color: #ececf1;
+  --inverted-bg-color: #12122b;
 
-  --text-color: #04ff04;
-  --inverted-text-color: #049604;
+  --primary-color: #1e40af;
+  --inverted-primary-color: #2563eb;
+
+  --secondary-color: #64748b;
+  --inverted-secondary-color: #dbeafe;
+
+  --text-color: #1e293b;
+  --inverted-text-color: #f8fafc;
+
+  --error-color: #dc2626;
 }

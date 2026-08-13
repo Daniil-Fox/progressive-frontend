@@ -2,5 +2,11 @@
   "main": "Главная",
   "about": "О сайте",
   "lang": "Русский",
-  "short_lang": "ru"
+  "short_lang": "ru",
+  "enter": "Войти",
+  "logout": "Выйти",
+  "open modal": "Войти",
+  "login form": "Форма авторизации",
+  "profile": "Профиль",
+  "articles": "Статьи"
 }

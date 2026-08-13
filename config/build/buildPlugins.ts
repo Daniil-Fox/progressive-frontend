@@ -3,10 +3,13 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import webpack from "webpack";
 import { BuildOptions } from "./types/buildOptions";
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import  { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 export function buildPlugins({
     paths,
     isDev,
+    apiUrl,
+    project,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
     return [
         new HtmlWebpackPlugin({
@@ -17,7 +20,13 @@ export function buildPlugins({
             filename: "css/[name].[contenthash:8].css",
             chunkFilename: "css/[name].[contenthash:8].css",
         }),
+        new webpack.DefinePlugin({
+            __IS_DEV__: JSON.stringify(isDev),
+            __API__: JSON.stringify(apiUrl),
+            __PROJECT__: JSON.stringify(project)
+        }),
         isDev && new webpack.HotModuleReplacementPlugin(),
-        isDev && new ReactRefreshWebpackPlugin(),
+        isDev && new ReactRefreshWebpackPlugin()
+
     ].filter(Boolean) as webpack.WebpackPluginInstance[];
 }

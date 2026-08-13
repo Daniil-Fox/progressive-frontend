@@ -1,6 +1,7 @@
 .Sidebar {
   width: var(--sidebar-width);
   background-color: var(--primary-color);
+  color: var(--inverted-text-color);
   height: calc(100vh - var(--navbar-height));
   position: relative;
   transition: width 0.3s ease;
@@ -14,12 +15,7 @@
   gap: 10px;
   padding: 0 20px;
 }
-.sidebarLink {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font: var(--font-m);
-}
+
 .switchers {
   position: absolute;
   bottom: 80px;
@@ -42,8 +38,5 @@
 
   .switchers {
     flex-direction: column;
-  }
-  .sidebarLink span {
-    display: none;
   }
 }

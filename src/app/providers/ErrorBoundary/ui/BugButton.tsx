@@ -1,9 +1,9 @@
-import { classNames } from "shared/lib/helpers/classNames/classNames";
+import { classNames } from "shared/lib/classNames/classNames";
 
 import {useEffect, useState} from "react";
 import {Button} from "shared/ui/Button/Button";
 interface BugButtonProps {
-  className?: string;
+    className?: string;
 }
 
 export const BugButton = ({ className }: BugButtonProps) => {
@@ -13,9 +13,9 @@ export const BugButton = ({ className }: BugButtonProps) => {
     useEffect(() => {
         if(error) throw new Error()
     }, [error])
-  return (
-    <Button className={classNames('', {}, [className])} onClick={onThrow}>
-        throw error
-    </Button>
-  );
+    return (
+        <Button className={classNames('', {}, [className])} onClick={onThrow}>
+            throw error
+        </Button>
+    );
 };

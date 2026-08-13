@@ -28,17 +28,17 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
     };
 
     config.resolve ??= {};
-    config.resolve.modules ??= [];
     config.resolve.extensions ??= [];
+    config.resolve.preferAbsolute = true;
+    config.resolve.modules = [paths.src, "node_modules"];
     config.resolve.alias = {
         ...config.resolve.alias,
-        "": paths.src,
+        entities: path.resolve(paths.src, "entities"),
     };
 
     config.module ??= { rules: [] };
     config.module.rules ??= [];
 
-    config.resolve.modules.push(paths.src);
     config.resolve.extensions.push(".ts", ".tsx");
 
     config.module.rules = config.module.rules.map((rule) => {
@@ -57,7 +57,35 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
     });
 
     config.module.rules.push(buildCssLoaders(true));
+    config.module.rules.push({
+        test: /\.svg$/,
+        use: [{ loader: "@svgr/webpack", options: { icon: true,
+                svgoConfig: {
+                    plugins: [
+                        {
+                            name: 'convertColors',
+                            params: {
+                                currentColor: true
+                            }
+                        }
+                    ]
+                }
+            }
+        }],
+    });
+    config.module.rules.push({
+        test: /\.(png|jpe?g|gif|avif|woff2?)$/i,
+        type: "asset/resource",
+    });
 
+    config.plugins ??= [];
+    config.plugins.push(
+        new webpack.DefinePlugin({
+            __IS_DEV__: JSON.stringify(true),
+            __API__: JSON.stringify(""),
+            __PROJECT__: JSON.stringify("storybook"),
+        }),
+    );
 
     return config;
 };

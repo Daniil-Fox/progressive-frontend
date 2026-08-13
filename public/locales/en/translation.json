@@ -2,5 +2,11 @@
   "main": "Main",
   "about": "About",
   "lang": "English",
-  "short_lang": "en"
+  "short_lang": "en",
+  "enter": "Log in",
+  "logout": "Logout",
+  "open modal": "Log in",
+  "login form": "Login form",
+  "profile": "Profile",
+  "articles": "Articles"
 }

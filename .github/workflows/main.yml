@@ -22,14 +22,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Debug filesystem
-        run: |
-          pwd
-          ls -la
-          ls -la public
-          file public/index.html
-          cat public/index.html
-
       - name: Build project
         run: npm run build:prod
 

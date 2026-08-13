@@ -1,16 +1,17 @@
-import {fireEvent, render, screen} from "@testing-library/react";
+import { render, screen} from "@testing-library/react";
 import {Sidebar} from "widgets/Sidebar";
-import {renderWithRouter} from "shared/lib/helpers/renderWithRouter/renderWithRouter";
-
+import {renderWithRouter} from "shared/lib/tests/renderWithRouter/renderWithRouter";
+import cls from './Sidebar.module.scss'
+import {userEvent} from '@testing-library/user-event'
 
 describe("Sidebar", () => {
-    test('test', () => {
+    test('test', async () => {
         renderWithRouter(<Sidebar/>)
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
 
         const toggleBtn = screen.getByTestId('toggle-sidebar-btn')
 
-        fireEvent.click(toggleBtn)
+        await userEvent.click(toggleBtn)
 
         expect(screen.getByTestId('sidebar')).toHaveClass('collapsed')
     })

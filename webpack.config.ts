@@ -8,7 +8,7 @@ const rootDir = process.cwd();
 export default (env: EnvOptions) => {
     const mode = env.mode || "development";
     const PORT = env.port || 3000;
-
+    const apiUrl = env.apiUrl || "http://localhost:8000";
     const isDev = mode === "development";
 
     const paths: BuildPaths = {
@@ -23,6 +23,8 @@ export default (env: EnvOptions) => {
         paths: paths,
         isDev,
         port: PORT,
+        apiUrl: apiUrl,
+        project: 'frontend'
     });
 
 };
