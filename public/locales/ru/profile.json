@@ -1,0 +1,22 @@
+{
+  "Profile Page": "Страница профиля",
+  "Profile": "Профиль",
+  "Edit": "Редактировать",
+  "Your name": "Ваше имя",
+  "Your lastname": "Ваша фамилия",
+  "Error profile page": "Ошибка профиля",
+  "Something went wrong": "Что-то пошло не так",
+  "Cancel": "Отменить",
+  "Apply": "Применить",
+  "Your age": "Ваш возраст",
+  "City": "Ваш город",
+  "Avatar link": "Ссылка на аватар",
+  "Username": "Пользовательское имя",
+  "Currency": "Валюта",
+  "Country": "Страна",
+  "server error": "Ошибка сервера",
+  "incorrect country": "Неизвестная страна",
+  "incorrect age": "Возраст должен быть числом",
+  "no data": "Нет данных",
+  "Incorrect user data": "Неправильные имя или фамилия"
+}

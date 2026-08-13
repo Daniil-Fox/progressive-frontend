@@ -1,0 +1,23 @@
+[23:31:20.736] [INFO] storybook v10.4.6
+[23:31:22.229] [DEBUG] Getting package.json info for C:/Users/foxon/OneDrive/Рабочий стол/Fullstack-learning/front-course-repeat/package.json...
+[23:31:23.660] [INFO] Starting...
+[23:31:23.902] [DEBUG] Starting preview..
+[23:31:23.926] [INFO] Addon-docs: using MDX3
+[23:31:23.963] [INFO] Using implicit CSS loaders
+[23:31:23.998] [INFO] Loading custom Webpack config (full-control mode).
+[23:31:24.815] [ERROR] Failed to build the preview
+[23:31:24.817] [WARN] Force closed preview build
+[23:31:24.818] [ERROR] [38;2;241;97;97mSB_BUILDER-WEBPACK5_0003 (WebpackCompilationError): There were problems when compiling your code with Webpack.
+Run Storybook with --debug-webpack for more information.[39m
+    at starter (file:///C:/Users/foxon/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Fullstack-learning/front-course-repeat/node_modules/@storybook/builder-webpack5/dist/index.js:857:11)
+    at starter.next (<anonymous>)
+    at Module.start (file:///C:/Users/foxon/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Fullstack-learning/front-course-repeat/node_modules/@storybook/builder-webpack5/dist/index.js:915:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async storybookDevServer (file:///C:/Users/foxon/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Fullstack-learning/front-course-repeat/node_modules/storybook/dist/core-server/index.js:11496:158)
+    at async buildOrThrow (file:///C:/Users/foxon/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Fullstack-learning/front-course-repeat/node_modules/storybook/dist/core-server/index.js:8205:12)
+    at async buildDevStandalone (file:///C:/Users/foxon/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Fullstack-learning/front-course-repeat/node_modules/storybook/dist/core-server/index.js:12057:41)
+    at async withTelemetry (file:///C:/Users/foxon/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Fullstack-learning/front-course-repeat/node_modules/storybook/dist/_node-chunks/chunk-G7NXW2C2.js:650:12)
+    at async dev (file:///C:/Users/foxon/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Fullstack-learning/front-course-repeat/node_modules/storybook/dist/bin/core.js:2735:3)
+    at async _Command.<anonymous> (file:///C:/Users/foxon/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Fullstack-learning/front-course-repeat/node_modules/storybook/dist/bin/core.js:2805:92)
+[23:31:24.827] [WARN] Broken build, fix the error above.
+You may need to refresh the browser.

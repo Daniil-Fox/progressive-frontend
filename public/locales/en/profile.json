@@ -1,0 +1,22 @@
+{
+  "Profile Page": "Profile Page",
+  "Profile": "Profile",
+  "Edit": "Edit",
+  "Your name": "Your name",
+  "Your lastname": "Your lastname",
+  "Error profile page": "Error profile page",
+  "Something went wrong": "Something went wrong",
+  "Cancel": "Cancel",
+  "Apply": "Apply",
+  "Your age": "Your age",
+  "City": "City",
+  "Avatar link": "Avatar link",
+  "Username": "Username",
+  "Currency": "Currency",
+  "Country": "Country",
+  "server error": "Server error",
+  "incorrect country": "Incorrect country",
+  "incorrect age": "Age must be a number",
+  "no data": "No data",
+  "Incorrect user data": "Incorrect name or lastname"
+}

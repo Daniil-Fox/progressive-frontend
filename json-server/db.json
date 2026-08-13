@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
+  ],
+  "profile": {
+    "first": "Даниил123123",
+    "lastname": "sad",
+    "age": 2,
+    "currency": "USD",
+    "country": "America",
+    "city": "Moscow",
+    "username": "gay",
+    "avatar": "https://img.magnific.com/free-vector/cute-astronaut-playing-vr-game-with-controller-cartoon-vector-icon-illustration-science-technology_138676-13977.jpg?semt=ais_hybrid&w=740&q=80"
+  }
+}

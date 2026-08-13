@@ -1,0 +1,19 @@
+.sidebarLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font: var(--font-m);
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.collapsed {
+
+  justify-content: center;
+   span {
+    display: none;
+  }
+}

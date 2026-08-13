@@ -1,0 +1,27 @@
+.ProfileCard {
+  padding: 20px;
+  border: 2px solid var(--inverted-bg-color);
+}
+
+
+.editBtn {
+  margin-left: auto;
+}
+
+.input {
+  margin-bottom: 10px;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.AvatarWrapper {
+  display: flex;
+  justify-content: center;
+}
+.edit {
+  border-color: var(--inverted-primary-color);
+}
