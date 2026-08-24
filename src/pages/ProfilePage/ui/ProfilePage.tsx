@@ -8,6 +8,8 @@ import {ProfilePageHeader} from "pages/ProfilePage/ui/ProfilePageHeader/ProfileP
 import {Currency} from "entities/Currency/model/types/CurrencySchema";
 import {Country} from "entities/Country/model/types/country";
 import {Text, TextTheme} from "shared/ui/Text/Text";
+import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import {useParams} from "react-router-dom";
 
 export interface ProfilePageProps {
   className?: string;
@@ -21,7 +23,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   const error = useAppSelector(profileSelectors.getProfileError)
   const readonly = useAppSelector(profileSelectors.getProfileReadonly)
   const validateErrors = useAppSelector(profileSelectors.getValidateError)
-
+  const {id} = useParams()
 
   const validateErrorTranslates = {
     [ValidateProfileError.SERVER_ERROR]: t('server error'),
@@ -63,11 +65,11 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     dispatch(profileActions.updateProfile({country: value|| Country.America}))
   }, [dispatch])
 
-  useEffect(() => {
-    if(__PROJECT__ !== 'storybook'){
-      dispatch(fetchProfileData())
+  useInitialEffect(() => {
+    if(id){
+      dispatch(fetchProfileData(id))
     }
-  }, [dispatch]);
+  })
 
   return (
       <div className={classNames(cls.PortfolioPage, {}, [className])}>

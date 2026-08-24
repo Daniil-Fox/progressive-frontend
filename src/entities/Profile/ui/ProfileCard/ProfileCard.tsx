@@ -30,7 +30,7 @@ interface ProfileCardProps {
 
 export const ProfileCard = (props: ProfileCardProps) => {
     const { className, data, error, isLoading, onChangeFirstName, onChangeLastname, onChangeAge, onChangeCity, onChangeCurrency, onChangeCountry, onChangeAvatar, onChangeUsername, readonly } = props
-    const {t} = useTranslation('profile')
+    const { t } = useTranslation('profile')
 
     const mods: Mods = {
         [cls.edit]: !readonly

@@ -5,7 +5,7 @@
   height: calc(100vh - var(--navbar-height));
   position: relative;
   transition: width 0.3s ease;
-
+  flex-shrink: 0;
 }
 
 

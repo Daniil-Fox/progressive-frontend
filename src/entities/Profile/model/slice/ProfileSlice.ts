@@ -3,6 +3,7 @@ import type {Profile, ProfileSchema} from "../types/profile";
 import {rootReducer} from "app/providers/StoreProvider/config/rootReducer";
 import {fetchProfileData} from "../services/fetchProfileData/fetchProfileData";
 import {updateProfileData} from "./../services/updateProfileData/updateProfileData";
+import {DeepPartial} from "shared/types/DeepPartial";
 
 const initialState: ProfileSchema = {
     readonly: true,
@@ -25,7 +26,7 @@ export const profileSlice = createSlice({
             state.validateError = undefined
             state.form = state.data
         },
-        updateProfile: (state, action: PayloadAction<Profile>) => {
+        updateProfile: (state, action: PayloadAction<DeepPartial<Profile>>) => {
             state.form = {
                 ...state.form,
                 ...action.payload
@@ -80,8 +81,8 @@ export const profileSlice = createSlice({
 
 const injectedProfile = profileSlice.injectInto(rootReducer)
 
-export const {actions: profileActions} = profileSlice;
-export const {reducer: profileReducer} = profileSlice;
+export const {actions: profileActions} = injectedProfile;
+export const {reducer: profileReducer} = injectedProfile;
 export const {selectors: profileSelectors} = injectedProfile;
 
 declare module 'app/providers/StoreProvider/config/rootReducer' {

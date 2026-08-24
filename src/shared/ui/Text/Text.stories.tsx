@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from '@storybook/react-webpack5';
 
-import {Text, TextTheme} from "./Text";
+import {Text, TextSize, TextTheme} from "./Text";
 
 
 
@@ -37,6 +37,13 @@ export const OnlyTitle: Story = {
 }
 export const OnlyText: Story = {
     args: {
+        text: "Description text",
+    }
+}
+export const SizeL: Story = {
+    args: {
+        size: TextSize.L,
+        title: "Title",
         text: "Description text",
     }
 }
