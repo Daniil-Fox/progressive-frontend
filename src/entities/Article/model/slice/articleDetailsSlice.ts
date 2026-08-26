@@ -37,7 +37,7 @@ export const articleSlice = createSlice({
 
 const injectedProfile = articleSlice.injectInto(rootReducer)
 
-export const {actions: articleActions} = articleSlice;
+export const {actions: articleActions} = injectedProfile;
 export const {reducer: articleReducer} = articleSlice;
 export const {selectors: articleSelectors} = injectedProfile;
 

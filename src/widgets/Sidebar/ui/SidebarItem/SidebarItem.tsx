@@ -2,10 +2,10 @@ import cls from "./SidebarItem.module.scss";
 import {AppLink, AppLinkTheme} from "shared/ui/AppLink/AppLink";
 import HomeIcon from "shared/assets/home.svg";
 import {useTranslation} from "react-i18next";
-import {SidebarItemType} from "widgets/Sidebar/model/items";
 import {classNames} from "shared/lib/classNames/classNames";
 import {useAppSelector} from "shared/lib/store/hooks/hooks";
 import {getUserAuthData} from "entities/User";
+import {SidebarItemType} from "widgets/Sidebar/model/types/sidebarSchema";
 interface SidebarItemProps {
     item: SidebarItemType;
     collapsed: boolean;

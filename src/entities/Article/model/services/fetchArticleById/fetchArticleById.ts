@@ -17,7 +17,7 @@ export const fetchArticleById = createAsyncThunk<
             const response = await extra.api.get<Article>(`/articles/${articleId}` );
 
             if(!response.data){
-                throw new Error()
+                return rejectWithValue('NO DATA')
             }
 
             return response.data

@@ -4,14 +4,16 @@ import cls from "./Sidebar.module.scss";
 import {Button, ButtonSize, ButtonTheme} from "shared/ui/Button/Button";
 import {ThemeSwitcher} from "widgets/ThemeSwitcher";
 import {LanguageSwitcher} from "widgets/LanguageSwitcher";
-import {SidebarItemList} from "widgets/Sidebar/model/items";
 import {SidebarItem} from "widgets/Sidebar/ui/SidebarItem/SidebarItem";
+import {useAppSelector} from "shared/lib/store/hooks/hooks";
+import {getSidebarItems} from "widgets/Sidebar/model/selectors/getSidebarItems";
 
 interface SidebarProps {
     className?: string;
 }
 export const Sidebar: FC = memo(({ className }: SidebarProps) => {
     const [isCollapsed, setIsCollapsed] = useState(false);
+    const SidebarItemList = useAppSelector(getSidebarItems)
     const toggleCollapsed = () => {
         setIsCollapsed(!isCollapsed);
     };
