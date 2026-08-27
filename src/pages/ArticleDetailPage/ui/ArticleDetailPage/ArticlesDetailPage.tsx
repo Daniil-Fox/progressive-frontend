@@ -1,10 +1,10 @@
 import {classNames} from "shared/lib/classNames/classNames";
 import cls from "./ArticlesDetailPage.module.scss";
 import {ArticleDetails} from "entities/Article";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 import {CommentList} from "entities/Comment";
-import {Text} from "shared/ui";
+import {Button, Text} from "shared/ui";
 import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
 import {
     articleDetailsSelectors,
@@ -17,6 +17,8 @@ import {
 import {AddCommentForm} from "features/addCommentForm";
 import {useCallback} from "react";
 import {addCommentForArticle} from "./../../model/services/addCommentForArticle/addCommentForArticle";
+import {ButtonTheme} from "shared/ui/Button/Button";
+import {pathRoutes} from "app/routes/config/routes";
 
 export interface ArticlesDetailPageProps {
     className?: string;
@@ -29,10 +31,14 @@ const ArticlesDetailPage = ({className}: ArticlesDetailPageProps) => {
     const isLoading = useAppSelector(articleDetailsSelectors.getIsLoading)
     const error = useAppSelector(articleDetailsSelectors.getError)
     const dispatch = useAppDispatch()
-
+    const navigate = useNavigate()
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text))
     }, [dispatch])
+
+    const onBackToList = () => {
+        navigate(pathRoutes.articles)
+    }
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id))
@@ -50,6 +56,9 @@ const ArticlesDetailPage = ({className}: ArticlesDetailPageProps) => {
 
     return (
         <div className={classNames(cls.ArticlesDetailPage, {}, [className])}>
+            <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
+                {t("back to list")}
+            </Button>
             <ArticleDetails id={id}/>
 
             <Text title={"Комментарии"} className={cls.commentTitle}/>
