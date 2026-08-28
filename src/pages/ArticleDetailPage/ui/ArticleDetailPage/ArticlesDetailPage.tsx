@@ -9,7 +9,7 @@ import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
 import {
     articleDetailsSelectors,
     getArticleComments
-} from "./../../model/slice/articleDetailsCommentsSlice";
+} from "../../model/slice/articleDetailsCommentsSlice";
 import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import {
     fetchCommentsByArticleId

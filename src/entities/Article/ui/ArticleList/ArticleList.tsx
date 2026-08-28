@@ -14,8 +14,8 @@ interface ArticleListProps {
 const getSkeleton = (view: ArticleView) => {
     return new Array(view === ArticleView.SMALL ? 9 : 3)
         .fill(0)
-        .map((item, index) => (
-            <ArticleListItemSkeleton key={view} view={view}/>
+        .map((_, index) => (
+            <ArticleListItemSkeleton key={index} view={view}/>
         ))
 }
 
@@ -28,7 +28,7 @@ export const ArticleList = (props: ArticleListProps) => {
         )
     }
 
-    if(isLoading) {
+    if (isLoading && !articles.length) {
         return (
             <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
                 {getSkeleton(view)}

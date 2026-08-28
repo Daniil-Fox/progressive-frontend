@@ -2,7 +2,7 @@ import {createEntityAdapter, createSlice, PayloadAction, WithSlice} from "@redux
 import {Comment} from "entities/Comment";
 import {rootReducer} from "app/providers/StoreProvider/config/rootReducer";
 import {RootState} from "app/providers/StoreProvider";
-import {ArticleDetailsCommentSchema} from "./../types/ArticleDetailsCommentSchema";
+import {ArticleDetailsCommentSchema} from "../types/ArticleDetailsCommentSchema";
 import {
     fetchCommentsByArticleId
 } from "pages/ArticleDetailPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
