@@ -11,7 +11,6 @@ import {ArticleTextBlockComponent} from "./../ArticleTextBlockComponent/ArticleT
 import {useCallback} from "react";
 import {useNavigate} from "react-router-dom";
 import {pathRoutes} from "app/routes/config/routes";
-import {Skeleton} from "shared/ui/Skeleton/Skeleton";
 
 interface ArticleListItemProps {
     className?: string;

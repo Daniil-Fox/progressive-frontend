@@ -19,6 +19,7 @@ import {useCallback} from "react";
 import {addCommentForArticle} from "./../../model/services/addCommentForArticle/addCommentForArticle";
 import {ButtonTheme} from "shared/ui/Button/Button";
 import {pathRoutes} from "app/routes/config/routes";
+import {Page} from "shared/ui/Page/Page";
 
 export interface ArticlesDetailPageProps {
     className?: string;
@@ -46,16 +47,16 @@ const ArticlesDetailPage = ({className}: ArticlesDetailPageProps) => {
 
     if(!id){
         return (
-            <div className={classNames(cls.ArticlesDetailPage, {}, [className])}>
+            <Page className={classNames(cls.ArticlesDetailPage, {}, [className])}>
                 {t('Article is not found')}
-            </div>
+            </Page>
         )
     }
 
 
 
     return (
-        <div className={classNames(cls.ArticlesDetailPage, {}, [className])}>
+        <Page className={classNames(cls.ArticlesDetailPage, {}, [className])}>
             <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
                 {t("back to list")}
             </Button>
@@ -64,7 +65,7 @@ const ArticlesDetailPage = ({className}: ArticlesDetailPageProps) => {
             <Text title={"Комментарии"} className={cls.commentTitle}/>
             <AddCommentForm onSendComment={onSendComment} />
             <CommentList comments={comments} isLoading={isLoading}/>
-        </div>
+        </Page>
     );
 };
 

@@ -10,6 +10,7 @@ import {Country} from "entities/Country/model/types/country";
 import {Text, TextTheme} from "shared/ui/Text/Text";
 import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import {useParams} from "react-router-dom";
+import {Page} from "shared/ui/Page/Page";
 
 export interface ProfilePageProps {
   className?: string;
@@ -72,7 +73,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   })
 
   return (
-      <div className={classNames(cls.PortfolioPage, {}, [className])}>
+      <Page className={classNames(cls.PortfolioPage, {}, [className])}>
         <div className={cls.header}>
           <h1>{t('Profile Page')}</h1>
           <ProfilePageHeader/>
@@ -98,7 +99,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
             isLoading={isLoading}
             error={error}
         />
-      </div>
+      </Page>
   );
 };
 

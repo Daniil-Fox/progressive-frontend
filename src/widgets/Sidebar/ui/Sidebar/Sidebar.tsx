@@ -26,20 +26,20 @@ export const Sidebar: FC = memo(({ className }: SidebarProps) => {
     ), [isCollapsed])
 
     return (
-        <div
+        <aside
             data-testid="sidebar"
             className={classNames(cls.Sidebar, { [cls.collapsed]: isCollapsed }, [
                 className,
             ])}
         >
-            <div className={cls.links}>
+            <menu className={cls.links}>
                 {itemsList}
-            </div>
+            </menu>
             <Button square={true} size={ButtonSize.XL} className={cls.collapseBtn} theme={ButtonTheme.BACKGROUND_INVERTED} data-testid="toggle-sidebar-btn" onClick={toggleCollapsed}>{isCollapsed ? ">" : "<"}</Button>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LanguageSwitcher short={isCollapsed}/>
             </div>
-        </div>
+        </aside>
     );
 });

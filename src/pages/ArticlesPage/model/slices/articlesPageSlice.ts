@@ -22,15 +22,25 @@ const articlesPageSlice = createSlice({
         error: undefined,
         view: ArticleView.SMALL,
         ids: [],
-        entities: {}
+        entities: {},
+        page: 1,
+        hasMore: true
     }),
     reducers: {
         setView: (state, action: PayloadAction<ArticleView>) => {
             state.view = action.payload;
             localStorage.setItem(ARTICLES_VIEW_LOCALSTORAGE_KEY, JSON.stringify(action.payload));
         },
+        setPage: (state, action: PayloadAction<number>) => {
+            state.page = action.payload;
+        },
         initState: state => {
-            state.view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView;
+            const viewFromStorage = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY);
+            const view = viewFromStorage
+                ? JSON.parse(viewFromStorage) as ArticleView
+                : ArticleView.SMALL;
+            state.view = view;
+            state.limit = view === ArticleView.BIG ? 4 : 9;
         }
     },
     extraReducers: builder => {
@@ -40,17 +50,13 @@ const articlesPageSlice = createSlice({
             })
             .addCase(fetchArticlesList.fulfilled, (state, action: PayloadAction<Article[]>) => {
                 state.isLoading = false
-                articlesAdapter.setAll(state, action.payload)
+                articlesAdapter.addMany(state, action.payload)
+                state.hasMore = action.payload.length > 0
             })
             .addCase(fetchArticlesList.rejected, (state, action) => {
                 state.isLoading = false
                 state.error = action.payload
             })
-    },
-    selectors: {
-        getIsLoading: state => state.isLoading,
-        getError: state => state.error,
-        getView: state => state.view,
     }
 })
 
@@ -65,6 +71,5 @@ declare module "app/providers/StoreProvider/config/rootReducer" {
 export const {
     reducer: articlePageReducer,
     actions: articlePageActions,
-    selectors: articlesPageSelectors,
 } = injectedArticlesPageSlice;
 

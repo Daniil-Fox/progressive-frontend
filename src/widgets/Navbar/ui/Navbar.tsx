@@ -7,7 +7,7 @@ import {LoginModal} from "features/AuthByUsername";
 import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
 import {getUserAuthData, userActions} from "entities/User";
 interface NavbarProps {
-  className?: string;
+    className?: string;
 }
 export const Navbar: FC = ({ className }: NavbarProps) => {
     const { t } = useTranslation();
@@ -27,17 +27,19 @@ export const Navbar: FC = ({ className }: NavbarProps) => {
     }
 
     if(authData){
-        return <div className={classNames(cls.Navbar, {}, [className])}>
-            <div className={cls.links}>
-                <Button onClick={onLogout}>
-                    {t('logout')}
-                </Button>
-            </div>
-        </div>
+        return (
+            <header className={classNames(cls.Navbar, {}, [className])}>
+                <div className={cls.links}>
+                    <Button onClick={onLogout}>
+                        {t('logout')}
+                    </Button>
+                </div>
+            </header>
+        )
     }
 
     return (
-        <div className={classNames(cls.Navbar, {}, [className])}>
+        <header className={classNames(cls.Navbar, {}, [className])}>
             <div className={cls.links}>
                 <Button onClick={onOpenModal}>
                     {t('open modal')}
@@ -45,6 +47,6 @@ export const Navbar: FC = ({ className }: NavbarProps) => {
 
                 <LoginModal isOpen={modalOpen} onClose={onCloseModal}></LoginModal>
             </div>
-        </div>
+        </header>
     );
 };
