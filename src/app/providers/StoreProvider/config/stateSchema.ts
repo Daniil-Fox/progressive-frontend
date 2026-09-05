@@ -15,7 +15,7 @@ export interface StateSchema {
 
 export interface ThunkExtraArg {
     api: AxiosInstance;
-    navigate?: (to: To, options?: NavigateOptions) => void | Promise<void>
+    // navigate?: (to: To, options?: NavigateOptions) => void | Promise<void>
 }
 
 export interface ThunkConfig<T> {

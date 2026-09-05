@@ -19,7 +19,7 @@ import {useCallback} from "react";
 import {addCommentForArticle} from "./../../model/services/addCommentForArticle/addCommentForArticle";
 import {ButtonTheme} from "shared/ui/Button/Button";
 import {pathRoutes} from "app/routes/config/routes";
-import {Page} from "shared/ui/Page/Page";
+import {Page} from "widgets/Page";
 
 export interface ArticlesDetailPageProps {
     className?: string;

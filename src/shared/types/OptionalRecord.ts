@@ -1,0 +1,1 @@
+export type OptionalRecord<K extends PropertyKey, T> = Partial<Record<K, T>>;

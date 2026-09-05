@@ -13,8 +13,11 @@ export const useInfiniteScroll = (props: UseInfiniteScrollProps)=>  {
             return;
         }
 
+        const trigger = triggerRef.current;
+        const wrapper = wrapperRef.current;
+
         const options = {
-            root: wrapperRef.current,
+            root: wrapper,
             rootMargin: '0px',
             threshold: 1.0,
         };
@@ -25,7 +28,6 @@ export const useInfiniteScroll = (props: UseInfiniteScrollProps)=>  {
             }
         }, options);
 
-        const trigger = triggerRef.current;
         if (trigger) {
             observer.observe(trigger);
         }

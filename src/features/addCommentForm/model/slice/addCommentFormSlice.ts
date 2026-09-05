@@ -15,7 +15,7 @@ export const addCommentFormSlice = createSlice({
         }
     },
     selectors: {
-        getText: (state) => state.text
+        getText: (state) => state.text ?? ''
     }
 })
 

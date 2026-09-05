@@ -9,11 +9,13 @@ interface StoreProviderProps {
 }
 
 export const StoreProvider: FC<StoreProviderProps> = ({children, initialStore}) => {
-    const navigate = useNavigate()
-    const store = createReduxStore(initialStore, navigate)
+    // const navigate = useNavigate()
+    const store = createReduxStore(initialStore)
 
-    return <Provider store={store}>
-        {children}
-    </Provider>
+    return (
+        <Provider store={store}>
+            {children}
+        </Provider>
+    )
 }
 

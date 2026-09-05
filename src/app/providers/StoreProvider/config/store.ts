@@ -7,13 +7,11 @@ import {NavigateOptions, Path} from "react-router-dom";
 export type To = string | Partial<Path>
 
 export function createReduxStore(
-    initialState?: Partial<StateSchema>,
-    navigate?: (to: To, options?: NavigateOptions) => void | Promise<void>
+    initialState?: Partial<StateSchema>
 ) {
 
     const extraArgs: ThunkExtraArg = {
-        api: $api,
-        navigate
+        api: $api
     }
 
     return configureStore({

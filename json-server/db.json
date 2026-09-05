@@ -118,7 +118,7 @@
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "22.02.2025",
       "userId": "1",
       "type": [
         "IT"
@@ -162,11 +162,11 @@
     },
     {
       "id": "4",
-      "title": "Python news",
+      "title": "Питон",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 21,
+      "createdAt": "26.02.2023",
       "userId": "1",
       "type": [
         "IT"
@@ -186,11 +186,11 @@
     },
     {
       "id": "5",
-      "title": "Kotlin news",
+      "title": "Kotlin",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 1256,
+      "createdAt": "26.02.2002",
       "userId": "1",
       "type": [
         "IT"
@@ -210,11 +210,11 @@
     },
     {
       "id": "6",
-      "title": "Python news",
+      "title": "C++",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 200,
+      "createdAt": "26.02.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -545,6 +545,12 @@
       "userId": "2",
       "text": "asdasdasd",
       "id": "SQi4BvV"
+    },
+    {
+      "articleId": "17",
+      "userId": "2",
+      "text": "xcsdfsdf",
+      "id": "fUYBCB2"
     }
   ],
   "posts": [
