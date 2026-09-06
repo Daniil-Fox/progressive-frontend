@@ -5,12 +5,14 @@ import {ArticleListItem} from "./../ArticleListItem/ArticleListItem";
 import {ArticleListItemSkeleton} from "./../ArticleListItem/ArticleListItemSkeleton";
 import {Text} from "shared/ui";
 import {TextSize} from "shared/ui/Text/Text";
+import {HTMLAttributeAnchorTarget} from "react";
 
 interface ArticleListProps {
     className?: string;
     articles: Article[];
     isLoading?: boolean;
     view?: ArticleView;
+    target?: HTMLAttributeAnchorTarget
 }
 
 const getSkeleton = (view: ArticleView) => {
@@ -22,11 +24,11 @@ const getSkeleton = (view: ArticleView) => {
 }
 
 export const ArticleList = (props: ArticleListProps) => {
-    const { className, isLoading, articles, view = ArticleView.SMALL } = props
+    const { className, isLoading, articles, view = ArticleView.SMALL, target } = props
 
     const renderArticle = (article: Article) => {
         return (
-            <ArticleListItem key={article.id} article={article} view={view}/>
+            <ArticleListItem target={target} key={article.id} article={article} view={view}/>
         )
     }
 

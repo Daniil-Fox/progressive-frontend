@@ -14,7 +14,6 @@ import {Icon} from "shared/ui/Icon/Icon";
 import {ArticleCodeBlockComponent} from "./../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import {ArticleTextBlockComponent} from "./../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import {ArticleImageBlockComponent} from "./../ArticleImageBlockComponent/ArticleImageBlockComponent";
-import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 
 interface ArticleDetailsProps {
     className?: string;
@@ -41,9 +40,11 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         }
     }, [])
 
-    useInitialEffect(() => {
-        dispatch(fetchArticleById(id))
-    })
+    useEffect(() => {
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchArticleById(id))
+        }
+    }, [id, dispatch])
 
     if(isLoading){
         return (

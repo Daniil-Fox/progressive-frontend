@@ -1,23 +1,21 @@
-import {createEntityAdapter, createSlice, PayloadAction, WithSlice} from "@reduxjs/toolkit";
+import {createEntityAdapter, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {Comment} from "entities/Comment";
-import {rootReducer} from "app/providers/StoreProvider/config/rootReducer";
 import {RootState} from "app/providers/StoreProvider";
-import {ArticleDetailsCommentSchema} from "../types/ArticleDetailsCommentSchema";
+import {ArticleDetailsCommentSchema} from "./../types/ArticleDetailsCommentSchema";
 import {
     fetchCommentsByArticleId
-} from "pages/ArticleDetailPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
-
+} from "./../services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 
 const commentsAdapter = createEntityAdapter<Comment, string>({
     selectId: (comment) => comment.id
 })
 
 export const getArticleComments = commentsAdapter.getSelectors<RootState>(
-    (state) => state.articleDetailsCommentsSlice || commentsAdapter.getInitialState()
+    (state) => state?.articleDetailsPage?.comments || commentsAdapter.getInitialState()
 )
 
-const articleDetailsCommentsSlice = createSlice({
-    name: "articleDetailsCommentsSlice",
+export const articleDetailsCommentsSlice = createSlice({
+    name: "comments",
     initialState: commentsAdapter.getInitialState<ArticleDetailsCommentSchema>({
         isLoading: false,
         error: undefined,
@@ -45,11 +43,4 @@ const articleDetailsCommentsSlice = createSlice({
     }
 })
 
-const injectedArticleDetailsCommentsSlice = articleDetailsCommentsSlice.injectInto(rootReducer)
-
-declare module "app/providers/StoreProvider/config/rootReducer" {
-    interface LazyLoadedSlices extends WithSlice<typeof articleDetailsCommentsSlice>{}
-}
-
-export const {reducer: articleDetailsReducer} = articleDetailsCommentsSlice;
-export const {selectors: articleDetailsSelectors} = injectedArticleDetailsCommentsSlice
+export const {selectors: articleDetailsSelectors} = articleDetailsCommentsSlice

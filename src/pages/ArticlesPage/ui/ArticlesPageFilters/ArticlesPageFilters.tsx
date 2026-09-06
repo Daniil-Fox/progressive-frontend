@@ -4,8 +4,7 @@ import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
 import {articlePageActions} from "./../../model/slices/articlesPageSlice";
 import {getView} from "./../../model/selectors/getView/getView";
 import {ArticleSortSelector, ArticlesSortField, ArticleView, ArticleViewSelector} from "entities/Article";
-import {useCallback, useMemo} from "react";
-import {Select} from "shared/ui/Select/Select";
+import {useCallback} from "react";
 import {Card} from "shared/ui/Card/Card";
 import {Input} from "shared/ui";
 import {getArticlePageOrder} from "./../../model/selectors/getArticlesOrder/getArticlesOrder";
@@ -14,7 +13,6 @@ import {SortOrder} from "shared/types/SortOrder";
 import {getArticlePageSearch} from "./../../model/selectors/getArticlesSearch/getArticlesSearch";
 import {fetchArticlesList} from "pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList";
 import {useDebounce} from "shared/lib/hooks/useDebounce/useDebounce";
-import {TabItem, Tabs} from "shared/ui/Tabs/Tabs";
 import {ArticleType} from "entities/Article/model/types/article";
 import {getArticlePageType} from "pages/ArticlesPage/model/selectors/getArticlePageType/getArticlePageType";
 import {ArticleTypeTabs} from "entities/Article";
@@ -26,14 +24,15 @@ interface ArticlesPageFiltersProps {
 export const ArticlesPageFilters = ({className}: ArticlesPageFiltersProps) => {
     const view = useAppSelector(getView)
     const dispatch = useAppDispatch()
+
     const onChangeView = useCallback((view: ArticleView) => {
         dispatch(articlePageActions.setView(view))
     }, [dispatch])
+
     const type = useAppSelector(getArticlePageType)
     const sort = useAppSelector(getArticlePageSort)
     const order = useAppSelector(getArticlePageOrder)
     const search = useAppSelector(getArticlePageSearch)
-
 
     const fetchData = useCallback(() => {
         dispatch(fetchArticlesList({replace: true}))

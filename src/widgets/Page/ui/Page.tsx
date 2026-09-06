@@ -1,11 +1,10 @@
 import {classNames} from "shared/lib/classNames/classNames";
 import cls from "./Page.module.scss";
-import {ReactNode, RefObject, UIEvent, useRef} from "react";
+import {ReactNode, UIEvent, useEffect, useRef} from "react";
 import {useInfiniteScroll} from "shared/lib/hooks/useInfiniteScroll/useInfiniteScroll";
 import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
 import {getScrollByPath, scrollSaveActions} from "features/scrollSave";
 import {useLocation} from "react-router-dom";
-import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import {useThrottle} from "shared/lib/hooks/useThrottle/useThrottle";
 
 interface PageProps {
@@ -31,11 +30,13 @@ export const Page = (props: PageProps) => {
         }))
     }, 500)
 
-    useInitialEffect(() => {
-        if(wrapperRef && wrapperRef.current){
+    useEffect(() => {
+        if (wrapperRef.current) {
             wrapperRef.current.scrollTop = scrollPosition
         }
-    })
+        // восстанавливаем скролл только при смене маршрута
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [location.pathname])
 
     return (
         <section
