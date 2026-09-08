@@ -28,6 +28,7 @@ import {
     selectRecommendationsError,
     selectRecommendationsIsLoading
 } from "./../../model/selectors/getArticleDetails";
+import {ArticleDetailsPageHeader} from "./../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
 export interface ArticlesDetailPageProps {
     className?: string;
@@ -46,14 +47,12 @@ const ArticlesDetailPage = ({className}: ArticlesDetailPageProps) => {
     const recommendationsError = useAppSelector(selectRecommendationsError)
 
     const dispatch = useAppDispatch()
-    const navigate = useNavigate()
+
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text))
     }, [dispatch])
 
-    const onBackToList = () => {
-        navigate(pathRoutes.articles)
-    }
+
 
     useEffect(() => {
         if (__PROJECT__ !== 'storybook' && id) {
@@ -74,9 +73,7 @@ const ArticlesDetailPage = ({className}: ArticlesDetailPageProps) => {
 
     return (
         <Page className={classNames(cls.ArticlesDetailPage, {}, [className])}>
-            <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-                {t("back to list")}
-            </Button>
+            <ArticleDetailsPageHeader/>
             <ArticleDetails id={id}/>
 
             <Text title={"Рекоммендации"} className={cls.commentTitle}/>

@@ -6,6 +6,7 @@ import {memo} from "react";
 export enum TextTheme {
     PRIMARY = 'primary',
     ERROR = 'error',
+    INVERTED = 'inverted',
 }
 
 export enum TextAlign {

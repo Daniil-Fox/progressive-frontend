@@ -1,0 +1,1 @@
+export {ArticleDetailPageAsync as ArticleDetailPage} from './ui/ArticleEditPage/ArticleEditPageAsync'
