@@ -1,6 +1,3 @@
-import {FC, lazy} from "react";
-import {ArticlesDetailPageProps} from "./ArticlesDetailPage";
+import {lazy} from "react";
 
-export const ArticleDetailPageAsync = lazy<FC<ArticlesDetailPageProps>>(() =>
-    new Promise(resolve => setTimeout( () => resolve(import('./ArticlesDetailPage')), 1000 ))
-)
+export const ArticleDetailPageAsync = lazy(() => import('./ArticlesDetailPage'))

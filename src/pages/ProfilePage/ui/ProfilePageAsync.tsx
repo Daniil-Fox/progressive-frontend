@@ -1,6 +1,3 @@
-import {FC, lazy} from "react";
-import {ProfilePageProps} from "pages/ProfilePage/ui/ProfilePage";
+import {lazy} from "react";
 
-export const ProfilePageAsync = lazy<FC<ProfilePageProps>>(() =>
-    new Promise(resolve => setTimeout(() => resolve(import('./ProfilePage')), 1000))
-);
+export const ProfilePageAsync = lazy(() => import('./ProfilePage'));

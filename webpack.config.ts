@@ -16,6 +16,8 @@ export default (env: EnvOptions) => {
         output: path.resolve(rootDir, "build"),
         html: path.resolve(rootDir, "public", "index.html"),
         src: path.resolve(rootDir, "src"),
+        locales: path.resolve(rootDir, "public", "locales"),
+        buildLocales: path.resolve(rootDir, "build", "locales"),
     };
 
     return configWebpack({
