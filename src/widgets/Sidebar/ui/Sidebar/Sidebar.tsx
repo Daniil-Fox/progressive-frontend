@@ -23,7 +23,7 @@ export const Sidebar: FC = memo(({ className }: SidebarProps) => {
             item={item}
             collapsed={isCollapsed}
             key={item.path}/>
-    ), [isCollapsed])
+    ), [isCollapsed, SidebarItemList])
 
     return (
         <aside
