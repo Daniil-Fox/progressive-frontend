@@ -495,6 +495,246 @@
           ]
         }
       ]
+    },
+    {
+      "id": "article-kotlin-2022-001",
+      "title": "Kotlin news",
+      "subtitle": "Что нового в Kotlin в 2022 году?",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "views": 1245,
+      "createdAt": "27.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "block-kotlin-001",
+          "type": "TEXT",
+          "title": "Обновления Kotlin",
+          "paragraphs": [
+            "Kotlin продолжает активно развиваться и получать новые возможности.",
+            "Разработчики языка работают над улучшением производительности, удобства разработки и совместимости с другими технологиями.",
+            "Kotlin широко используется для создания приложений, серверных решений и других программных продуктов."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "article-js-2022-002",
+      "title": "JavaScript news",
+      "subtitle": "Главные изменения JavaScript в 2022 году",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "views": 2387,
+      "createdAt": "01.03.2022",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "block-js-002",
+          "type": "TEXT",
+          "title": "Современный JavaScript",
+          "paragraphs": [
+            "JavaScript продолжает оставаться одним из основных языков веб-разработки.",
+            "Современный JavaScript предоставляет разработчикам множество возможностей для создания сложных интерфейсов.",
+            "Новые версии языка постепенно добавляют синтаксические улучшения и новые возможности."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "article-react-2022-003",
+      "title": "React news",
+      "subtitle": "Что нового в React",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "views": 3412,
+      "createdAt": "05.03.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "block-react-003",
+          "type": "TEXT",
+          "title": "Разработка интерфейсов",
+          "paragraphs": [
+            "React используется для создания пользовательских интерфейсов.",
+            "Компонентный подход позволяет разделять приложение на небольшие независимые части.",
+            "Современные React-приложения используют различные инструменты для управления состоянием и загрузки данных."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "article-ts-2022-004",
+      "title": "TypeScript news",
+      "subtitle": "Почему TypeScript становится популярнее",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "views": 1876,
+      "createdAt": "08.03.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "block-ts-004",
+          "type": "TEXT",
+          "title": "Типизация в JavaScript",
+          "paragraphs": [
+            "TypeScript добавляет статическую типизацию поверх JavaScript.",
+            "Типы помогают обнаруживать некоторые ошибки ещё во время разработки.",
+            "TypeScript активно используется в больших frontend-проектах и серверных приложениях."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "article-node-2022-005",
+      "title": "Node.js news",
+      "subtitle": "Разработка серверных приложений на Node.js",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "views": 2954,
+      "createdAt": "12.03.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "block-node-005",
+          "type": "TEXT",
+          "title": "JavaScript на сервере",
+          "paragraphs": [
+            "Node.js позволяет выполнять JavaScript вне браузера.",
+            "Платформа часто используется для создания API и серверных приложений.",
+            "Большое количество npm-пакетов позволяет быстро добавлять в проекты различные возможности."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "article-css-2022-006",
+      "title": "CSS news",
+      "subtitle": "Современные возможности CSS",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "views": 1543,
+      "createdAt": "16.03.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "block-css-006",
+          "type": "TEXT",
+          "title": "Современная стилизация",
+          "paragraphs": [
+            "CSS постоянно получает новые возможности для создания интерфейсов.",
+            "Flexbox и Grid позволяют создавать сложные адаптивные макеты.",
+            "Современные CSS-инструменты помогают уменьшить количество дополнительного кода."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "article-html-2022-007",
+      "title": "HTML news",
+      "subtitle": "Современная структура веб-страниц",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "views": 1129,
+      "createdAt": "20.03.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "block-html-007",
+          "type": "TEXT",
+          "title": "Основы HTML",
+          "paragraphs": [
+            "HTML используется для описания структуры веб-страницы.",
+            "Семантические элементы помогают сделать структуру документа понятнее.",
+            "Правильная HTML-разметка является основой доступных и хорошо организованных веб-приложений."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "article-webpack-2022-008",
+      "title": "Webpack news",
+      "subtitle": "Сборка frontend-приложений",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "views": 2678,
+      "createdAt": "23.03.2022",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "block-webpack-008",
+          "type": "TEXT",
+          "title": "Инструменты сборки",
+          "paragraphs": [
+            "Webpack используется для сборки frontend-приложений.",
+            "Сборщик позволяет объединять модули и обрабатывать различные типы файлов.",
+            "Настройка Webpack может значительно отличаться в зависимости от требований проекта."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "article-redux-2022-009",
+      "title": "Redux news",
+      "subtitle": "Управление состоянием приложения",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "views": 3211,
+      "createdAt": "27.03.2022",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "block-redux-009",
+          "type": "TEXT",
+          "title": "Управление состоянием",
+          "paragraphs": [
+            "Redux позволяет хранить состояние приложения в централизованном хранилище.",
+            "Состояние изменяется через действия и reducers.",
+            "Redux Toolkit предоставляет удобные инструменты для современной разработки приложений с Redux."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "article-react-window-2022-010",
+      "title": "React Window news",
+      "subtitle": "Оптимизация больших списков в React",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "views": 4582,
+      "createdAt": "30.03.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "block-react-window-010",
+          "type": "TEXT",
+          "title": "Виртуализация списков",
+          "paragraphs": [
+            "При большом количестве элементов браузеру может быть сложно одновременно отображать весь список.",
+            "Виртуализация позволяет создавать только те элементы, которые находятся рядом с видимой областью.",
+            "react-window помогает эффективно отображать большие списки и уменьшать количество DOM-элементов."
+          ]
+        }
+      ]
     }
   ],
   "comments": [

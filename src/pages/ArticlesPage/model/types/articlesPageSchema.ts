@@ -2,6 +2,7 @@ import {EntityState} from "@reduxjs/toolkit";
 import {Article, ArticlesSortField, ArticleView} from "entities/Article";
 import {SortOrder} from "shared/types/SortOrder";
 import {ArticleType} from "entities/Article";
+import {GridStateSnapshot, StateSnapshot} from "react-virtuoso";
 
 export interface ArticlesPageSchema extends EntityState<Article, string> {
     isLoading?: boolean;
@@ -19,6 +20,10 @@ export interface ArticlesPageSchema extends EntityState<Article, string> {
     sort: ArticlesSortField
     search: string;
     type: ArticleType
+
+    listScrollState?: StateSnapshot
+    gridScrollState?: GridStateSnapshot
+    virtuosoSession?: number
 
     _inited: boolean;
 }

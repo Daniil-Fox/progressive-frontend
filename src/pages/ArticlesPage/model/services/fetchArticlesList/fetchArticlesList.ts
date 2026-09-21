@@ -8,6 +8,8 @@ import {getArticlePageSearch} from "./../../selectors/getArticlesSearch/getArtic
 import {getPage} from "./../../selectors/getPage/getPage";
 import {addQueryParams} from "shared/lib/url/addQueryParams/addQueryParams";
 import {getArticlePageType} from "./../../selectors/getArticlePageType/getArticlePageType";
+import {getIsLoading} from "./../../selectors/getIsLoading/getIsLoading";
+import {getHasMore} from "./../../selectors/getHasMore/getHasMore";
 
 interface FetchArticlesPageProps {
     replace?: boolean;
@@ -47,6 +49,18 @@ export const fetchArticlesList = createAsyncThunk<Article[], FetchArticlesPagePr
             return response.data
         } catch (e){
             return rejectWithValue('Something wrong with fetching ArticlesList')
+        }
+    },
+    {
+        condition: (_, thunkApi) => {
+            const state = thunkApi.getState()
+
+            if(getIsLoading(state)){
+                return false
+            }
+
+            return getHasMore(state);
+
         }
     }
 )

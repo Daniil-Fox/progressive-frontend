@@ -1,15 +1,51 @@
 .ArticleList {
-
+  width: 100%;
 }
 
-.BIG {
+.list {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex: none;
+  width: 250px;
+  padding: 10px;
+  align-content: stretch;
+}
+
+.cardItem {
+}
+
+.skeleton {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .SMALL {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  .skeleton {
+    gap: 20px;
+  }
+}
+
+.staticList {
+  &.SMALL {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+.BIG {
+  .cardItem {
+    box-sizing: border-box;
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
+  .skeleton {
+    flex-direction: column;
+  }
 }

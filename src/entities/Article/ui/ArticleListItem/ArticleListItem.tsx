@@ -10,17 +10,18 @@ import {ButtonTheme} from "shared/ui/Button/Button";
 import {ArticleTextBlockComponent} from "./../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import {useNavigate} from "react-router-dom";
 import {pathRoutes} from "app/routes/config/routes";
-import {HTMLAttributeAnchorTarget} from "react";
+import {CSSProperties, HTMLAttributeAnchorTarget} from "react";
 
 interface ArticleListItemProps {
     className?: string;
     article: Article;
     view: ArticleView;
-    target?: HTMLAttributeAnchorTarget
+    target?: HTMLAttributeAnchorTarget;
+    style?: CSSProperties
 }
 
 export const ArticleListItem = (props: ArticleListItemProps) => {
-    const {className, article, view, target} = props;
+    const {className, article, view, target, style} = props;
     const {t} = useTranslation();
 
 
@@ -39,7 +40,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
 
 
         return (
-            <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+            <div style={style} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
                 <Card className={cls.card} >
                     <div className={cls.header}>
                         <Avatar size={30} src={article.user.avatar}/>
@@ -49,9 +50,11 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
                     <Text title={article.title} className={cls.title}/>
                     {types}
                     <img src={article.img} className={cls.img} alt={article.title}/>
-                    {textBlock && (
-                        <ArticleTextBlockComponent block={textBlock} className={cls.textBlock}/>
-                    )}
+                    <div className={cls.textBlock}>
+                        {textBlock && (
+                            <ArticleTextBlockComponent block={textBlock}/>
+                        )}
+                    </div>
                     <div className={cls.footer}>
                         <AppLink target={target} to={pathRoutes.article_details + article.id}>
                             <Button theme={ButtonTheme.OUTLINE}>
