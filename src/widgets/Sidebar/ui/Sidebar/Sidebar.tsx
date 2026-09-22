@@ -7,6 +7,7 @@ import {LanguageSwitcher} from "widgets/LanguageSwitcher";
 import {SidebarItem} from "widgets/Sidebar/ui/SidebarItem/SidebarItem";
 import {useAppSelector} from "shared/lib/store/hooks/hooks";
 import {getSidebarItems} from "widgets/Sidebar/model/selectors/getSidebarItems";
+import {VStack} from "shared/ui/Stack/VStack/VStack";
 
 interface SidebarProps {
     className?: string;
@@ -32,9 +33,9 @@ export const Sidebar: FC = memo(({ className }: SidebarProps) => {
                 className,
             ])}
         >
-            <menu className={cls.links}>
+            <VStack className={cls.links} gap='8'>
                 {itemsList}
-            </menu>
+            </VStack>
             <Button square={true} size={ButtonSize.XL} className={cls.collapseBtn} theme={ButtonTheme.BACKGROUND_INVERTED} data-testid="toggle-sidebar-btn" onClick={toggleCollapsed}>{isCollapsed ? ">" : "<"}</Button>
             <div className={cls.switchers}>
                 <ThemeSwitcher />

@@ -15,10 +15,12 @@ interface ThemeProviderProps {
 
 export const ThemeProvider = (props: ThemeProviderProps) => {
     const {children, initialTheme} = props;
-    const defaultTheme =
-    (localStorage.getItem(LOCALSTORAGE_THEME_KEY) as Theme) || Theme.DARK;
+    const defaultTheme = (localStorage.getItem(LOCALSTORAGE_THEME_KEY) as Theme) || Theme.DARK;
+
     document.body.classList = defaultTheme
+
     const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
+
     const switchTheme = () => {
         const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
         setTheme(newTheme);

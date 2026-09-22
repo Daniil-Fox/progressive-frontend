@@ -4,6 +4,7 @@ import {Comment} from "./../../model/types/comments";
 import {AppLink, Avatar, Text} from "shared/ui";
 import {Skeleton} from "shared/ui/Skeleton/Skeleton";
 import {pathRoutes, routeConfig} from "app/routes/config/routes";
+import {HStack, VStack} from "shared/ui/Stack";
 
 interface CommentCardProps {
     className?: string;
@@ -18,13 +19,13 @@ export const CommentCard = (props: CommentCardProps) => {
 
     if(isLoading){
         return (
-            <div className={classNames(cls.CommentCard, {}, [className])}>
-                <div className={cls.header}>
+            <VStack gap={'8'} className={classNames(cls.CommentCard, {}, [className])}>
+                <HStack gap={'16'}>
                     <Skeleton width={30} height={30} border={'50%'}/>
                     <Skeleton width={200} height={30}/>
-                </div>
+                </HStack>
                 <Skeleton width={400} height={60}/>
-            </div>
+            </VStack>
         )
     }
 
@@ -33,12 +34,14 @@ export const CommentCard = (props: CommentCardProps) => {
     }
 
     return (
-        <div className={classNames(cls.CommentCard, {}, [className])}>
-            <AppLink to={`${pathRoutes.profile}${comment.user.id}`} className={cls.header}>
-                {comment.user.avatar ? <Avatar size={30} src={comment.user.avatar}/> : null}
-                <Text title={comment.user.username}/>
+        <VStack gap={'8'} className={classNames(cls.CommentCard, {}, [className])}>
+            <AppLink to={`${pathRoutes.profile}${comment.user.id}`}>
+                <HStack gap={'16'}>
+                    {comment.user.avatar ? <Avatar size={30} src={comment.user.avatar}/> : null}
+                    <Text title={comment.user.username}/>
+                </HStack>
             </AppLink>
             <Text text={comment.text}/>
-        </div>
+        </VStack>
     );
 };

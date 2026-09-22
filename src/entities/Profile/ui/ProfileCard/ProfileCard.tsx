@@ -8,9 +8,9 @@ import {Loader} from "shared/ui";
 import {Avatar} from "shared/ui/Avatar/Avatar";
 import {CurrencySelect} from "entities/Currency";
 import {Currency} from "entities/Currency/model/types/CurrencySchema";
-import {Select} from "shared/ui/Select/Select";
 import {Country} from "entities/Country/model/types/country";
 import {CountrySelect} from "entities/Country";
+import {HStack, VStack} from "shared/ui/Stack";
 
 interface ProfileCardProps {
     className?: string;
@@ -37,16 +37,16 @@ export const ProfileCard = (props: ProfileCardProps) => {
     }
 
     if(isLoading){
-        return <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+        return <HStack justify='center' className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
             <Loader/>
-        </div>
+        </HStack>
     }
 
     if(error){
         return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+            <HStack justify='center' className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
                 <Text align={TextAlign.CENTER} theme={TextTheme.ERROR} title={t("Error profile page")} text={t("Something went wrong")}/>
-            </div>
+            </HStack>
         )
     }
 
@@ -54,57 +54,53 @@ export const ProfileCard = (props: ProfileCardProps) => {
     return (
         <div className={classNames(cls.ProfileCard, mods, [className])}>
 
-            <div className={cls.data}>
-                {data?.avatar && (
-                    <div className={cls.AvatarWrapper}>
-                        <Avatar size={150} src={data.avatar}/>
-                    </div>
-                )}
+            <VStack gap="8" className={cls.data}>
+                <HStack justify='center'>
+                    {data?.avatar && (
+                        <div className={cls.AvatarWrapper}>
+                            <Avatar size={150} src={data.avatar}/>
+                        </div>
+                    )}
+                </HStack>
                 <Input
                     onChange={onChangeFirstName}
                     value={data?.first}
                     placeholder={t('Your name')}
-                    className={cls.input}
                     readonly={readonly}
                 />
                 <Input
                     onChange={onChangeLastname}
                     value={data?.lastname}
                     placeholder={t('Your lastname')}
-                    className={cls.input}
                     readonly={readonly}
                 />
                 <Input
                     onChange={onChangeAge}
                     value={data?.age}
                     placeholder={t('Your age')}
-                    className={cls.input}
                     readonly={readonly}
                 />
                 <Input
                     onChange={onChangeCity}
                     value={data?.city}
                     placeholder={t('City')}
-                    className={cls.input}
                     readonly={readonly}
                 />
                 <Input
                     onChange={onChangeAvatar}
                     value={data?.avatar}
                     placeholder={t('Avatar link')}
-                    className={cls.input}
                     readonly={readonly}
                 />
                 <Input
                     onChange={onChangeUsername}
                     value={data?.username}
                     placeholder={t('Username')}
-                    className={cls.input}
                     readonly={readonly}
                 />
                 <CurrencySelect value={data?.currency} onChange={onChangeCurrency} readonly={readonly}/>
                 <CountrySelect value={data?.country} onChange={onChangeCountry} readonly={readonly}/>
-            </div>
+            </VStack>
         </div>
     );
 };

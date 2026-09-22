@@ -29,6 +29,7 @@ import {
     selectRecommendationsIsLoading
 } from "./../../model/selectors/getArticleDetails";
 import {ArticleDetailsPageHeader} from "./../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
+import {VStack} from "shared/ui/Stack";
 
 export interface ArticlesDetailPageProps {
     className?: string;
@@ -73,15 +74,25 @@ const ArticlesDetailPage = ({className}: ArticlesDetailPageProps) => {
 
     return (
         <Page className={classNames(cls.ArticlesDetailPage, {}, [className])}>
-            <ArticleDetailsPageHeader/>
-            <ArticleDetails id={id}/>
+            <VStack gap={'32'}>
+                <VStack gap={'16'}>
+                    <ArticleDetailsPageHeader/>
+                    <ArticleDetails id={id}/>
+                </VStack>
 
-            <Text title={"Рекоммендации"} className={cls.commentTitle}/>
-            <ArticleList target={"_blank"} className={cls.recommendationList} articles={recommendations} isLoading={recommendationsIsLoading}/>
+                <VStack gap={'16'}>
+                    <Text title={"Рекоммендации"}/>
+                    <ArticleList target={"_blank"} className={cls.recommendationList} articles={recommendations} isLoading={recommendationsIsLoading}/>
+                </VStack>
 
-            <Text title={"Комментарии"} className={cls.commentTitle}/>
-            <AddCommentForm onSendComment={onSendComment} />
-            <CommentList comments={comments} isLoading={isLoading}/>
+                <VStack gap={'32'}>
+                    <Text title={"Комментарии"}/>
+                    <VStack gap={'16'}>
+                        <AddCommentForm onSendComment={onSendComment} />
+                        <CommentList comments={comments} isLoading={isLoading}/>
+                    </VStack>
+                </VStack>
+            </VStack>
         </Page>
     );
 };
