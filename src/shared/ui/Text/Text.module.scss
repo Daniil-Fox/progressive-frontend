@@ -20,6 +20,7 @@
     color: var(--error-color);
   }
 }
+
 .inverted {
   .title {
     color: var(--secondary-color);
@@ -32,11 +33,22 @@
 .left {
   text-align: left;
 }
+
 .right {
   text-align: right;
 }
+
 .center {
   text-align: center;
+}
+
+.size_s {
+  .title {
+    font: var(--font-m);
+  }
+  .text {
+    font: var(--font-s);
+  }
 }
 
 .size_m {
@@ -47,6 +59,7 @@
     font: var(--font-m);
   }
 }
+
 .size_l {
   .title {
     font: var(--font-xl);

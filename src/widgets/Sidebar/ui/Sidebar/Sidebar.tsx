@@ -33,7 +33,7 @@ export const Sidebar: FC = memo(({ className }: SidebarProps) => {
                 className,
             ])}
         >
-            <VStack className={cls.links} gap='8'>
+            <VStack role='navigation' className={cls.links} gap='8'>
                 {itemsList}
             </VStack>
             <Button square={true} size={ButtonSize.XL} className={cls.collapseBtn} theme={ButtonTheme.BACKGROUND_INVERTED} data-testid="toggle-sidebar-btn" onClick={toggleCollapsed}>{isCollapsed ? ">" : "<"}</Button>
