@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import {BugButton} from "app/providers/ErrorBoundary";
 import {useState} from "react";
 import {Page} from "widgets/Page/ui/Page";
+import {ListBox} from "shared/ui/ListBox/ListBox";
 
 const MainPage = () => {
     const { t } = useTranslation();

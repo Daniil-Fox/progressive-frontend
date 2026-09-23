@@ -37,9 +37,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
     }
 
     if(isLoading){
-        return <HStack justify='center' className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
-            <Loader/>
-        </HStack>
+        return (
+            <HStack justify='center' className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+                <Loader/>
+            </HStack>
+        )
     }
 
     if(error){
