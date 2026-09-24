@@ -14,7 +14,7 @@ interface ListBoxItem<T extends string> {
 
 interface ListBoxProps<T extends string> {
     className?: string;
-    items?: ListBoxItem<T>[];
+    items: ListBoxItem<T>[];
     value?: T;
     defaultValue?: T;
     onChange: (value: T) => void;
@@ -55,7 +55,7 @@ export const ListBox = <T extends string,>(props: ListBoxProps<T>) => {
                     </Button>
                 </ListboxButton>
                 <ListboxOptions as={"ul"} ref={refs.setFloating} style={floatingStyles} className={cls.options} >
-                    {items?.map((item) => (
+                    {items.map((item) => (
                         <ListboxOption as={Fragment} key={item.value} value={item.value}>
                             {({focus, selected, disabled}) => (
                                 <li className={classNames(cls.item, {[cls.selected]: selected, [cls.focus]: focus, [cls.disabled]: disabled}, [])}>

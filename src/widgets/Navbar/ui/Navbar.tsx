@@ -6,10 +6,11 @@ import {Button} from "shared/ui/Button/Button";
 import {LoginModal} from "features/AuthByUsername";
 import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
 import {getUserAuthData, userActions} from "entities/User";
-import {AppLink, Text} from "shared/ui";
+import {AppLink, Avatar, Text} from "shared/ui";
 import {pathRoutes} from "app/routes/config/routes";
 import {AppLinkTheme} from "shared/ui/AppLink/AppLink";
 import {TextTheme} from "shared/ui/Text/Text";
+import {Dropdown} from "shared/ui/Dropdown/Dropdown";
 interface NavbarProps {
     className?: string;
 }
@@ -37,11 +38,22 @@ export const Navbar: FC = ({ className }: NavbarProps) => {
                 <AppLink theme={AppLinkTheme.SECONDARY} to={pathRoutes.article_create} className={cls.createBtn}>
                     Создать статью
                 </AppLink>
-                <div className={cls.links}>
-                    <Button onClick={onLogout}>
-                        {t('logout')}
-                    </Button>
-                </div>
+
+                <Dropdown
+                    className={cls.links}
+                    items={[
+                        {
+                            content: t('profile'),
+                            href: pathRoutes.profile + authData.id
+                        },
+                        {
+                            content: t('logout'),
+                            onClick: onLogout
+                        }
+
+                    ]}
+                    trigger={<Avatar size={30} src={authData.avatar}/>}
+                />
             </header>
         )
     }
