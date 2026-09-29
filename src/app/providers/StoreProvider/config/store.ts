@@ -2,9 +2,7 @@ import {configureStore} from "@reduxjs/toolkit";
 import {StateSchema, ThunkExtraArg} from "app/providers/StoreProvider/config/stateSchema";
 import {rootReducer} from "./rootReducer";
 import {$api} from "shared/api/api";
-import {NavigateOptions, Path} from "react-router-dom";
-
-export type To = string | Partial<Path>
+import {rtkApi} from "shared/api/rtkApi";
 
 export function createReduxStore(
     initialState?: Partial<StateSchema>
@@ -21,7 +19,7 @@ export function createReduxStore(
             thunk: {
                 extraArgument: extraArgs
             }
-        }),
+        }).concat(rtkApi.middleware),
     });
 }
 

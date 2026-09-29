@@ -52,11 +52,15 @@ export const fetchArticlesList = createAsyncThunk<Article[], FetchArticlesPagePr
         }
     },
     {
-        condition: (_, thunkApi) => {
+        condition: (arg, thunkApi) => {
             const state = thunkApi.getState()
 
             if(getIsLoading(state)){
                 return false
+            }
+
+            if (arg.replace) {
+                return true
             }
 
             return getHasMore(state);

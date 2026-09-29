@@ -11,10 +11,10 @@ import {getArticlePageOrder} from "./../../model/selectors/getArticlesOrder/getA
 import {getArticlePageSort} from "../../model/selectors/getSort/getArticlePageSort";
 import {SortOrder} from "shared/types/SortOrder";
 import {getArticlePageSearch} from "./../../model/selectors/getArticlesSearch/getArticlesSearch";
-import {fetchArticlesList} from "pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList";
+import {fetchArticlesList} from "./../../model/services/fetchArticlesList/fetchArticlesList";
 import {useDebounce} from "shared/lib/hooks/useDebounce/useDebounce";
 import {ArticleType} from "entities/Article/model/types/article";
-import {getArticlePageType} from "pages/ArticlesPage/model/selectors/getArticlePageType/getArticlePageType";
+import {getArticlePageType} from "./../../model/selectors/getArticlePageType/getArticlePageType";
 import {ArticleTypeTabs} from "entities/Article";
 
 interface ArticlesPageFiltersProps {

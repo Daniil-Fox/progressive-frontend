@@ -1,13 +1,9 @@
 import {classNames} from "shared/lib/classNames/classNames";
 import cls from "./ArticlesPage.module.scss";
 import {memo, useCallback, useState} from "react";
-import {ArticleList, ArticleView, ArticleViewSelector} from "entities/Article";
 import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
 import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import {articlePageActions, getArticles, getGridScrollState, getListScrollState, getVirtuosoSession} from "./../../model/slices/articlesPageSlice";
-import {getIsLoading} from "./../../model/selectors/getIsLoading/getIsLoading";
 import {getError} from "./../../model/selectors/getError/getError";
-import {getView} from "./../../model/selectors/getView/getView";
 import {Page} from "widgets/Page";
 import {fetchNextArticlesPage} from "./../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import {Text} from "shared/ui";
@@ -15,7 +11,7 @@ import {TextTheme} from "shared/ui/Text/Text";
 import {initArticlesPage} from "./../../model/services/initArticlesPage/initArticlesPage";
 import {ArticlesPageFilters} from "./../ArticlesPageFilters/ArticlesPageFilters";
 import {useSearchParams} from "react-router-dom";
-import {GridStateSnapshot, StateSnapshot} from "react-virtuoso";
+import {ArticlesInfiniteList} from "pages/ArticlesPage/ui/ArticlesInfiniteList/ArticlesInfiniteList";
 
 export interface ArticlesPageProps {
     className?: string;
@@ -25,13 +21,8 @@ export interface ArticlesPageProps {
 const ArticlesPage = ({className}: ArticlesPageProps) => {
     const [scrollParent, setScrollParent] = useState<HTMLElement | null>(null);
     const dispatch = useAppDispatch()
-    const articles = useAppSelector(getArticles.selectAll)
-    const isLoading = useAppSelector(getIsLoading)
     const error = useAppSelector(getError)
-    const view = useAppSelector(getView)
-    const listState = useAppSelector(getListScrollState)
-    const gridState = useAppSelector(getGridScrollState)
-    const sessionKey = useAppSelector(getVirtuosoSession)
+
     const [searchParams] = useSearchParams()
 
     useInitialEffect(() => {
@@ -42,13 +33,6 @@ const ArticlesPage = ({className}: ArticlesPageProps) => {
         dispatch(fetchNextArticlesPage())
     }, [dispatch]);
 
-    const onListStateChange = useCallback((state: StateSnapshot) => {
-        dispatch(articlePageActions.setListScrollState(state))
-    }, [dispatch])
-
-    const onGridStateChange = useCallback((state: GridStateSnapshot) => {
-        dispatch(articlePageActions.setGridScrollState(state))
-    }, [dispatch])
 
 
     if(error){
@@ -60,7 +44,6 @@ const ArticlesPage = ({className}: ArticlesPageProps) => {
     }
 
 
-
     return (
         <Page
             ref={setScrollParent}
@@ -69,18 +52,7 @@ const ArticlesPage = ({className}: ArticlesPageProps) => {
             className={classNames(cls.ArticlesPage, {}, [className])}
         >
             <ArticlesPageFilters/>
-            <ArticleList
-                scrollParent={scrollParent}
-                isLoading={isLoading}
-                view={view}
-                articles={articles}
-                className={cls.list}
-                sessionKey={sessionKey}
-                listState={listState}
-                gridState={gridState}
-                onListStateChange={onListStateChange}
-                onGridStateChange={onGridStateChange}
-            />
+            <ArticlesInfiniteList scrollParent={scrollParent}/>
         </Page>
     );
 };

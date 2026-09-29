@@ -1,12 +1,10 @@
 import { WithSlice, combineSlices } from "@reduxjs/toolkit";
 
 import { articleDetailsCommentsSlice } from "./articleDetailsCommentsSlice";
-import { articleDetailsPageRecommendationsSlice } from "./articleDetailsPageRecommendationsSlice";
 import {rootReducer} from "app/providers/StoreProvider/config/rootReducer";
 
 const articleDetailsReducer = combineSlices(
-    articleDetailsCommentsSlice,
-    articleDetailsPageRecommendationsSlice,
+    articleDetailsCommentsSlice
 );
 
 export const articleDetailsSlice = {
@@ -22,4 +20,3 @@ declare module "app/providers/StoreProvider/config/rootReducer" {
 }
 
 export { getArticleComments } from "./articleDetailsCommentsSlice";
-export { getArticleRecommendations } from "./articleDetailsPageRecommendationsSlice";

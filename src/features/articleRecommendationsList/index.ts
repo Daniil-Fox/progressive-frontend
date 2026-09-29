@@ -1,0 +1,2 @@
+export { ArticleRecommendationsList } from './ui/ArticleRecommendationsList/ArticleRecommendationsList';
+export type { ArticleRecommendationsListSchema } from './model/types/articleRecommendationsListSchema';

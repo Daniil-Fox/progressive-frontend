@@ -1,10 +1,11 @@
 import {profileActions, profileReducer, profileSelectors} from "./ProfileSlice";
-import {ProfileSchema, ValidateProfileError} from "./../types/profile";
+import {ProfileSchema} from "./../types/profile";
 import {updateProfileData} from './../services/updateProfileData/updateProfileData'
 import {RootState} from "app/providers/StoreProvider/config/store";
 import {DeepPartial} from "shared/types/DeepPartial";
 import {Country} from "entities/Country/model/types/country";
 import {Currency} from "entities/Currency/model/types/CurrencySchema";
+import {ValidateProfileError} from "features/editableProfileCard";
 
 describe("ProfileSlice", () => {
     describe("Selectors", () => {

@@ -1,8 +1,9 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import {ThunkConfig} from "app/providers/StoreProvider";
-import {Profile, ValidateProfileError} from "../../types/profile";
-import {profileSelectors} from "entities/Profile";
+import {ValidateProfileError} from "../../types/profile";
 import {validateProfile} from "./../validateProfile/validateProfile";
+import {profileSelectors} from "./../../slice/ProfileSlice";
+import {Profile} from "entities/Profile";
 
 
 

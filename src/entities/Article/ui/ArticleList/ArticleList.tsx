@@ -22,7 +22,7 @@ import { useThrottle } from "shared/lib/hooks/useThrottle/useThrottle";
 
 interface ArticleListProps {
   className?: string;
-  articles: Article[];
+  articles?: Article[];
   isLoading?: boolean;
   view?: ArticleView;
   target?: HTMLAttributeAnchorTarget;
@@ -171,7 +171,7 @@ export const ArticleList = (props: ArticleListProps) => {
     [],
   );
 
-  if (!isLoading && !articles.length) {
+  if (!isLoading && !articles?.length) {
     return (
       <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
         <Text size={TextSize.L} title={"Статьи не найдены"} />
@@ -184,6 +184,8 @@ export const ArticleList = (props: ArticleListProps) => {
   };
 
   const context: ArticleListContext = { isLoading, view };
+
+  if(!articles) return null;
   const canRestore = articles.length > 0;
 
   return (
@@ -222,7 +224,7 @@ export const ArticleList = (props: ArticleListProps) => {
       )}
       {!scrollParent && (
         <>
-          {articles.map((article) => (
+          {articles?.map((article) => (
             <ArticleListItem
               key={article.id}
               article={article}
