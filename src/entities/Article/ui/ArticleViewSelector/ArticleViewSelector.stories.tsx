@@ -2,11 +2,12 @@ import type {Meta, StoryObj} from '@storybook/react-webpack5';
 
 import {fn} from 'storybook/test';
 import {ArticleViewSelector} from './ArticleViewSelector';
+import {ArticleView} from "entities/Article";
 
 
 const meta = {
     component: ArticleViewSelector,
-    title: 'enteties/ArticleViewSelector',
+    title: 'entities/ArticleViewSelector',
     tags: ['autodocs'],
     args: {},
 } satisfies Meta<typeof ArticleViewSelector>;
@@ -14,6 +15,14 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {
-    args: {},
+export const ViewSmall: Story = {
+    args: {
+        view: ArticleView.SMALL
+    },
+};
+
+export const ViewBig: Story = {
+    args: {
+        view: ArticleView.BIG
+    },
 };

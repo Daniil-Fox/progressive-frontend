@@ -9,7 +9,7 @@ import {Currency} from "entities/Currency/model/types/CurrencySchema";
 
 const meta = {
     component: ProfileCard,
-    title: 'enteties/ProfileCard',
+    title: 'entities/ProfileCard',
     tags: ['autodocs'],
     args: { },
 } satisfies Meta<typeof ProfileCard>;

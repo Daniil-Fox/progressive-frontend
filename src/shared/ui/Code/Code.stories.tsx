@@ -24,7 +24,7 @@ export const Normal: Story = {
             "\n" +
             "const meta = {\n" +
             "    component: Code,\n" +
-            "    title: 'enteties/Code',\n" +
+            "    title: 'entities/Code',\n" +
             "    tags: ['autodocs'],\n" +
             "    args: {},\n" +
             "} satisfies Meta<typeof Code>;"

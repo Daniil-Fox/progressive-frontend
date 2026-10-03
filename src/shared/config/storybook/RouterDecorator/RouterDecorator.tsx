@@ -1,11 +1,10 @@
 import {PartialStoryFn} from "storybook/internal/csf";
 import {BrowserRouter} from "react-router-dom";
-import {AppRouter} from "app/routes";
 
-export const RouterDecorator = (Story: PartialStoryFn) => {
+export const RouterDecorator = (StoryComponent: PartialStoryFn) => {
     return (
         <BrowserRouter>
-            <Story />
+            <StoryComponent />
         </BrowserRouter>
     )
 }

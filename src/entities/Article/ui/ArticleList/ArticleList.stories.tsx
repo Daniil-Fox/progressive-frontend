@@ -7,7 +7,7 @@ import {ArticleType} from "entities/Article";
 
 const meta = {
     component: ArticleList,
-    title: 'enteties/ArticleList',
+    title: 'entities/ArticleList',
     tags: ['autodocs'],
     args: {},
 } satisfies Meta<typeof ArticleList>;

@@ -5,7 +5,9 @@ import {RootState} from "app/providers/StoreProvider/config/store";
 
 
 export const StoreDecorator = (state: Partial<RootState>) => (Story: PartialStoryFn) => {
-    return <StoreProvider initialStore={state}>
-        <Story />
-    </StoreProvider>;
+    return (
+        <StoreProvider initialStore={state}>
+            <Story />
+        </StoreProvider>
+    );
 };

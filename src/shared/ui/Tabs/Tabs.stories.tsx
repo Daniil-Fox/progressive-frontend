@@ -7,7 +7,7 @@ import {action} from "storybook/actions";
 
 const meta = {
     component: Tabs,
-    title: 'enteties/Tabs',
+    title: 'entities/Tabs',
     tags: ['autodocs'],
     args: {},
 } satisfies Meta<typeof Tabs>;
