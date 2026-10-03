@@ -35,6 +35,7 @@ export const WithError: Story = {
     args: {
         error: "Something Wrong"
     },
+
 };
 export const Loading: Story = {
     args: {
