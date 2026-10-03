@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import {Button} from "shared/ui/Button/Button";
 import {LoginModal} from "features/AuthByUsername";
 import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
-import {getUserAuthData, userActions} from "entities/User";
+import {getUserAuthData, isUserAdmin, isUserManager, userActions} from "entities/User";
 import {AppLink, Avatar, Text} from "shared/ui";
 import {pathRoutes} from "app/routes/config/routes";
 import {AppLinkTheme} from "shared/ui/AppLink/AppLink";
@@ -19,6 +19,8 @@ export const Navbar: FC = ({ className }: NavbarProps) => {
     const [modalOpen, setModalOpen] = useState(false);
     const authData = useAppSelector(getUserAuthData)
     const dispatch = useAppDispatch()
+    const isAdmin = useAppSelector(isUserAdmin)
+    const isManager = useAppSelector(isUserManager)
 
     const onOpenModal = () => {
         setModalOpen(true)
@@ -31,6 +33,8 @@ export const Navbar: FC = ({ className }: NavbarProps) => {
         dispatch(userActions.logout())
     }
 
+    const isAdminPanelAvailable = isAdmin || isManager
+
     if(authData){
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
@@ -42,6 +46,10 @@ export const Navbar: FC = ({ className }: NavbarProps) => {
                 <Dropdown
                     className={cls.links}
                     items={[
+                        ...(isAdminPanelAvailable ? [{
+                            content: t('admin panel'),
+                            href: pathRoutes.admin_panel
+                        }] : []),
                         {
                             content: t('profile'),
                             href: pathRoutes.profile + authData.id

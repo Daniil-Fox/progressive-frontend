@@ -15,8 +15,11 @@ interface ArticleRecommendationsListProps {
 export const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps) => {
     const { className } = props;
     const { t } = useTranslation();
-    const {data: articles, isLoading} = useGetArticleRecommendationsListQuery(3)
+    const {data: articles, isLoading, isError} = useGetArticleRecommendationsListQuery(3)
 
+    if(!articles || isError){
+        return null
+    }
     return (
         <VStack gap={'8'} className={classNames('', {}, [className])}>
             <Text title={t("Рекоммендации")}/>

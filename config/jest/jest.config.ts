@@ -56,6 +56,20 @@ const config: Config = {
   transform: {
     "^.+\\.(t|j)sx?$": "babel-jest",
   },
+
+  reporters: [
+    "default",
+    ["./node_modules/jest-html-reporter", {
+      pageTitle: "Test Report",
+      outputPath: '<rootDir>/reports/report.html'
+    }]
+  ],
+
+  globals: {
+    __IS_DEV: true,
+    __API__: "",
+    __PROJECT__: "jest"
+  },
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
 
@@ -103,11 +117,7 @@ const config: Config = {
   // globalTeardown: undefined,
 
   // A set of global variables that need to be available in all test environments
-  globals: {
-    __IS_DEV: true,
-    __API__: "",
-    __PROJECT__: "jest"
-  },
+
 
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
   // maxWorkers: "50%",
@@ -137,7 +147,7 @@ const config: Config = {
   // projects: undefined,
 
   // Use this configuration option to add custom reporters to Jest
-  // reporters: undefined,
+
 
   // Automatically reset mock state before every test
   // resetMocks: false,

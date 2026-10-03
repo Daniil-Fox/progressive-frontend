@@ -1,7 +1,8 @@
-import {Profile, ValidateProfileError} from "./../../types/profile";
-import {validateProfile} from "entities/Profile/model/services/validateProfile/validateProfile";
+import {ValidateProfileError} from "./../../types/profile";
 import {Country} from "entities/Country/model/types/country";
 import {Currency} from "entities/Currency/model/types/CurrencySchema";
+import {Profile} from "entities/Profile";
+import {validateProfile} from "./validateProfile";
 
 describe('validateProfile test', () => {
     test('validate with empty profile', () => {

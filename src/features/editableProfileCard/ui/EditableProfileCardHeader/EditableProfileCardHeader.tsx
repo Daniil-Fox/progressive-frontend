@@ -1,5 +1,4 @@
 import {classNames} from "shared/lib/classNames/classNames";
-import cls from "./EditableProfileCardHeader.module.scss";
 import {useTranslation} from "react-i18next";
 import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
 import {getUserAuthData} from "entities/User";
@@ -40,22 +39,22 @@ export const EditableProfileCardHeader = ({className}: EditableProfileCardHeader
 
 
     return (
-        <div className={classNames(cls.EditableProfileCardHeader, {}, [className])}>
+        <div className={classNames('', {}, [className])}>
             <HStack justify='between' align='center' className={className}>
                 <Text title={t('Profile Page')}/>
                 <>
                     {canEdit && (
                         <div>
                             {readonly ? (
-                                    <Button onClick={onEdit} theme={ButtonTheme.OUTLINE}>
+                                    <Button data-testid={'EditableProfileCardHeader.editbtn'} onClick={onEdit} theme={ButtonTheme.OUTLINE}>
                                         {t('Edit')}
                                     </Button>
                                 )
                                 : (<HStack gap="8">
-                                    <Button onClick={onCancelEdit} theme={ButtonTheme.OUTLINE_RED}>
+                                    <Button data-testid={'EditableProfileCardHeader.cancelbtn'} onClick={onCancelEdit} theme={ButtonTheme.OUTLINE_RED}>
                                         {t('Cancel')}
                                     </Button>
-                                    <Button onClick={onSave} theme={ButtonTheme.OUTLINE}>
+                                    <Button data-testid={'EditableProfileCardHeader.applybtn'} onClick={onSave} theme={ButtonTheme.OUTLINE}>
                                         {t('Apply')}
                                     </Button>
                                 </HStack>)

@@ -22,7 +22,7 @@ import { useThrottle } from "shared/lib/hooks/useThrottle/useThrottle";
 
 interface ArticleListProps {
   className?: string;
-  articles?: Article[];
+  articles: Article[];
   isLoading?: boolean;
   view?: ArticleView;
   target?: HTMLAttributeAnchorTarget;

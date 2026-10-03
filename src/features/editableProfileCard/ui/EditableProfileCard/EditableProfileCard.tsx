@@ -1,12 +1,10 @@
 import {classNames} from "shared/lib/classNames/classNames";
-import cls from "./EditableProfileCard.module.scss";
 import {Text} from "shared/ui";
 import {TextTheme} from "shared/ui/Text/Text";
 import {ProfileCard} from "entities/Profile";
 import {useTranslation} from "react-i18next";
 import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
 import {profileActions, profileSelectors} from "../../model/slice/ProfileSlice";
-import {useParams} from "react-router-dom";
 import {ValidateProfileError} from "../../model/types/profile";
 import {useCallback} from "react";
 import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
@@ -16,10 +14,11 @@ import {Country} from "entities/Country";
 import {
     EditableProfileCardHeader
 } from "./../EditableProfileCardHeader/EditableProfileCardHeader";
+import {VStack} from "shared/ui/Stack";
 
 interface EditableProfileCardProps {
     className?: string;
-    id?: string;
+    id: string;
 }
 
 export const EditableProfileCard = (props: EditableProfileCardProps) => {
@@ -81,7 +80,7 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
     })
 
     return (
-        <div className={classNames(cls.EditableProfileCard, {}, [className])}>
+        <VStack gap={'16'} className={classNames('', {}, [className])}>
             <EditableProfileCardHeader/>
 
             { validateErrors?.length && validateErrors.map(err => {
@@ -89,6 +88,7 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
                     key={err}
                     theme={TextTheme.ERROR}
                     text={validateErrorTranslates[err]}
+                    data-testid={'EditableProfileCardError'}
                 />
             })}
             <ProfileCard
@@ -105,6 +105,6 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
                 isLoading={isLoading}
                 error={error}
             />
-        </div>
+        </VStack>
     );
 };
