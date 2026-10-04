@@ -1,9 +1,9 @@
 import {ReactNode, useMemo} from "react";
 import {getUserAuthData, getUserRoles} from "entities/User";
 import {Navigate, useLocation} from "react-router-dom";
-import {pathRoutes} from "app/routes/config/routes";
 import {useAppSelector} from "shared/lib/store/hooks/hooks";
 import {UserRole} from "entities/User/model/types/user";
+import {pathRoutes} from "shared/routes/routes";
 
 interface RequireAuthProps {
     children: ReactNode;

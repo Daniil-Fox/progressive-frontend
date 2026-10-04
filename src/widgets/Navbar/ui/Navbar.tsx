@@ -7,10 +7,10 @@ import {LoginModal} from "features/AuthByUsername";
 import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
 import {getUserAuthData, isUserAdmin, isUserManager, userActions} from "entities/User";
 import {AppLink, Avatar, Text} from "shared/ui";
-import {pathRoutes} from "app/routes/config/routes";
 import {AppLinkTheme} from "shared/ui/AppLink/AppLink";
 import {TextTheme} from "shared/ui/Text/Text";
 import {Dropdown} from "shared/ui/Dropdown/Dropdown";
+import {pathRoutes} from "shared/routes/routes";
 interface NavbarProps {
     className?: string;
 }

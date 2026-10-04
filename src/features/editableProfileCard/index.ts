@@ -1,2 +1,4 @@
 export {EditableProfileCard} from './ui/EditableProfileCard/EditableProfileCard'
-export {ValidateProfileError} from "features/editableProfileCard/model/types/profile";
+export {ValidateProfileError} from "./model/types/profile";
+
+export {getProfileForm, getProfileReadonly, getProfileIsLoading, getProfileError, getValidateError, getProfileData} from './model/selector/selectors'

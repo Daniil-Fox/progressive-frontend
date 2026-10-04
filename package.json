@@ -33,6 +33,7 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.7",
+    "@types/circular-dependency-plugin": "^5.0.8",
     "@types/jest": "^30.0.0",
     "@types/node": "^25.9.1",
     "@types/react": "^19.2.17",
@@ -41,6 +42,7 @@
     "@types/webpack-bundle-analyzer": "^4.7.0",
     "@types/webpack-dev-server": "^4.7.1",
     "babel-jest": "^30.4.1",
+    "circular-dependency-plugin": "^5.2.2",
     "concurrently": "^10.0.4",
     "copy-webpack-plugin": "^14.0.0",
     "css-loader": "^7.1.4",
@@ -55,11 +57,14 @@
     "jest-html-reporter": "^4.4.2",
     "json-server": "^0.17.4",
     "mini-css-extract-plugin": "^2.10.2",
+    "msw": "^2.15.0",
+    "msw-storybook-addon": "^3.0.3",
     "react-refresh": "^0.18.0",
     "react-refresh-typescript": "^2.0.12",
     "sass": "^1.100.0",
     "sass-loader": "^17.0.0",
     "storybook": "^10.4.4",
+    "storybook-addon-mock": "^6.0.1",
     "storybook-css-modules": "^1.0.8",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.7",
@@ -94,6 +99,11 @@
   "eslintConfig": {
     "extends": [
       "plugin:storybook/recommended"
+    ]
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
     ]
   }
 }

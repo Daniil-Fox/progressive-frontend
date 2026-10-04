@@ -9,8 +9,8 @@ import {useTranslation} from "react-i18next";
 import {ButtonTheme} from "shared/ui/Button/Button";
 import {ArticleTextBlockComponent} from "./../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import {useNavigate} from "react-router-dom";
-import {pathRoutes} from "app/routes/config/routes";
 import {CSSProperties, HTMLAttributeAnchorTarget} from "react";
+import {pathRoutes} from "shared/routes/routes";
 
 interface ArticleListItemProps {
     className?: string;

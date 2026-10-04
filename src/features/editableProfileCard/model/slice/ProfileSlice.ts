@@ -34,14 +34,6 @@ export const profileSlice = createSlice({
             };
         }
     },
-    selectors: {
-        getProfileData: (state) => state.data,
-        getProfileForm: (state) => state.form,
-        getProfileError: (state) => state.error,
-        getProfileIsLoading: (state) => state.isLoading,
-        getProfileReadonly: (state) => state.readonly,
-        getValidateError: (state) => state.validateError
-    },
     extraReducers: builder => {
         builder
             .addCase(fetchProfileData.pending, (state) => {
@@ -84,7 +76,6 @@ const injectedProfile = profileSlice.injectInto(rootReducer)
 
 export const {actions: profileActions} = injectedProfile;
 export const {reducer: profileReducer} = injectedProfile;
-export const {selectors: profileSelectors} = injectedProfile;
 
 declare module 'app/providers/StoreProvider/config/rootReducer' {
     interface LazyLoadedSlices extends WithSlice<typeof profileSlice> {}

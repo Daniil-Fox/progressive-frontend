@@ -3,7 +3,6 @@ import cls from "./ArticleDetails.module.scss";
 import {memo, useCallback, useEffect} from "react";
 import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
 import {fetchArticleById} from "./../../model/services/fetchArticleById/fetchArticleById";
-import {articleSelectors} from "./../../model/slice/articleDetailsSlice";
 import {ArticleBlock, ArticleBlockType} from "./../../model/types/article";
 import {Avatar, Text} from "shared/ui";
 import {TextSize, TextTheme} from "shared/ui/Text/Text";
@@ -15,18 +14,19 @@ import {ArticleCodeBlockComponent} from "./../ArticleCodeBlockComponent/ArticleC
 import {ArticleTextBlockComponent} from "./../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import {ArticleImageBlockComponent} from "./../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import {HStack, VStack} from "shared/ui/Stack";
+import {getData, getError, getIsLoading} from "./../../model/selectors/selectors";
 
 interface ArticleDetailsProps {
     className?: string;
-    id: string
+    id: string | undefined
 }
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const {className, id} = props
     const dispatch = useAppDispatch()
-    const isLoading =  useAppSelector(articleSelectors.getIsLoading)
-    const error =  useAppSelector(articleSelectors.getError)
-    const article =  useAppSelector(articleSelectors.getData)
+    const isLoading =  useAppSelector(getIsLoading)
+    const error =  useAppSelector(getError)
+    const article =  useAppSelector(getData)
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type){

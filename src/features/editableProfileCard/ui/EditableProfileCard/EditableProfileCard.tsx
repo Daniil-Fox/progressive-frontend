@@ -4,7 +4,7 @@ import {TextTheme} from "shared/ui/Text/Text";
 import {ProfileCard} from "entities/Profile";
 import {useTranslation} from "react-i18next";
 import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
-import {profileActions, profileSelectors} from "../../model/slice/ProfileSlice";
+import {profileActions} from "../../model/slice/ProfileSlice";
 import {ValidateProfileError} from "../../model/types/profile";
 import {useCallback} from "react";
 import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
@@ -15,6 +15,12 @@ import {
     EditableProfileCardHeader
 } from "./../EditableProfileCardHeader/EditableProfileCardHeader";
 import {VStack} from "shared/ui/Stack";
+import {
+    getProfileError,
+    getProfileForm,
+    getProfileIsLoading,
+    getProfileReadonly, getValidateError
+} from "./../../model/selector/selectors";
 
 interface EditableProfileCardProps {
     className?: string;
@@ -27,11 +33,11 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
     const {t} = useTranslation('profile');
 
     const dispatch = useAppDispatch()
-    const formData = useAppSelector(profileSelectors.getProfileForm)
-    const isLoading = useAppSelector(profileSelectors.getProfileIsLoading)
-    const error = useAppSelector(profileSelectors.getProfileError)
-    const readonly = useAppSelector(profileSelectors.getProfileReadonly)
-    const validateErrors = useAppSelector(profileSelectors.getValidateError)
+    const formData = useAppSelector(getProfileForm)
+    const isLoading = useAppSelector(getProfileIsLoading)
+    const error = useAppSelector(getProfileError)
+    const readonly = useAppSelector(getProfileReadonly)
+    const validateErrors = useAppSelector(getValidateError)
 
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t('server error'),

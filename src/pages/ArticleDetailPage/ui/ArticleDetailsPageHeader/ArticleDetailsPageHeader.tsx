@@ -1,13 +1,13 @@
 import {classNames} from "shared/lib/classNames/classNames";
 import cls from "./ArticleDetailsPageHeader.module.scss";
-import {pathRoutes} from "app/routes/config/routes";
 import {useNavigate} from "react-router-dom";
 import {Button} from "shared/ui";
 import {ButtonTheme} from "shared/ui/Button/Button";
 import {useTranslation} from "react-i18next";
 import {useAppSelector} from "shared/lib/store/hooks/hooks";
 import {getCanEditArticle} from "./../../model/selectors/article";
-import {articleSelectors} from "entities/Article";
+import {pathRoutes} from "shared/routes/routes";
+import {getData} from "entities/Article";
 
 interface ArticleDetailsPageHeaderProps {
     className?: string;
@@ -17,7 +17,7 @@ export const ArticleDetailsPageHeader = ({className}: ArticleDetailsPageHeaderPr
     const navigate = useNavigate()
     const {t} = useTranslation('article-details')
     const canEdit = useAppSelector(getCanEditArticle)
-    const article = useAppSelector(articleSelectors.getData)
+    const article = useAppSelector(getData)
     const onBackToList = () => {
         navigate(pathRoutes.articles)
     }

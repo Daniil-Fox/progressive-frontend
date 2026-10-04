@@ -1,7 +1,7 @@
 import {classNames} from "shared/lib/classNames/classNames";
 import {AddCommentForm} from "features/addCommentForm";
 import {CommentList} from "entities/Comment";
-import {useCallback, useEffect} from "react";
+import {Suspense, useCallback, useEffect} from "react";
 import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
 import {getArticleComments} from "./../../model/slice";
 import {selectCommentsError, selectCommentsIsLoading} from "./../../model/selectors/getArticleDetails";
@@ -10,6 +10,7 @@ import {
     fetchCommentsByArticleId
 } from "pages/ArticleDetailPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import {VStack} from "shared/ui/Stack";
+import {Loader} from "shared/ui";
 
 interface ArticleDetailCommentsProps {
     className?: string;
@@ -36,7 +37,9 @@ export const ArticleDetailComments = (props: ArticleDetailCommentsProps) => {
 
     return (
         <VStack gap={'16'} className={classNames('', {}, [className])}>
-            <AddCommentForm onSendComment={onSendComment} />
+            <Suspense fallback={<Loader/>}>
+                <AddCommentForm onSendComment={onSendComment} />
+            </Suspense>
             <CommentList comments={comments} isLoading={isLoading}/>
         </VStack>
     );

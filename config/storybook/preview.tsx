@@ -3,8 +3,8 @@ import {StyleDecorator} from "../../src/shared/config/storybook/StyleDecorator/S
 import {ThemeDecorator} from "../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import {Theme} from "../../src/shared/lib/theme/ThemeContext";
 import {RouterDecorator} from "../../src/shared/config/storybook/RouterDecorator/RouterDecorator";
-import {StoreDecorator} from "../../src/shared/config/storybook/StoreDecorator/StoreDecorator";
-
+import {SuspenseDecorator} from "../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator";
+import {mswLoader} from "msw-storybook-addon/csf3";
 
 const preview: Preview = {
     parameters: {
@@ -18,9 +18,10 @@ const preview: Preview = {
     decorators: [
         StyleDecorator,
         ThemeDecorator,
-        StoreDecorator({}),
+        SuspenseDecorator,
         RouterDecorator,
     ],
+    loaders: [mswLoader()],
     globalTypes: {
         theme: {
             description: 'Global theme',

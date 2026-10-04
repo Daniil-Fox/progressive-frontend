@@ -15,11 +15,6 @@ export const articleSlice = createSlice({
     initialState,
     reducers: {
     },
-    selectors: {
-        getIsLoading: (state) => state.isLoading,
-        getError: (state) => state.error,
-        getData: (state) => state.data
-    },
     extraReducers: builder => {
         builder.addCase(fetchArticleById.pending, (state: ArticleDetailsSchema) => {
             state.isLoading = true
@@ -39,7 +34,6 @@ const injectedProfile = articleSlice.injectInto(rootReducer)
 
 export const {actions: articleActions} = injectedProfile;
 export const {reducer: articleReducer} = articleSlice;
-export const {selectors: articleSelectors} = injectedProfile;
 
 declare module 'app/providers/StoreProvider/config/rootReducer' {
     interface LazyLoadedSlices extends WithSlice<typeof articleSlice> {}

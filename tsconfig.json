@@ -14,6 +14,7 @@
       "*": ["./src/*"],
     },
   },
+  "isolatedModules": true,
   "include": ["./config/jest/setupTests.ts", "src/**/*"],
   "ts-node": {
     "compilerOptions": {
