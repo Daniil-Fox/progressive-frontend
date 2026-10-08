@@ -2,7 +2,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import {FC, useState} from "react";
 import cls from "./Navbar.module.scss";
 import { useTranslation } from "react-i18next";
-import {Button} from "shared/ui/Button/Button";
+import {Button, ButtonTheme} from "shared/ui/Button/Button";
 import {LoginModal} from "features/AuthByUsername";
 import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
 import {getUserAuthData, isUserAdmin, isUserManager, userActions} from "entities/User";
@@ -11,6 +11,10 @@ import {AppLinkTheme} from "shared/ui/AppLink/AppLink";
 import {TextTheme} from "shared/ui/Text/Text";
 import {Dropdown} from "shared/ui/Dropdown/Dropdown";
 import {pathRoutes} from "shared/routes/routes";
+import {HStack} from "shared/ui/Stack";
+import {NotificationButton} from "features/notificationButton";
+import {AvatarDropdown} from "features/avatarDropdown";
+
 interface NavbarProps {
     className?: string;
 }
@@ -18,9 +22,7 @@ export const Navbar: FC = ({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const [modalOpen, setModalOpen] = useState(false);
     const authData = useAppSelector(getUserAuthData)
-    const dispatch = useAppDispatch()
-    const isAdmin = useAppSelector(isUserAdmin)
-    const isManager = useAppSelector(isUserManager)
+
 
     const onOpenModal = () => {
         setModalOpen(true)
@@ -29,11 +31,7 @@ export const Navbar: FC = ({ className }: NavbarProps) => {
         setModalOpen(false)
     }
 
-    const onLogout = () => {
-        dispatch(userActions.logout())
-    }
 
-    const isAdminPanelAvailable = isAdmin || isManager
 
     if(authData){
         return (
@@ -43,25 +41,10 @@ export const Navbar: FC = ({ className }: NavbarProps) => {
                     Создать статью
                 </AppLink>
 
-                <Dropdown
-                    className={cls.links}
-                    items={[
-                        ...(isAdminPanelAvailable ? [{
-                            content: t('admin panel'),
-                            href: pathRoutes.admin_panel
-                        }] : []),
-                        {
-                            content: t('profile'),
-                            href: pathRoutes.profile + authData.id
-                        },
-                        {
-                            content: t('logout'),
-                            onClick: onLogout
-                        }
-
-                    ]}
-                    trigger={<Avatar size={30} src={authData.avatar}/>}
-                />
+                <HStack gap={'16'} className={cls.actions}>
+                    <NotificationButton/>
+                    <AvatarDropdown/>
+                </HStack>
             </header>
         )
     }

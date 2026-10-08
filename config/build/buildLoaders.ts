@@ -9,7 +9,8 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         test: /\.tsx?$/,
 
         use: [
-            {loader: 'ts-loader',
+            {
+                loader: 'ts-loader',
                 options: {
                     transpileOnly: true,
                     getCustomTransformers: () => ({

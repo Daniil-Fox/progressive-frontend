@@ -15,6 +15,7 @@ import {ArticleTextBlockComponent} from "./../ArticleTextBlockComponent/ArticleT
 import {ArticleImageBlockComponent} from "./../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import {HStack, VStack} from "shared/ui/Stack";
 import {getData, getError, getIsLoading} from "./../../model/selectors/selectors";
+import "./../../model/slice/articleDetailsSlice";
 
 interface ArticleDetailsProps {
     className?: string;

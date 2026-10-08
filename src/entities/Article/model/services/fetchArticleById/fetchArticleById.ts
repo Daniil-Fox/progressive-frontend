@@ -9,7 +9,7 @@ export const fetchArticleById = createAsyncThunk<
     string | undefined,
     ThunkConfig<string>
 >(
-    'profile/fetchProfileData',
+    'articleDetails/fetchArticleById',
     async (articleId, thunkAPI) => {
         const {extra, rejectWithValue} = thunkAPI;
 
@@ -21,8 +21,7 @@ export const fetchArticleById = createAsyncThunk<
                 params: {
                     _expand: 'user'
                 }
-            } );
-
+            });
             if(!response.data){
                 return rejectWithValue('NO DATA')
             }

@@ -15,6 +15,40 @@
       "avatar": "https://fons.grizly.club/uploads/posts/2025-06/04/17490609279263.jpg"
     }
   ],
+  "notifications":  [
+    {
+      "id": "1",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Уведомление 2",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "3",
+      "title": "Уведомление 3",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "4",
+      "title": "Уведомление 4",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "5",
+      "title": "Уведомление 5",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href":  "http://localhost:3000/admin"
+    }
+  ],
   "profile": [
     {
       "id": "1",
