@@ -32,7 +32,7 @@ export const Dropdown = (props: DropdownProps) => {
         <Menu as={"div"} className={classNames(cls.Dropdown, {}, [className])}>
             <MenuButton ref={refs.setReference} className={cls.btn}>{trigger}</MenuButton>
             <MenuItems ref={refs.setFloating} style={floatingStyles} className={cls.menu}>
-                {items.map(item => {
+                {items.map((item, index) => {
                     const content = ({focus}: {focus: boolean}) => (
                         <button type={"button"} disabled={item.disabled} className={classNames('', {[cls.active]: focus}, [cls.item])} onClick={item.onClick}>
                             {item.content}
@@ -41,14 +41,14 @@ export const Dropdown = (props: DropdownProps) => {
 
                     if(item.href){
                         return (
-                            <MenuItem as={AppLink} to={item.href} disabled={item.disabled}>
+                            <MenuItem as={AppLink} key={index} to={item.href} disabled={item.disabled}>
                                 {content}
                             </MenuItem>
                         )
                     }
 
                     return (
-                        <MenuItem as={Fragment} disabled={item.disabled}>
+                        <MenuItem as={Fragment} key={index} disabled={item.disabled}>
                             {content}
                         </MenuItem>
                     )

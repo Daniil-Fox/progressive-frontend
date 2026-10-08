@@ -1,5 +1,5 @@
 import { classNames } from "shared/lib/classNames/classNames";
-import {FC, useState} from "react";
+import {FC, useCallback, useState} from "react";
 import cls from "./Navbar.module.scss";
 import { useTranslation } from "react-i18next";
 import {Button, ButtonTheme} from "shared/ui/Button/Button";
@@ -14,6 +14,8 @@ import {pathRoutes} from "shared/routes/routes";
 import {HStack} from "shared/ui/Stack";
 import {NotificationButton} from "features/notificationButton";
 import {AvatarDropdown} from "features/avatarDropdown";
+import {Drawer} from "shared/ui/Drawer/Drawer";
+import {NotificationList} from "entities/Notification";
 
 interface NavbarProps {
     className?: string;
@@ -30,7 +32,6 @@ export const Navbar: FC = ({ className }: NavbarProps) => {
     const onCloseModal = () => {
         setModalOpen(false)
     }
-
 
 
     if(authData){
