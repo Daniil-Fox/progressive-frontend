@@ -3,6 +3,7 @@ import cls from "./Modal.module.scss";
 import React, {useEffect, useState} from "react";
 import {Portal} from "./../Portal/Portal";
 import {Overlay} from "./../Overlay/Overlay";
+import {useModal} from "shared/lib/hooks/useModal/useModal";
 
 interface ModalProps {
     className?: string;
@@ -14,36 +15,13 @@ interface ModalProps {
 
 export const Modal = (props: ModalProps) => {
     const { className, children, isOpen, onClose, lazy } = props;
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        window.addEventListener('keydown', onKeyboardCLick)
-
-        return () => {
-            window.removeEventListener('keydown', onKeyboardCLick)
-        }
-    }, [])
-
-    useEffect(() => {
-        if(isOpen && !mounted){
-            setMounted(true)
-        }
-    }, [isOpen]);
-
-    const onKeyboardCLick = (e: KeyboardEvent) => {
-        if(e.key === "Escape"){
-            onClose()
-        }
-    }
-
+    useModal({lazy, onClose, isOpen})
 
     const mods: Mods = {
         [cls.open]: isOpen
     }
 
-    if(lazy && !mounted) {
-        return null
-    }
+
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [className])}>
