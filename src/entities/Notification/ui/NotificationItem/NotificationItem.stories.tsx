@@ -15,5 +15,12 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
-    args: {},
+    args: {
+        notification: {
+            id: '1',
+            title: 'Title',
+            description: 'Desc',
+            href: '#!'
+        }
+    },
 };

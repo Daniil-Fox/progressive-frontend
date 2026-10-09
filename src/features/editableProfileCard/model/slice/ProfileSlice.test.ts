@@ -1,11 +1,17 @@
-import {profileActions, profileReducer, profileSelectors} from "./ProfileSlice";
+import {profileActions, profileReducer} from "./ProfileSlice";
 import {ProfileSchema} from "./../types/profile";
 import {updateProfileData} from './../services/updateProfileData/updateProfileData'
 import {RootState} from "app/providers/StoreProvider/config/store";
 import {DeepPartial} from "shared/types/DeepPartial";
 import {Country} from "entities/Country/model/types/country";
 import {Currency} from "entities/Currency/model/types/CurrencySchema";
-import {ValidateProfileError} from "features/editableProfileCard";
+import {
+    getProfileData,
+    getProfileError,
+    getProfileForm,
+    getProfileIsLoading, getValidateError,
+    ValidateProfileError
+} from "features/editableProfileCard";
 
 describe("ProfileSlice", () => {
     describe("Selectors", () => {
@@ -24,7 +30,7 @@ describe("ProfileSlice", () => {
                     data: data
                 }
             }
-            expect(profileSelectors.getProfileData(state as RootState)).toEqual(data)
+            expect(getProfileData(state as RootState)).toEqual(data)
         })
         test('getProfileForm', () => {
             const state: DeepPartial<RootState> = {
@@ -32,7 +38,7 @@ describe("ProfileSlice", () => {
                     form: data
                 }
             }
-            expect(profileSelectors.getProfileForm(state as RootState)).toEqual(data)
+            expect(getProfileForm(state as RootState)).toEqual(data)
         })
         test('getProfileIsLoading', () => {
             const state: DeepPartial<RootState> = {
@@ -40,7 +46,7 @@ describe("ProfileSlice", () => {
                     isLoading: true
                 }
             }
-            expect(profileSelectors.getProfileIsLoading(state as RootState)).toEqual(true)
+            expect(getProfileIsLoading(state as RootState)).toEqual(true)
         })
         test('getProfileError', () => {
             const state: DeepPartial<RootState> = {
@@ -48,7 +54,7 @@ describe("ProfileSlice", () => {
                     error: 'some error'
                 }
             }
-            expect(profileSelectors.getProfileError(state as RootState)).toEqual('some error')
+            expect(getProfileError(state as RootState)).toEqual('some error')
         })
         test('getProfileValidateErrors', () => {
             const state: DeepPartial<RootState> = {
@@ -56,7 +62,7 @@ describe("ProfileSlice", () => {
                     validateError: [ValidateProfileError.SERVER_ERROR, ValidateProfileError.NO_DATA]
                 }
             }
-            expect(profileSelectors.getValidateError(state as RootState)).toEqual([ValidateProfileError.SERVER_ERROR, ValidateProfileError.NO_DATA])
+            expect(getValidateError(state as RootState)).toEqual([ValidateProfileError.SERVER_ERROR, ValidateProfileError.NO_DATA])
         })
     })
 

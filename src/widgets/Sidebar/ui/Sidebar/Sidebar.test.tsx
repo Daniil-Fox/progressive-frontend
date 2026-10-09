@@ -5,7 +5,7 @@ import {renderWithStore} from "shared/lib/tests/renderWithStore/renderWithStore"
 
 describe("Sidebar", () => {
     test('test', async () => {
-        renderWithStore({children: <Sidebar/>})
+        renderWithStore(<Sidebar/>, {})
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
 
         const toggleBtn = screen.getByTestId('toggle-sidebar-btn')

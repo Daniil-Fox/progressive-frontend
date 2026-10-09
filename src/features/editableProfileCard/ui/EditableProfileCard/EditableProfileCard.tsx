@@ -24,7 +24,7 @@ import {
 
 interface EditableProfileCardProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 export const EditableProfileCard = (props: EditableProfileCardProps) => {
@@ -45,7 +45,7 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
         [ValidateProfileError.INCORRECT_AGE]: t('incorrect age'),
         [ValidateProfileError.NO_DATA]: t('no data'),
         [ValidateProfileError.INCORRECT_USER_DATA]: t('Incorrect user data'),
-    }
+    } as const
 
     const onChangeName = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({first: value || ''}))

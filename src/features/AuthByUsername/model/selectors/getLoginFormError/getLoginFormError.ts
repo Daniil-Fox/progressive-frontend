@@ -1,4 +1,3 @@
+import {RootState} from "app/providers/StoreProvider";
 
-import {StateSchema} from "app/providers/StoreProvider/config/stateSchema";
-
-export const getLoginFormError = (state: StateSchema) => state?.loginForm?.error || ""
+export const getLoginFormError = (state: RootState) => state?.login?.error || ""
