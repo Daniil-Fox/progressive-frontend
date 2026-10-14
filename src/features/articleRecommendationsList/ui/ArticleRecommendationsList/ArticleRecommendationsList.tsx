@@ -1,9 +1,9 @@
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import {memo} from 'react';
-import {ArticleList} from "entities/Article";
-import {Text} from "shared/ui";
-import {VStack} from "shared/ui/Stack";
+import {ArticleList} from "@/entities/Article";
+import {Text} from "@/shared/ui";
+import {VStack} from "@/shared/ui/Stack";
 import {
     useGetArticleRecommendationsListQuery
 } from "./../../api/articleRecommendationsApi";

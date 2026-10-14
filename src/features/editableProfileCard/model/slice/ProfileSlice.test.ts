@@ -1,17 +1,17 @@
 import {profileActions, profileReducer} from "./ProfileSlice";
 import {ProfileSchema} from "./../types/profile";
 import {updateProfileData} from './../services/updateProfileData/updateProfileData'
-import {RootState} from "app/providers/StoreProvider/config/store";
-import {DeepPartial} from "shared/types/DeepPartial";
-import {Country} from "entities/Country/model/types/country";
-import {Currency} from "entities/Currency/model/types/CurrencySchema";
+import {RootState} from "@/app/providers/StoreProvider/config/store";
+import {DeepPartial} from "@/shared/types/DeepPartial";
+import {Country} from "@/entities/Country/model/types/country";
+import {Currency} from "@/entities/Currency/model/types/CurrencySchema";
 import {
     getProfileData,
     getProfileError,
     getProfileForm,
     getProfileIsLoading, getValidateError,
     ValidateProfileError
-} from "features/editableProfileCard";
+} from "@/features/editableProfileCard";
 
 describe("ProfileSlice", () => {
     describe("Selectors", () => {

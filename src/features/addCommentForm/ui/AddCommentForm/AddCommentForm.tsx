@@ -1,7 +1,7 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from "./AddCommentForm.module.scss";
-import {Button, Input} from "shared/ui";
-import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
+import {Button, Input} from "@/shared/ui";
+import {useAppDispatch, useAppSelector} from "@/shared/lib/store/hooks/hooks";
 import {addCommentFormActions, addCommentFormSelectors} from "./../../model/slice/addCommentFormSlice";
 import {useCallback} from "react";
 

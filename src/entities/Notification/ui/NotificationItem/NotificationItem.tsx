@@ -1,8 +1,8 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from "./NotificationItem.module.scss";
 import {Notification} from "./../../types/notification";
-import {Card} from "shared/ui/Card/Card";
-import {Text} from "shared/ui";
+import {Card} from "@/shared/ui/Card/Card";
+import {Text} from "@/shared/ui";
 
 interface NotificationItemProps {
     className?: string;

@@ -2,11 +2,11 @@ import type {Meta, StoryObj} from '@storybook/react-webpack5';
 
 import {fn} from 'storybook/test';
 import ArticlesDetailPage from './ArticlesDetailPage';
-import {ThemeDecorator} from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import {Theme} from "shared/lib/theme/ThemeContext";
-import {StoreDecorator} from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import {RouterDecorator} from "shared/config/storybook/RouterDecorator/RouterDecorator";
-import {ArticleBlockType, ArticleType} from "entities/Article/model/types/article";
+import {ThemeDecorator} from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import {Theme} from "@/shared/lib/theme/ThemeContext";
+import {StoreDecorator} from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import {RouterDecorator} from "@/shared/config/storybook/RouterDecorator/RouterDecorator";
+import {ArticleBlockType, ArticleType} from "@/entities/Article/model/types/article";
 
 
 const meta = {

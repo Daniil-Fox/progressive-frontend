@@ -1,9 +1,9 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from "./Dropdown.module.scss";
 import {Menu, MenuButton, MenuItem, MenuItems} from "@headlessui/react";
 import {flip, offset, useFloating} from "@floating-ui/react";
 import {Fragment, ReactNode} from "react";
-import {AppLink} from "shared/ui";
+import {AppLink} from "@/shared/ui";
 
 export interface DropdownItem {
     disabled?: boolean;

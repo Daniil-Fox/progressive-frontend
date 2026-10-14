@@ -1,8 +1,8 @@
 import type {Meta, StoryObj} from '@storybook/react-webpack5';
 
 import {AppLink, AppLinkTheme} from "./AppLink";
-import {ThemeDecorator} from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import {Theme} from "shared/lib/theme/ThemeContext";
+import {ThemeDecorator} from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import {Theme} from "@/shared/lib/theme/ThemeContext";
 
 
 const meta = {

@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction, WithSlice} from "@reduxjs/toolkit";
-import {rootReducer} from "app/providers/StoreProvider/config/rootReducer";
+import {rootReducer} from "@/app/providers/StoreProvider/config/rootReducer";
 import {ArticleDetailsSchema} from "./../types/articleDetailsSchema";
 import {fetchArticleById} from "./../services/fetchArticleById/fetchArticleById";
 import {Article} from "./../types/article";
@@ -36,6 +36,6 @@ const injectedArticleDetails = articleSlice.injectInto(rootReducer)
 export const {actions: articleActions} = injectedArticleDetails;
 export const {reducer: articleReducer} = injectedArticleDetails;
 
-declare module 'app/providers/StoreProvider/config/rootReducer' {
+declare module '@/app/providers/StoreProvider/config/rootReducer' {
     interface LazyLoadedSlices extends WithSlice<typeof articleSlice> {}
 }

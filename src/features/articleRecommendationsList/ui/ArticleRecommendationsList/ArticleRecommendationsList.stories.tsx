@@ -1,7 +1,7 @@
 import {Meta, StoryObj} from "@storybook/react-webpack5";
 import {ArticleRecommendationsList} from "./ArticleRecommendationsList";
-import {StoreDecorator} from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import {Article, ArticleType} from "entities/Article";
+import {StoreDecorator} from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import {Article, ArticleType} from "@/entities/Article";
 import {http, HttpResponse} from "msw";
 
 const meta: Meta = {

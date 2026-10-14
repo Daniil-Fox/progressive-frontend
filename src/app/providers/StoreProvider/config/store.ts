@@ -1,8 +1,8 @@
 import {configureStore} from "@reduxjs/toolkit";
-import {StateSchema, ThunkExtraArg} from "app/providers/StoreProvider/config/stateSchema";
+import {StateSchema, ThunkExtraArg} from "@/app/providers/StoreProvider/config/stateSchema";
 import {rootReducer} from "./rootReducer";
-import {$api} from "shared/api/api";
-import {rtkApi} from "shared/api/rtkApi";
+import {$api} from "@/shared/api/api";
+import {rtkApi} from "@/shared/api/rtkApi";
 
 export function createReduxStore(
     initialState?: Partial<StateSchema>

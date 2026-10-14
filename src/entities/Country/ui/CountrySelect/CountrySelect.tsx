@@ -1,10 +1,10 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./CountrySelect.module.scss";
 import {useCallback, useMemo} from "react";
-import {Select} from "shared/ui/Select/Select";
-import {Country} from "entities/Country/model/types/country";
+import {Select} from "@/shared/ui/Select/Select";
+import {Country} from "@/entities/Country/model/types/country";
 import {useTranslation} from "react-i18next";
-import {ListBox} from "shared/ui/ListBox/ListBox";
+import {ListBox} from "@/shared/ui/ListBox/ListBox";
 interface CountrySelectProps {
     className?: string;
     value?: Country;

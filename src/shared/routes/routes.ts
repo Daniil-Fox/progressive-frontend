@@ -1,5 +1,5 @@
 import {RouteProps} from "react-router-dom";
-import {UserRole} from "entities/User/model/types/user";
+import {UserRole} from "@/entities/User/model/types/user";
 
 export enum AppRoutes {
     MAIN = "main",

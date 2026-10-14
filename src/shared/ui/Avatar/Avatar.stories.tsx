@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react-webpack5';
 
 import {fn} from 'storybook/test';
-import ava from 'shared/assets/tests/ava.jpg'
+import ava from '@/shared/assets/tests/ava.jpg'
 import {Avatar} from './Avatar';
 
 

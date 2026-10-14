@@ -1,10 +1,10 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from "./AvatarDropdown.module.scss";
-import {Dropdown} from "shared/ui/Dropdown/Dropdown";
-import {Avatar} from "shared/ui";
-import {pathRoutes} from "shared/routes/routes";
-import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
-import {getUserAuthData, isUserAdmin, isUserManager, userActions} from "entities/User";
+import {Dropdown} from "@/shared/ui/Dropdown/Dropdown";
+import {Avatar} from "@/shared/ui";
+import {pathRoutes} from "@/shared/routes/routes";
+import {useAppDispatch, useAppSelector} from "@/shared/lib/store/hooks/hooks";
+import {getUserAuthData, isUserAdmin, isUserManager, userActions} from "@/entities/User";
 import {useTranslation} from "react-i18next";
 
 interface AvatarDropdownProps {

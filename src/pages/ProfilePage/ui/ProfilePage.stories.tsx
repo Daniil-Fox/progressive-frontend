@@ -1,10 +1,10 @@
 import type {Meta, StoryObj} from '@storybook/react-webpack5';
 
 import ProfilePage from './ProfilePage';
-import {StoreDecorator} from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import {Country} from "entities/Country/model/types/country";
-import {Currency} from "entities/Currency/model/types/CurrencySchema";
-import ava from "shared/assets/tests/ava.jpg";
+import {StoreDecorator} from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import {Country} from "@/entities/Country/model/types/country";
+import {Currency} from "@/entities/Currency/model/types/CurrencySchema";
+import ava from "@/shared/assets/tests/ava.jpg";
 
 
 const meta = {

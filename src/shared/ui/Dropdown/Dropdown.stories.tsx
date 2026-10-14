@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from '@storybook/react-webpack5';
 
 import {fn} from 'storybook/test';
 import {Dropdown} from './Dropdown';
-import {Button} from "shared/ui";
+import {Button} from "@/shared/ui";
 
 
 const meta = {

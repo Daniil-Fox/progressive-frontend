@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from '@storybook/react-webpack5';
 
 import {fn} from 'storybook/test';
 import {Card} from './Card';
-import {Text} from "shared/ui";
+import {Text} from "@/shared/ui";
 
 
 const meta = {

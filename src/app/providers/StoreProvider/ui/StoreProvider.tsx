@@ -1,6 +1,6 @@
 import {FC, ReactNode} from "react";
 import {Provider} from "react-redux";
-import {createReduxStore, RootState} from "app/providers/StoreProvider/config/store";
+import {createReduxStore, RootState} from "@/app/providers/StoreProvider/config/store";
 import {useNavigate} from "react-router-dom";
 
 interface StoreProviderProps {

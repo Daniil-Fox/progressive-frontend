@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from '@storybook/react-webpack5';
 
 import {fn} from 'storybook/test';
 import {ArticleSortSelector} from './ArticleSortSelector';
-import {ArticlesSortField} from "entities/Article";
+import {ArticlesSortField} from "@/entities/Article";
 
 
 const meta = {

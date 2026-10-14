@@ -1,10 +1,11 @@
 import cls from "./SidebarItem.module.scss";
-import {AppLink, AppLinkTheme} from "shared/ui/AppLink/AppLink";
+import {AppLink, AppLinkTheme} from "@/shared/ui/AppLink/AppLink";
 import {useTranslation} from "react-i18next";
-import {classNames} from "shared/lib/classNames/classNames";
-import {useAppSelector} from "shared/lib/store/hooks/hooks";
-import {getUserAuthData} from "entities/User";
+import {classNames} from "@/shared/lib/classNames/classNames";
+import {useAppSelector} from "@/shared/lib/store/hooks/hooks";
+import {getUserAuthData} from "@/entities/User";
 import {SidebarItemType} from "./../../model/types/sidebarSchema";
+import {Icon} from "@/shared/ui/Icon/Icon";
 
 interface SidebarItemProps {
     item: SidebarItemType;
@@ -23,7 +24,7 @@ export const SidebarItem = (props: SidebarItemProps) => {
 
     return (
         <AppLink data-testid="main-page-link" className={classNames(cls.sidebarLink, { [cls.collapsed]: collapsed }, [])} theme={AppLinkTheme.SECONDARY} to={item.path}>
-            <item.Icon />
+            <Icon Svg={item.Icon}/>
             <span>{t(item.text)}</span>
         </AppLink>
     );

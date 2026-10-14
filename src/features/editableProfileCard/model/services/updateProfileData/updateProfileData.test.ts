@@ -1,11 +1,11 @@
 
 
-import {TestAsyncThunk} from "shared/lib/tests/testAsyncThunk/TestAsyncThunk";
-import {Country} from "entities/Country/model/types/country";
-import {Currency} from "entities/Currency/model/types/CurrencySchema";
+import {TestAsyncThunk} from "@/shared/lib/tests/testAsyncThunk/TestAsyncThunk";
+import {Country} from "@/entities/Country/model/types/country";
+import {Currency} from "@/entities/Currency/model/types/CurrencySchema";
 import {updateProfileData} from "./updateProfileData";
 
-import {ValidateProfileError} from "features/editableProfileCard";
+import {ValidateProfileError} from "@/features/editableProfileCard";
 
 const data = {
     first: 'Daniil',

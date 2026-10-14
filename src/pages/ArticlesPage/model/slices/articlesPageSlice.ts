@@ -4,18 +4,18 @@ import {
   PayloadAction,
   WithSlice,
 } from "@reduxjs/toolkit";
-import { rootReducer } from "app/providers/StoreProvider/config/rootReducer";
-import { RootState } from "app/providers/StoreProvider";
+import { rootReducer } from "@/app/providers/StoreProvider/config/rootReducer";
+import { RootState } from "@/app/providers/StoreProvider";
 import {
   Article,
   ArticlesSortField,
   ArticleType,
   ArticleView,
-} from "entities/Article";
+} from "@/entities/Article";
 import { ArticlesPageSchema } from "../types/articlesPageSchema";
 import { fetchArticlesList } from "./../services/fetchArticlesList/fetchArticlesList";
-import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from "shared/const/localstorage";
-import { SortOrder } from "shared/types/SortOrder";
+import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from "@/shared/const/localstorage";
+import { SortOrder } from "@/shared/types/SortOrder";
 import { GridStateSnapshot, StateSnapshot } from "react-virtuoso";
 
 const articlesAdapter = createEntityAdapter<Article, string>({
@@ -115,7 +115,7 @@ const articlesPageSlice = createSlice({
 
 const injectedArticlesPageSlice = articlesPageSlice.injectInto(rootReducer);
 
-declare module "app/providers/StoreProvider/config/rootReducer" {
+declare module "@/app/providers/StoreProvider/config/rootReducer" {
   interface LazyLoadedSlices extends WithSlice<typeof articlesPageSlice> {}
 }
 

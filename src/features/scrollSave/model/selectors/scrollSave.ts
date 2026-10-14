@@ -1,4 +1,4 @@
-import {RootState} from "app/providers/StoreProvider";
+import {RootState} from "@/app/providers/StoreProvider";
 import {createSelector} from "@reduxjs/toolkit";
 
 export const getScroll = (state: RootState) => state?.scrollSave?.scroll

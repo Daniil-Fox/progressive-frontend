@@ -1,17 +1,17 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from "./ArticlesPage.module.scss";
 import {memo, useCallback, useState} from "react";
-import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
-import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import {useAppDispatch, useAppSelector} from "@/shared/lib/store/hooks/hooks";
+import {useInitialEffect} from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import {getError} from "./../../model/selectors/getError/getError";
-import {Page} from "widgets/Page";
+import {Page} from "@/widgets/Page";
 import {fetchNextArticlesPage} from "./../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
-import {Text} from "shared/ui";
-import {TextTheme} from "shared/ui/Text/Text";
+import {Text} from "@/shared/ui";
+import {TextTheme} from "@/shared/ui/Text/Text";
 import {initArticlesPage} from "./../../model/services/initArticlesPage/initArticlesPage";
 import {ArticlesPageFilters} from "./../ArticlesPageFilters/ArticlesPageFilters";
 import {useSearchParams} from "react-router-dom";
-import {ArticlesInfiniteList} from "pages/ArticlesPage/ui/ArticlesInfiniteList/ArticlesInfiniteList";
+import {ArticlesInfiniteList} from "@/pages/ArticlesPage/ui/ArticlesInfiniteList/ArticlesInfiniteList";
 
 export interface ArticlesPageProps {
     className?: string;

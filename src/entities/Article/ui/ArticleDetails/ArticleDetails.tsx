@@ -1,19 +1,19 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from "./ArticleDetails.module.scss";
 import {memo, useCallback, useEffect} from "react";
-import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
+import {useAppDispatch, useAppSelector} from "@/shared/lib/store/hooks/hooks";
 import {fetchArticleById} from "./../../model/services/fetchArticleById/fetchArticleById";
 import {ArticleBlock, ArticleBlockType} from "./../../model/types/article";
-import {Avatar, Text} from "shared/ui";
-import {TextSize, TextTheme} from "shared/ui/Text/Text";
-import {Skeleton} from "shared/ui/Skeleton/Skeleton";
-import EyeIcon from 'shared/assets/eye.svg'
-import CalendarIcon from 'shared/assets/calendar.svg'
-import {Icon} from "shared/ui/Icon/Icon";
+import {Avatar, Text} from "@/shared/ui";
+import {TextSize, TextTheme} from "@/shared/ui/Text/Text";
+import {Skeleton} from "@/shared/ui/Skeleton/Skeleton";
+import EyeIcon from '@/shared/assets/eye.svg'
+import CalendarIcon from '@/shared/assets/calendar.svg'
+import {Icon} from "@/shared/ui/Icon/Icon";
 import {ArticleCodeBlockComponent} from "./../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import {ArticleTextBlockComponent} from "./../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import {ArticleImageBlockComponent} from "./../ArticleImageBlockComponent/ArticleImageBlockComponent";
-import {HStack, VStack} from "shared/ui/Stack";
+import {HStack, VStack} from "@/shared/ui/Stack";
 import {getData, getError, getIsLoading} from "./../../model/selectors/selectors";
 import "./../../model/slice/articleDetailsSlice";
 

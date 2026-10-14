@@ -1,14 +1,14 @@
-import {MainPage} from "pages/MainPage";
-import {AboutPage} from "pages/AboutPage";
-import {NotFoundPage} from "pages/NotFoundPage";
-import {ProfilePage} from "pages/ProfilePage";
-import {ArticlesPage} from "pages/ArticlesPage";
-import ArticlesDetailPage from "pages/ArticleDetailPage/ui/ArticleDetailPage/ArticlesDetailPage";
-import ArticleEditPage from "pages/ArticleEditPage/ui/ArticleEditPage/ArticleEditPage";
-import {UserRole} from "entities/User/model/types/user";
-import {AdminPanel} from "pages/AdminPanel";
-import {ForbiddenPage} from "pages/ForbiddenPage";
-import {AppRoutes, AppRoutesProps, pathRoutes} from "shared/routes/routes";
+import {MainPage} from "@/pages/MainPage";
+import {AboutPage} from "@/pages/AboutPage";
+import {NotFoundPage} from "@/pages/NotFoundPage";
+import {ProfilePage} from "@/pages/ProfilePage";
+import {ArticlesPage} from "@/pages/ArticlesPage";
+import ArticlesDetailPage from "@/pages/ArticleDetailPage/ui/ArticleDetailPage/ArticlesDetailPage";
+import ArticleEditPage from "@/pages/ArticleEditPage/ui/ArticleEditPage/ArticleEditPage";
+import {UserRole} from "@/entities/User/model/types/user";
+import {AdminPanel} from "@/pages/AdminPanel";
+import {ForbiddenPage} from "@/pages/ForbiddenPage";
+import {AppRoutes, AppRoutesProps, pathRoutes} from "@/shared/routes/routes";
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.MAIN]: {

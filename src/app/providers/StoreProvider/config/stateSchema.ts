@@ -1,5 +1,5 @@
-import {UserSchema} from "entities/User";
-import {LoginSchema} from "features/AuthByUsername";
+import {UserSchema} from "@/entities/User";
+import {LoginSchema} from "@/features/AuthByUsername";
 import {AxiosInstance} from "axios";
 import {NavigateOptions} from "react-router-dom";
 import type {RootState} from './store'

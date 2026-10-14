@@ -1,14 +1,15 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from "./Flex.module.scss";
 import {DetailedHTMLProps, HTMLAttributes, ReactNode} from "react";
 
-export type FlexJustify = 'start' | 'center' | 'between' | 'around' | 'evenly';
+export type FlexJustify = 'start' | 'center' | 'between' | 'around' | 'evenly' | 'end';
 export type FlexAlign = 'start' | 'center' | 'end' | 'stretch'
 export type FlexDirection = 'row' | 'column'
 export type FlexGap = '4' | '8' | '16' | '32' | '64'
 
 const justifyClasses: Record<FlexJustify, string> = {
     start: cls.justifyStart,
+    end: cls.justifyEnd,
     center: cls.justifyCenter,
     between: cls.justifyBetween,
     around: cls.justifyAround,

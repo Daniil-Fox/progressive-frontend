@@ -1,20 +1,20 @@
-import {classNames} from "shared/lib/classNames/classNames";
-import {Text} from "shared/ui";
-import {TextTheme} from "shared/ui/Text/Text";
-import {ProfileCard} from "entities/Profile";
+import {classNames} from "@/shared/lib/classNames/classNames";
+import {Text} from "@/shared/ui";
+import {TextTheme} from "@/shared/ui/Text/Text";
+import {ProfileCard} from "@/entities/Profile";
 import {useTranslation} from "react-i18next";
-import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
+import {useAppDispatch, useAppSelector} from "@/shared/lib/store/hooks/hooks";
 import {profileActions} from "../../model/slice/ProfileSlice";
 import {ValidateProfileError} from "../../model/types/profile";
 import {useCallback} from "react";
-import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import {useInitialEffect} from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import {fetchProfileData} from "../../model/services/fetchProfileData/fetchProfileData";
-import {Currency} from "entities/Currency";
-import {Country} from "entities/Country";
+import {Currency} from "@/entities/Currency";
+import {Country} from "@/entities/Country";
 import {
     EditableProfileCardHeader
 } from "./../EditableProfileCardHeader/EditableProfileCardHeader";
-import {VStack} from "shared/ui/Stack";
+import {VStack} from "@/shared/ui/Stack";
 import {
     getProfileError,
     getProfileForm,

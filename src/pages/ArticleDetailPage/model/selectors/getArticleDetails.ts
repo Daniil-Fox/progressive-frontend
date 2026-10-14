@@ -1,4 +1,4 @@
-import {RootState} from "app/providers/StoreProvider";
+import {RootState} from "@/app/providers/StoreProvider";
 
 
 export const selectCommentsIsLoading = (state: RootState) =>

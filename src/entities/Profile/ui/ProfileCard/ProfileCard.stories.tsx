@@ -1,10 +1,10 @@
 import type {Meta, StoryObj} from '@storybook/react-webpack5';
 
 import {fn} from 'storybook/test';
-import ava from 'shared/assets/tests/ava.jpg'
+import ava from '@/shared/assets/tests/ava.jpg'
 import {ProfileCard} from './ProfileCard';
-import {Country} from "entities/Country/model/types/country";
-import {Currency} from "entities/Currency/model/types/CurrencySchema";
+import {Country} from "@/entities/Country/model/types/country";
+import {Currency} from "@/entities/Currency/model/types/CurrencySchema";
 
 
 const meta = {

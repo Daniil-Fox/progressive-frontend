@@ -1,7 +1,7 @@
 import { screen} from "@testing-library/react";
-import {Sidebar} from "widgets/Sidebar";
+import {Sidebar} from "@/widgets/Sidebar";
 import {userEvent} from '@testing-library/user-event'
-import {renderWithStore} from "shared/lib/tests/renderWithStore/renderWithStore";
+import {renderWithStore} from "@/shared/lib/tests/renderWithStore/renderWithStore";
 
 describe("Sidebar", () => {
     test('test', async () => {

@@ -3,8 +3,8 @@ import type {Meta, StoryObj} from '@storybook/react-webpack5';
 import {fn} from 'storybook/test';
 
 import {Sidebar} from "./Sidebar";
-import {ThemeDecorator} from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import {Theme} from "shared/lib/theme/ThemeContext";
+import {ThemeDecorator} from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import {Theme} from "@/shared/lib/theme/ThemeContext";
 
 
 const meta = {

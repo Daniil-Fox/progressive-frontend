@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction, WithSlice} from "@reduxjs/toolkit";
-import {rootReducer} from "app/providers/StoreProvider/config/rootReducer";
+import {rootReducer} from "@/app/providers/StoreProvider/config/rootReducer";
 import {ScrollSaveSchema} from "./../types/scrollSaveSchema";
 
 const initialState: ScrollSaveSchema = {
@@ -23,6 +23,6 @@ export const {reducer: scrollSaveReducer} = scrollSaveSlice
 const injectedScrollSaveSlice = scrollSaveSlice.injectInto(rootReducer)
 
 
-declare module 'app/providers/StoreProvider/config/rootReducer' {
+declare module '@/app/providers/StoreProvider/config/rootReducer' {
     export interface LazyLoadedSlices extends WithSlice<typeof scrollSaveSlice> {}
 }

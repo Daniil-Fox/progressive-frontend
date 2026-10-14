@@ -1,9 +1,9 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from "./CommentList.module.scss";
-import {Text} from "shared/ui";
+import {Text} from "@/shared/ui";
 import {CommentCard} from "../CommentCard/CommentCard";
 import {Comment} from "./../../model/types/comments";
-import {VStack} from "shared/ui/Stack";
+import {VStack} from "@/shared/ui/Stack";
 
 interface CommentListProps {
     className?: string;

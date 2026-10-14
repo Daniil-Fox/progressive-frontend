@@ -2,7 +2,7 @@ import { ReactNode} from "react";
 import {render} from "@testing-library/react";
 import {MemoryRouter} from "react-router-dom";
 import {I18nextProvider} from "react-i18next";
-import i18nForTesting from "shared/config/i18n/i18nForTesting";
+import i18nForTesting from "@/shared/config/i18n/i18nForTesting";
 
 
 

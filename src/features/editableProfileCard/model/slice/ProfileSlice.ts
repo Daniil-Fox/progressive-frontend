@@ -1,9 +1,9 @@
 import {createSlice, PayloadAction, WithSlice} from "@reduxjs/toolkit";
-import {rootReducer} from "app/providers/StoreProvider/config/rootReducer";
+import {rootReducer} from "@/app/providers/StoreProvider/config/rootReducer";
 import {fetchProfileData} from "../services/fetchProfileData/fetchProfileData";
 import {updateProfileData} from "./../services/updateProfileData/updateProfileData";
-import {DeepPartial} from "shared/types/DeepPartial";
-import {Profile} from "entities/Profile";
+import {DeepPartial} from "@/shared/types/DeepPartial";
+import {Profile} from "@/entities/Profile";
 import {ProfileSchema} from "./../types/profile";
 
 const initialState: ProfileSchema = {
@@ -77,6 +77,6 @@ const injectedProfile = profileSlice.injectInto(rootReducer)
 export const {actions: profileActions} = injectedProfile;
 export const {reducer: profileReducer} = injectedProfile;
 
-declare module 'app/providers/StoreProvider/config/rootReducer' {
+declare module '@/app/providers/StoreProvider/config/rootReducer' {
     interface LazyLoadedSlices extends WithSlice<typeof profileSlice> {}
 }

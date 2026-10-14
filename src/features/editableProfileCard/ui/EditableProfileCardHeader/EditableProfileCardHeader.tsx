@@ -1,13 +1,13 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import {useTranslation} from "react-i18next";
-import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
-import {getUserAuthData} from "entities/User";
+import {useAppDispatch, useAppSelector} from "@/shared/lib/store/hooks/hooks";
+import {getUserAuthData} from "@/entities/User";
 import {profileActions} from "./../../model/slice/ProfileSlice";
 import {useCallback} from "react";
 import {updateProfileData} from "./../../model/services/updateProfileData/updateProfileData";
-import {HStack} from "shared/ui/Stack";
-import {Button, Text} from "shared/ui";
-import {ButtonTheme} from "shared/ui/Button/Button";
+import {HStack} from "@/shared/ui/Stack";
+import {Button, Text} from "@/shared/ui";
+import {ButtonTheme} from "@/shared/ui/Button/Button";
 import {getProfileData, getProfileReadonly} from "./../../model/selector/selectors";
 
 interface EditableProfileCardHeaderProps {

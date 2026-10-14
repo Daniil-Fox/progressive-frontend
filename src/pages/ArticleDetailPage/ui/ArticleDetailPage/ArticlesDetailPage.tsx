@@ -1,13 +1,13 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from "./ArticlesDetailPage.module.scss";
-import {ArticleDetails} from "entities/Article";
+import {ArticleDetails} from "@/entities/Article";
 import {useParams} from "react-router-dom";
-import {Text} from "shared/ui";
+import {Text} from "@/shared/ui";
 
-import {Page} from "widgets/Page";
+import {Page} from "@/widgets/Page";
 import {ArticleDetailsPageHeader} from "./../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
-import {VStack} from "shared/ui/Stack";
-import {ArticleRecommendationsList} from "features/articleRecommendationsList";
+import {VStack} from "@/shared/ui/Stack";
+import {ArticleRecommendationsList} from "@/features/articleRecommendationsList";
 import {ArticleDetailComments} from "./../ArticleDetailComments/ArticleDetailComments";
 
 export interface ArticlesDetailPageProps {

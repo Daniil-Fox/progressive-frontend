@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from '@storybook/react-webpack5';
 
 import {fn} from 'storybook/test';
 import {ArticleListItem} from './ArticleListItem';
-import {ArticleType, ArticleView} from "entities/Article";
+import {ArticleType, ArticleView} from "@/entities/Article";
 
 
 const meta = {

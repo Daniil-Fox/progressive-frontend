@@ -1,11 +1,11 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from "./Page.module.scss";
 import {ReactNode, Ref, UIEvent, useEffect, useRef} from "react";
-import {useInfiniteScroll} from "shared/lib/hooks/useInfiniteScroll/useInfiniteScroll";
-import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
-import {getScrollByPath, scrollSaveActions} from "features/scrollSave";
+import {useInfiniteScroll} from "@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll";
+import {useAppDispatch, useAppSelector} from "@/shared/lib/store/hooks/hooks";
+import {getScrollByPath, scrollSaveActions} from "@/features/scrollSave";
 import {useLocation} from "react-router-dom";
-import {useThrottle} from "shared/lib/hooks/useThrottle/useThrottle";
+import {useThrottle} from "@/shared/lib/hooks/useThrottle/useThrottle";
 
 export const PAGE_ID = 'page'
 

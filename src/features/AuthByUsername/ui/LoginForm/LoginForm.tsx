@@ -1,8 +1,8 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./LoginForm.module.scss";
-import {Button, ButtonTheme} from "shared/ui/Button/Button";
+import {Button, ButtonTheme} from "@/shared/ui/Button/Button";
 import {useTranslation} from "react-i18next";
-import {Input} from "shared/ui/Input/Input";
+import {Input} from "@/shared/ui/Input/Input";
 import {memo, useCallback} from "react";
 import {
     getLoginFormError,
@@ -12,8 +12,8 @@ import {
     loginActions
 } from "../../model/slice/loginSlice";
 import {loginByUsername} from "../../model/services/loginByUsername/loginByUsername";
-import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
-import {Text, TextTheme} from "shared/ui/Text/Text";
+import {useAppDispatch, useAppSelector} from "@/shared/lib/store/hooks/hooks";
+import {Text, TextTheme} from "@/shared/ui/Text/Text";
 
 export interface LoginFormProps {
   className?: string;

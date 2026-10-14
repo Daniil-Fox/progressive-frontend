@@ -1,8 +1,8 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from "./ArticlesInfiniteList.module.scss";
-import {ArticleList} from "entities/Article";
+import {ArticleList} from "@/entities/Article";
 import {useCallback, useState} from "react";
-import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
+import {useAppDispatch, useAppSelector} from "@/shared/lib/store/hooks/hooks";
 import {
     articlePageActions,
     getArticles,

@@ -1,21 +1,21 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from "./ArticlesPageFilters.module.scss";
-import {useAppDispatch, useAppSelector} from "shared/lib/store/hooks/hooks";
+import {useAppDispatch, useAppSelector} from "@/shared/lib/store/hooks/hooks";
 import {articlePageActions} from "./../../model/slices/articlesPageSlice";
 import {getView} from "./../../model/selectors/getView/getView";
-import {ArticleSortSelector, ArticlesSortField, ArticleView, ArticleViewSelector} from "entities/Article";
+import {ArticleSortSelector, ArticlesSortField, ArticleView, ArticleViewSelector} from "@/entities/Article";
 import {useCallback} from "react";
-import {Card} from "shared/ui/Card/Card";
-import {Input} from "shared/ui";
+import {Card} from "@/shared/ui/Card/Card";
+import {Input} from "@/shared/ui";
 import {getArticlePageOrder} from "./../../model/selectors/getArticlesOrder/getArticlesOrder";
 import {getArticlePageSort} from "../../model/selectors/getSort/getArticlePageSort";
-import {SortOrder} from "shared/types/SortOrder";
+import {SortOrder} from "@/shared/types/SortOrder";
 import {getArticlePageSearch} from "./../../model/selectors/getArticlesSearch/getArticlesSearch";
 import {fetchArticlesList} from "./../../model/services/fetchArticlesList/fetchArticlesList";
-import {useDebounce} from "shared/lib/hooks/useDebounce/useDebounce";
-import {ArticleType} from "entities/Article/model/types/article";
+import {useDebounce} from "@/shared/lib/hooks/useDebounce/useDebounce";
+import {ArticleType} from "@/entities/Article/model/types/article";
 import {getArticlePageType} from "./../../model/selectors/getArticlePageType/getArticlePageType";
-import {ArticleTypeTabs} from "entities/Article";
+import {ArticleTypeTabs} from "@/entities/Article";
 
 interface ArticlesPageFiltersProps {
     className?: string;

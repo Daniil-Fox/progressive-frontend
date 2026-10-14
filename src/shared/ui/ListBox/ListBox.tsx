@@ -1,10 +1,10 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from "./ListBox.module.scss";
 import { Listbox as HListbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
 import React, {Fragment, ReactNode} from "react";
-import {Button} from "shared/ui";
-import {ButtonTheme} from "shared/ui/Button/Button";
-import {HStack} from "shared/ui/Stack";
+import {Button} from "@/shared/ui";
+import {ButtonTheme} from "@/shared/ui/Button/Button";
+import {HStack} from "@/shared/ui/Stack";
 import {flip, offset, shift, useFloating} from "@floating-ui/react";
 
 interface ListBoxItem<T extends string> {

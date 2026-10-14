@@ -1,15 +1,15 @@
-import {classNames, Mods} from "shared/lib/classNames/classNames";
+import {classNames, Mods} from "@/shared/lib/classNames/classNames";
 import cls from "./Modal.module.scss";
 import React, {useEffect, useState} from "react";
 import {Portal} from "./../Portal/Portal";
 import {Overlay} from "./../Overlay/Overlay";
-import {useModal} from "shared/lib/hooks/useModal/useModal";
+import {useModal} from "@/shared/lib/hooks/useModal/useModal";
 
 interface ModalProps {
     className?: string;
     children?: React.ReactNode;
     isOpen: boolean;
-    onClose: () => void;
+    onClose?: () => void;
     lazy?: boolean;
 }
 

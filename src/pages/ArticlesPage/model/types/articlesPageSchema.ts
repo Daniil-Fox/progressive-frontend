@@ -1,7 +1,7 @@
 import {EntityState} from "@reduxjs/toolkit";
-import {Article, ArticlesSortField, ArticleView} from "entities/Article";
-import {SortOrder} from "shared/types/SortOrder";
-import {ArticleType} from "entities/Article";
+import {Article, ArticlesSortField, ArticleView} from "@/entities/Article";
+import {SortOrder} from "@/shared/types/SortOrder";
+import {ArticleType} from "@/entities/Article";
 import {GridStateSnapshot, StateSnapshot} from "react-virtuoso";
 
 export interface ArticlesPageSchema extends EntityState<Article, string> {

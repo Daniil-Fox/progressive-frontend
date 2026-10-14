@@ -1,13 +1,13 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from "./ArticleDetailsPageHeader.module.scss";
 import {useNavigate} from "react-router-dom";
-import {Button} from "shared/ui";
-import {ButtonTheme} from "shared/ui/Button/Button";
+import {Button} from "@/shared/ui";
+import {ButtonTheme} from "@/shared/ui/Button/Button";
 import {useTranslation} from "react-i18next";
-import {useAppSelector} from "shared/lib/store/hooks/hooks";
+import {useAppSelector} from "@/shared/lib/store/hooks/hooks";
 import {getCanEditArticle} from "./../../model/selectors/article";
-import {pathRoutes} from "shared/routes/routes";
-import {getData} from "entities/Article";
+import {pathRoutes} from "@/shared/routes/routes";
+import {getData} from "@/entities/Article";
 
 interface ArticleDetailsPageHeaderProps {
     className?: string;

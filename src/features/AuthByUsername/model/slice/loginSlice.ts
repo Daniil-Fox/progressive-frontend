@@ -1,7 +1,7 @@
 import {LoginSchema} from '../types/loginSchema'
 import {createSlice, PayloadAction, WithSlice} from "@reduxjs/toolkit";
-import {loginByUsername} from "features/AuthByUsername/model/services/loginByUsername/loginByUsername";
-import {rootReducer} from "app/providers/StoreProvider/config/rootReducer";
+import {loginByUsername} from "@/features/AuthByUsername/model/services/loginByUsername/loginByUsername";
+import {rootReducer} from "@/app/providers/StoreProvider/config/rootReducer";
 
 const initialState: LoginSchema = {
     username: '',
@@ -50,6 +50,6 @@ const injectedLoginFormSlice = loginSlice.injectInto(rootReducer)
 
 export const {getLoginFormUsername, getLoginFormPassword, getLoginFormIsLoading, getLoginFormError, getLoginForm} = injectedLoginFormSlice.selectors
 
-declare module 'app/providers/StoreProvider/config/rootReducer' {
+declare module '@/app/providers/StoreProvider/config/rootReducer' {
     export interface LazyLoadedSlices extends WithSlice<typeof loginSlice> {}
 }

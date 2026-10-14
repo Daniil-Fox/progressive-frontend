@@ -1,4 +1,4 @@
-import 'app/style/index.scss'
+import '@/app/style/index.scss'
 import {PartialStoryFn} from "storybook/internal/csf";
 
 

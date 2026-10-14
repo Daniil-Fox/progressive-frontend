@@ -1,11 +1,11 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from "./ArticleViewSelector.module.scss";
 import {ArticleView} from "./../../model/types/article";
-import ListIcon from 'shared/assets/view-list.svg'
-import GridIcon from 'shared/assets/grid.svg'
-import {Button} from "shared/ui";
-import {Icon} from "shared/ui/Icon/Icon";
-import {ButtonTheme} from "shared/ui/Button/Button";
+import ListIcon from '@/shared/assets/view-list.svg'
+import GridIcon from '@/shared/assets/grid.svg'
+import {Button} from "@/shared/ui";
+import {Icon} from "@/shared/ui/Icon/Icon";
+import {ButtonTheme} from "@/shared/ui/Button/Button";
 
 interface ArticleViewSelectorProps {
     className?: string;

@@ -1,11 +1,11 @@
 import {screen} from "@testing-library/react";
 import {EditableProfileCard} from "./EditableProfileCard";
-import {renderWithStore} from "shared/lib/tests/renderWithStore/renderWithStore";
-import {Profile} from "entities/Profile";
-import {Currency} from "entities/Currency";
-import {Country} from "entities/Country";
+import {renderWithStore} from "@/shared/lib/tests/renderWithStore/renderWithStore";
+import {Profile} from "@/entities/Profile";
+import {Currency} from "@/entities/Currency";
+import {Country} from "@/entities/Country";
 import {userEvent} from "@testing-library/user-event";
-import {$api} from "shared/api/api";
+import {$api} from "@/shared/api/api";
 
 const profile: Profile = {
     id: '1',

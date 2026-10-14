@@ -1,7 +1,7 @@
 import {ValidateProfileError} from "./../../types/profile";
-import {Country} from "entities/Country/model/types/country";
-import {Currency} from "entities/Currency/model/types/CurrencySchema";
-import {Profile} from "entities/Profile";
+import {Country} from "@/entities/Country/model/types/country";
+import {Currency} from "@/entities/Currency/model/types/CurrencySchema";
+import {Profile} from "@/entities/Profile";
 import {validateProfile} from "./validateProfile";
 
 describe('validateProfile test', () => {

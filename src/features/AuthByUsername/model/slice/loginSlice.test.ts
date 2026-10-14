@@ -1,8 +1,8 @@
-import {DeepPartial} from "shared/types/DeepPartial";
-import {StateSchema} from "app/providers/StoreProvider/config/stateSchema";
+import {DeepPartial} from "@/shared/types/DeepPartial";
+import {StateSchema} from "@/app/providers/StoreProvider/config/stateSchema";
 import {getLoginFormError, loginActions, loginReducer} from "./loginSlice";
-import {RootState} from "app/providers/StoreProvider/config/store";
-import {LoginSchema} from "features/AuthByUsername";
+import {RootState} from "@/app/providers/StoreProvider/config/store";
+import {LoginSchema} from "@/features/AuthByUsername";
 
 describe('selectors.test', () => {
     test('should return error', () => {
