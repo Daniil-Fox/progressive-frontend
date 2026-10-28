@@ -9,6 +9,7 @@ import {ArticleDetailsPageHeader} from "./../ArticleDetailsPageHeader/ArticleDet
 import {VStack} from "@/shared/ui/Stack";
 import {ArticleRecommendationsList} from "@/features/articleRecommendationsList";
 import {ArticleDetailComments} from "./../ArticleDetailComments/ArticleDetailComments";
+import {ArticleRating} from "@/features/articleRating";
 
 export interface ArticlesDetailPageProps {
     className?: string;
@@ -16,6 +17,11 @@ export interface ArticlesDetailPageProps {
 
 const ArticlesDetailPage = ({className}: ArticlesDetailPageProps) => {
     const { id } = useParams<{id: string}>()
+
+    if(!id){
+        return null;
+    }
+
     return (
         <Page className={classNames(cls.ArticlesDetailPage, {}, [className])}>
             <VStack gap={'32'}>
@@ -24,6 +30,7 @@ const ArticlesDetailPage = ({className}: ArticlesDetailPageProps) => {
                     <ArticleDetails id={id}/>
                 </VStack>
                 <ArticleRecommendationsList/>
+                <ArticleRating articleId={id}/>
                 <VStack gap={'32'}>
                     <Text title={"Комментарии"}/>
                     <VStack gap={'16'}>

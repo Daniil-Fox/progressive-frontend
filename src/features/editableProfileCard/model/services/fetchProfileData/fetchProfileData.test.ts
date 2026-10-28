@@ -1,5 +1,3 @@
-
-import {userActions} from "@/entities/User";
 import {TestAsyncThunk} from "@/shared/lib/tests/testAsyncThunk/TestAsyncThunk";
 import {fetchProfileData} from "./fetchProfileData";
 import {Country} from "@/entities/Country/model/types/country";
