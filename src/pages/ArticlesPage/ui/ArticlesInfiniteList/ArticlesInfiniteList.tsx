@@ -1,7 +1,6 @@
-import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from "./ArticlesInfiniteList.module.scss";
 import {ArticleList} from "@/entities/Article";
-import {useCallback, useState} from "react";
+import {useCallback} from "react";
 import {useAppDispatch, useAppSelector} from "@/shared/lib/store/hooks/hooks";
 import {
     articlePageActions,
@@ -19,7 +18,7 @@ interface ArticlesInfiniteListProps {
     scrollParent: HTMLElement | null;
 }
 
-export const ArticlesInfiniteList = ({className, scrollParent}: ArticlesInfiniteListProps) => {
+export const ArticlesInfiniteList = ({scrollParent}: ArticlesInfiniteListProps) => {
     const dispatch = useAppDispatch()
     const articles = useAppSelector(getArticles.selectAll)
     const isLoading = useAppSelector(getIsLoading)

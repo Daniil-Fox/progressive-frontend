@@ -40,6 +40,7 @@ export const Input = memo((props: InputProps) => {
         setFocused(false)
     }
 
+    // eslint-disable-next-line
     const onSelect = (e: any ) => {
         setCaretPosition(e?.target?.selectionStart)
     }

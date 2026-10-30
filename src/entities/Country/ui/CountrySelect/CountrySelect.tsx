@@ -1,10 +1,8 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./CountrySelect.module.scss";
 import {useCallback, useMemo} from "react";
-import {Select} from "@/shared/ui/Select/Select";
 import {Country} from "@/entities/Country/model/types/country";
 import {useTranslation} from "react-i18next";
 import {ListBox} from "@/shared/ui/ListBox/ListBox";
+
 interface CountrySelectProps {
     className?: string;
     value?: Country;
@@ -15,11 +13,11 @@ interface CountrySelectProps {
 export const CountrySelect = (props: CountrySelectProps) => {
     const {t} = useTranslation('profile');
 
-    const { className, value, readonly, onChange } = props
+    const { value, readonly, onChange } = props
 
     const onChangeCountry = useCallback((value: string) => {
         onChange?.(value as Country)
-    }, [])
+    }, [onChange])
 
     const countryList = useMemo(() => {
         return [

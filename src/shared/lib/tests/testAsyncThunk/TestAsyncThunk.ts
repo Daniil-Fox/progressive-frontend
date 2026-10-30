@@ -1,5 +1,5 @@
-import { AsyncThunkAction } from '@reduxjs/toolkit';
-import axios, { AxiosStatic } from 'axios';
+import {AsyncThunkAction} from '@reduxjs/toolkit';
+import axios, {AxiosStatic} from 'axios';
 import {DeepPartial} from "@/shared/types/DeepPartial";
 import {RootState} from "@/app/providers/StoreProvider/config/store";
 
@@ -11,6 +11,7 @@ jest.mock('axios');
 const mockedAxios = jest.mocked(axios, {shallow: false});
 
 export class TestAsyncThunk<Return, Arg, RejectedValue> {
+    // eslint-disable-next-line
     dispatch: jest.MockedFn<any>;
 
     getState: () => RootState;
@@ -18,7 +19,7 @@ export class TestAsyncThunk<Return, Arg, RejectedValue> {
     actionCreator: ActionCreatorType<Return, Arg, RejectedValue>;
 
     api: jest.MockedFunctionDeep<AxiosStatic>;
-
+    // eslint-disable-next-line
     navigate: jest.MockedFn<any>;
 
     constructor(

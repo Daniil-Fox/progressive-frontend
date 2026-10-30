@@ -116,6 +116,7 @@ const articlesPageSlice = createSlice({
 const injectedArticlesPageSlice = articlesPageSlice.injectInto(rootReducer);
 
 declare module "@/app/providers/StoreProvider/config/rootReducer" {
+   
   interface LazyLoadedSlices extends WithSlice<typeof articlesPageSlice> {}
 }
 

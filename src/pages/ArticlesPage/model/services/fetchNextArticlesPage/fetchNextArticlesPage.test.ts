@@ -18,7 +18,7 @@ describe('Fetch Profile Data', () => {
             }
         })
 
-        const result = await thunk.callThunk()
+        await thunk.callThunk()
 
         expect(thunk.dispatch).toHaveBeenCalledTimes(4)
         expect(fetchArticlesList).toHaveBeenCalled()
@@ -36,7 +36,7 @@ describe('Fetch Profile Data', () => {
             }
         })
 
-        const result = await thunk.callThunk()
+        await thunk.callThunk()
 
         expect(thunk.dispatch).toHaveBeenCalledTimes(2)
         expect(fetchArticlesList).not.toHaveBeenCalled()
@@ -54,7 +54,7 @@ describe('Fetch Profile Data', () => {
             }
         })
 
-        const result = await thunk.callThunk()
+        await thunk.callThunk()
 
         expect(thunk.dispatch).toHaveBeenCalledTimes(2)
         expect(fetchArticlesList).not.toHaveBeenCalled()

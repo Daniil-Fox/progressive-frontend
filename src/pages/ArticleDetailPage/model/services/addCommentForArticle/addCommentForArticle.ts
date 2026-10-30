@@ -39,7 +39,7 @@ export const addCommentForArticle = createAsyncThunk<
 
 
             return response.data
-        } catch(e){
+        } catch {
             return rejectWithValue('error')
         }
     }

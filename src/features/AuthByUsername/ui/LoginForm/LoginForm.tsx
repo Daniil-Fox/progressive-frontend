@@ -42,7 +42,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
       if(result.meta.requestStatus === "fulfilled"){
           onSuccess()
       }
-  }, [username, password])
+  }, [username, password, dispatch, onSuccess])
 
   return (
     <div className={classNames(cls.LoginForm, {}, [className])}>

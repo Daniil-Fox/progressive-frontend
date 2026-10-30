@@ -20,7 +20,7 @@ export const {actions: scrollSaveActions} = scrollSaveSlice
 
 export const {reducer: scrollSaveReducer} = scrollSaveSlice
 
-const injectedScrollSaveSlice = scrollSaveSlice.injectInto(rootReducer)
+scrollSaveSlice.injectInto(rootReducer)
 
 
 declare module '@/app/providers/StoreProvider/config/rootReducer' {

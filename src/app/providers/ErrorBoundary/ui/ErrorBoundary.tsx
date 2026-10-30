@@ -1,5 +1,6 @@
-import React, {ErrorInfo, ReactNode, Suspense} from "react";
+import React, {ReactNode, Suspense} from "react";
 import {ErrorPage} from "@/widgets/PageError";
+
 interface ErrorBoundaryProps {
     children: ReactNode;
 }
@@ -12,23 +13,23 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
         this.state = { hasError: false };
     }
 
-    static getDerivedStateFromError(error: Error) {
+    static getDerivedStateFromError(_: Error) {
         // Update state so the next render will show the fallback UI.
         return { hasError: true };
     }
 
-    componentDidCatch(error: Error, info: ErrorInfo) {
-        console.log(
-            error,
-            // Example "componentStack":
-            //   in ComponentThatThrows (created by App)
-            //   in ErrorBoundary (created by App)
-            //   in div (created by App)
-            //   in App
-            info.componentStack,
-            // Warning: `captureOwnerStack` is not available in production.
-            React.captureOwnerStack(),
-        );
+    componentDidCatch() {
+        // console.log(
+        //     error,
+        //     // Example "componentStack":
+        //     //   in ComponentThatThrows (created by App)
+        //     //   in ErrorBoundary (created by App)
+        //     //   in div (created by App)
+        //     //   in App
+        //     info.componentStack,
+        //     // Warning: `captureOwnerStack` is not available in production.
+        //     React.captureOwnerStack(),
+        // );
     }
 
     render() {

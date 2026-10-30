@@ -19,7 +19,7 @@ export function RequireAuth({children, roles}: RequireAuthProps) {
         if(!roles) return true
 
         return roles.some(requiredRole => userRoles?.includes(requiredRole))
-    }, [])
+    }, [roles, userRoles])
 
     if(!auth){
         return <Navigate to={pathRoutes.main} state={{from: location}} replace/>

@@ -21,7 +21,7 @@ const AddCommentForm = ({className, onSendComment}: AddCommentFormProps) => {
     const onSendHandler = useCallback(() => {
         onSendComment(text || '')
         handleInputChange('')
-    }, [dispatch, text, onSendComment])
+    }, [text, onSendComment, handleInputChange])
 
     return (
         <div className={classNames(cls.AddCommentForm, {}, [className])}>

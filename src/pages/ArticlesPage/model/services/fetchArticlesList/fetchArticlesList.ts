@@ -47,7 +47,7 @@ export const fetchArticlesList = createAsyncThunk<Article[], FetchArticlesPagePr
             }
 
             return response.data
-        } catch (e){
+        } catch {
             return rejectWithValue('Something wrong with fetching ArticlesList')
         }
     },

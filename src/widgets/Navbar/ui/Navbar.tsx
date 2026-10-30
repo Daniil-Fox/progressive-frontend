@@ -1,22 +1,18 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
-import {FC, useCallback, useState} from "react";
+import {classNames} from "@/shared/lib/classNames/classNames";
+import {FC, useState} from "react";
 import cls from "./Navbar.module.scss";
-import { useTranslation } from "react-i18next";
-import {Button, ButtonTheme} from "@/shared/ui/Button/Button";
+import {useTranslation} from "react-i18next";
+import {Button} from "@/shared/ui/Button/Button";
 import {LoginModal} from "@/features/AuthByUsername";
-import {useAppDispatch, useAppSelector} from "@/shared/lib/store/hooks/hooks";
-import {getUserAuthData, isUserAdmin, isUserManager, userActions} from "@/entities/User";
-import {AppLink, Avatar, Text} from "@/shared/ui";
+import {useAppSelector} from "@/shared/lib/store/hooks/hooks";
+import {getUserAuthData} from "@/entities/User";
+import {AppLink, Text} from "@/shared/ui";
 import {AppLinkTheme} from "@/shared/ui/AppLink/AppLink";
 import {TextTheme} from "@/shared/ui/Text/Text";
-import {Dropdown} from "@/shared/ui/Dropdown/Dropdown";
 import {pathRoutes} from "@/shared/routes/routes";
 import {HStack} from "@/shared/ui/Stack";
 import {NotificationButton} from "@/features/notificationButton";
 import {AvatarDropdown} from "@/features/avatarDropdown";
-import {Drawer} from "@/shared/ui/Drawer/Drawer";
-import {NotificationList} from "@/entities/Notification";
-import {AnimationProvider} from "@/shared/lib/AnimationProvider";
 
 interface NavbarProps {
     className?: string;

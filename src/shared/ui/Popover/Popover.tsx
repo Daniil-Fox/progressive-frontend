@@ -1,8 +1,9 @@
 import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from "./Popover.module.scss";
-import { Popover as HPopover, PopoverButton, PopoverPanel } from '@headlessui/react'
+import {Popover as HPopover, PopoverButton, PopoverPanel} from '@headlessui/react'
 import {ReactNode} from "react";
-import {flip, offset, shift, useFloating} from "@floating-ui/react";
+import {flip, useFloating} from "@floating-ui/react";
+
 interface PopoverProps {
     className?: string;
     trigger: ReactNode;

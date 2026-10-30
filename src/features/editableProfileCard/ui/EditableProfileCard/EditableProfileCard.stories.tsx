@@ -1,6 +1,4 @@
 import type {Meta, StoryObj} from '@storybook/react-webpack5';
-
-import {fn} from 'storybook/test';
 import {EditableProfileCard} from './EditableProfileCard';
 import {StoreDecorator} from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import {Country} from "@/entities/Country";

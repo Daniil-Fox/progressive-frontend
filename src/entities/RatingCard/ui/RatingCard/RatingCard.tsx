@@ -56,7 +56,7 @@ export const RatingCard = (props: RatingCardProps) => {
   const cancelHandle = useCallback(() => {
     setIsModalOpen(false);
     onCancel?.(starsCount);
-  }, [starsCount]);
+  }, [starsCount, onCancel]);
 
   const modalContent = (
     <VStack gap={"32"}>

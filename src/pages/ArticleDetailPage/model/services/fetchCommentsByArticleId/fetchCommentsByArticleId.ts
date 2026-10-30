@@ -21,7 +21,7 @@ export const fetchCommentsByArticleId = createAsyncThunk<Comment[], string | und
             }
 
             return response.data
-        } catch (e){
+        } catch {
             return rejectWithValue('error')
         }
     }

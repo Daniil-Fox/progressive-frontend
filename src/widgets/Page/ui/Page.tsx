@@ -41,7 +41,7 @@ export const Page = (props: PageProps) => {
 
         wrapperRef.current.scrollTop = scrollPosition
         // восстанавливаем скролл только при смене маршрута
-    }, [location.pathname, restoreScroll])
+    }, [location.pathname, restoreScroll, scrollPosition])
 
     return (
         <section

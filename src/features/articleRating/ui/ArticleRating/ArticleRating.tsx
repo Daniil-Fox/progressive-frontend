@@ -11,7 +11,7 @@ interface ArticleRatingProps {
 }
 
 export const ArticleRating = (props: ArticleRatingProps) => {
-    const {className, articleId} = props;
+    const {articleId} = props;
     const userData = useAppSelector(getUserAuthData)
     const {data, isLoading} = useGetArticleRating({
         userId: userData?.id ?? '',
@@ -29,8 +29,8 @@ export const ArticleRating = (props: ArticleRatingProps) => {
                 rate: starsCount,
                 feedback: feedback
             })
-        } catch (error) {
-            console.log(error)
+        } catch {
+            // some handling error
         }
     }, [articleId, rateArticleMutation, userData?.id])
 

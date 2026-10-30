@@ -8,7 +8,6 @@ import {Card} from "@/shared/ui/Card/Card";
 import {useTranslation} from "react-i18next";
 import {ButtonTheme} from "@/shared/ui/Button/Button";
 import {ArticleTextBlockComponent} from "./../ArticleTextBlockComponent/ArticleTextBlockComponent";
-import {useNavigate} from "react-router-dom";
 import {CSSProperties, HTMLAttributeAnchorTarget} from "react";
 import {pathRoutes} from "@/shared/routes/routes";
 

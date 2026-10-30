@@ -1,6 +1,6 @@
 import {classNames, Mods} from "@/shared/lib/classNames/classNames";
 import cls from "./Modal.module.scss";
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {Portal} from "./../Portal/Portal";
 import {Overlay} from "./../Overlay/Overlay";
 import {useModal} from "@/shared/lib/hooks/useModal/useModal";

@@ -26,7 +26,7 @@ export const updateProfileData = createAsyncThunk<Profile, undefined, ThunkConfi
             }
 
             return response.data
-        } catch(e){
+        } catch {
             return rejectWithValue([ValidateProfileError.SERVER_ERROR])
         }
     }

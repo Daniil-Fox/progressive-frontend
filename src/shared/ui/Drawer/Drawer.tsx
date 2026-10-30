@@ -21,7 +21,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
 
     const openDrawer = useCallback(() => {
         api.start({ y: 0, immediate: false})
-    }, [])
+    }, [api])
 
     useEffect(() => {
         if(isOpen){
@@ -36,12 +36,12 @@ export const DrawerContent = memo((props: DrawerProps) => {
             config: {...Spring.config.stiff, velocity},
             onResolve: onClose
         })
-    }, [])
+    }, [api, Spring.config.stiff, onClose])
 
     const bind = Gesture.useDrag(
-        ({ last, velocity: [, vy], direction: [, dy], offset: [, oy], cancel, canceled }) => {
+        ({ last, velocity: [, vy], direction: [, dy], offset: [, oy], cancel }) => {
             if (oy < -70) cancel()
-
+            // eslint-disable-nex-line
             if (last) {
                 oy > height * 0.5 || (vy > 0.5 && dy > 0) ? closeDrawer() : openDrawer()
             }

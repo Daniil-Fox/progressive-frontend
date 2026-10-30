@@ -1,4 +1,4 @@
-import {ReactNode, useMemo, useState} from "react";
+import {ReactNode, useCallback, useMemo, useState} from "react";
 
 import {
     LOCALSTORAGE_THEME_KEY,
@@ -21,14 +21,14 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
 
     const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
 
-    const switchTheme = () => {
+    const switchTheme = useCallback(() => {
         const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
         setTheme(newTheme);
         document.body.classList = newTheme
         localStorage.setItem(LOCALSTORAGE_THEME_KEY, newTheme);
-    };
+    }, [theme]);
 
-    const themeValue = useMemo(() => ({theme, switchTheme}), [theme])
+    const themeValue = useMemo(() => ({theme, switchTheme}), [theme, switchTheme])
 
     return (
         <ThemeContext.Provider value={themeValue}>

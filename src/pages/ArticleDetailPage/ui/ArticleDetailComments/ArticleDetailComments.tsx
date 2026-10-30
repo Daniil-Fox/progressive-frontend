@@ -4,7 +4,7 @@ import {CommentList} from "@/entities/Comment";
 import {Suspense, useCallback, useEffect} from "react";
 import {useAppDispatch, useAppSelector} from "@/shared/lib/store/hooks/hooks";
 import {getArticleComments} from "./../../model/slice";
-import {selectCommentsError, selectCommentsIsLoading} from "./../../model/selectors/getArticleDetails";
+import {selectCommentsIsLoading} from "./../../model/selectors/getArticleDetails";
 import {addCommentForArticle} from "./../../model/services/addCommentForArticle/addCommentForArticle";
 import {
     fetchCommentsByArticleId
@@ -23,7 +23,6 @@ export const ArticleDetailComments = (props: ArticleDetailCommentsProps) => {
     const comments = useAppSelector(getArticleComments.selectAll)
 
     const isLoading = useAppSelector(selectCommentsIsLoading)
-    const error = useAppSelector(selectCommentsError)
 
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text))
