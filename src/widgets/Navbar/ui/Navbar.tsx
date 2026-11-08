@@ -34,9 +34,9 @@ export const Navbar: FC = ({ className }: NavbarProps) => {
     if(authData){
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
-                <Text className={cls.appName} theme={TextTheme.INVERTED} title={'Title'}/>
+                <Text className={cls.appName} theme={TextTheme.INVERTED} title={t('app title')}/>
                 <AppLink theme={AppLinkTheme.SECONDARY} to={pathRoutes.article_create} className={cls.createBtn}>
-                    Создать статью
+                    {t('create article')}
                 </AppLink>
 
                 <HStack gap={'16'} className={cls.actions}>

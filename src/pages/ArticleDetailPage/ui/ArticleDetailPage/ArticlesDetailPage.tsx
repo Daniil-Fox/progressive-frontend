@@ -10,6 +10,7 @@ import {VStack} from "@/shared/ui/Stack";
 import {ArticleRecommendationsList} from "@/features/articleRecommendationsList";
 import {ArticleDetailComments} from "./../ArticleDetailComments/ArticleDetailComments";
 import {ArticleRating} from "@/features/articleRating";
+import {useTranslation} from "react-i18next";
 
 export interface ArticlesDetailPageProps {
     className?: string;
@@ -17,6 +18,7 @@ export interface ArticlesDetailPageProps {
 
 const ArticlesDetailPage = ({className}: ArticlesDetailPageProps) => {
     const { id } = useParams<{id: string}>()
+    const { t } = useTranslation('article-details')
 
     if(!id){
         return null;
@@ -32,7 +34,7 @@ const ArticlesDetailPage = ({className}: ArticlesDetailPageProps) => {
                 <ArticleRecommendationsList/>
                 <ArticleRating articleId={id}/>
                 <VStack gap={'32'}>
-                    <Text title={"Комментарии"}/>
+                    <Text title={t("Comments")}/>
                     <VStack gap={'16'}>
                         <ArticleDetailComments id={id}/>
                     </VStack>

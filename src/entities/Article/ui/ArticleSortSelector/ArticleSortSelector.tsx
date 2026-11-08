@@ -4,6 +4,7 @@ import {Select, SelectOption} from "@/shared/ui/Select/Select";
 import {useMemo} from "react";
 import {ArticlesSortField} from "./../../model/types/article";
 import {SortOrder} from "@/shared/types/SortOrder";
+import {useTranslation} from "react-i18next";
 
 interface ArticleSortSelectorProps {
     className?: string;
@@ -16,32 +17,33 @@ interface ArticleSortSelectorProps {
 
 export const ArticleSortSelector = (props: ArticleSortSelectorProps) => {
     const {className, sort, order, onChangeOrder, onChangeSort} = props
+    const {t} = useTranslation()
 
     const orderOptions = useMemo<SelectOption<SortOrder>[]>(() => [
         {
             value: 'asc',
-            content: 'возрастанию'
+            content: t('ascending')
         },
         {
             value: 'desc',
-            content: 'убыванию'
+            content: t('descending')
         }
-    ], [])
+    ], [t])
 
     const sortFieldOptions = useMemo<SelectOption<ArticlesSortField>[]>(() => [
         {
             value: ArticlesSortField.CREATED,
-            content: 'дате создания'
+            content: t('by date')
         },
         {
             value: ArticlesSortField.TITLE,
-            content: 'заголовку'
+            content: t('by title')
         },
         {
             value: ArticlesSortField.VIEWS,
-            content: 'просмотрам'
+            content: t('by views')
         },
-    ], [])
+    ], [t])
 
     return (
         <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
@@ -49,14 +51,14 @@ export const ArticleSortSelector = (props: ArticleSortSelectorProps) => {
                 value={sort}
                 onChange={onChangeSort}
                 options={sortFieldOptions}
-                label={"Сортировать по"}
+                label={t("Sort by")}
             />
 
             <Select
                 value={order}
                 onChange={onChangeOrder}
                 options={orderOptions}
-                label={"по"}
+                label={t("by")}
             />
         </div>
     );

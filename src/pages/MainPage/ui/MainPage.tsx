@@ -9,7 +9,7 @@ const MainPage = () => {
         <Page>
             <h1>{t("main")}</h1>
             <BugButton/>
-            <RatingCard title={'Как вам статья?'} feedbackTitle={'Оставьте отзыв о статье'} hasFeedback/>
+            <RatingCard title={t('How do you like the article?')} feedbackTitle={t('Leave your feedback about the article')} hasFeedback/>
         </Page>
     );
 }

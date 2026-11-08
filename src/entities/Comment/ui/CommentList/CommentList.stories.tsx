@@ -21,14 +21,14 @@ export const Normal: Story = {
                 id: '1'
             },
             {
-                user: {avatar: '', id: '2', username: 'user'},
+                user: {avatar: '', id: '2', username: 'user2'},
                 text: 'Text of comment',
-                id: '1'
+                id: '2'
             },
             {
-                user: {avatar: '', id: '3', username: 'user'},
+                user: {avatar: '', id: '3', username: 'user3'},
                 text: 'Text of comment',
-                id: '1'
+                id: '3'
             },
         ]
     },

@@ -6,7 +6,7 @@ import {useTranslation} from "react-i18next";
 import {useAppDispatch, useAppSelector} from "@/shared/lib/store/hooks/hooks";
 import {profileActions} from "../../model/slice/ProfileSlice";
 import {ValidateProfileError} from "../../model/types/profile";
-import {useCallback} from "react";
+import {useCallback, useEffect} from "react";
 import {useInitialEffect} from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import {fetchProfileData} from "../../model/services/fetchProfileData/fetchProfileData";
 import {Currency} from "@/entities/Currency";
@@ -79,11 +79,12 @@ export const EditableProfileCard = (props: EditableProfileCardProps) => {
         dispatch(profileActions.updateProfile({country: value|| Country.America}))
     }, [dispatch])
 
-    useInitialEffect(() => {
+    useEffect(() => {
         if(id){
             dispatch(fetchProfileData(id))
+            console.log('asdsad')
         }
-    })
+    }, [])
 
     return (
         <VStack gap={'16'} className={classNames('', {}, [className])}>

@@ -1,13 +1,15 @@
 import type {Meta, StoryObj} from '@storybook/react-webpack5';
 import {ArticleListItem} from './ArticleListItem';
-import {ArticleType, ArticleView} from "@/entities/Article";
-
+import {ArticleView} from "@/entities/Article";
+import {mockArticle} from "@/entities/Article/model/mocks/mockArticle";
 
 const meta = {
     component: ArticleListItem,
     title: 'entities/ArticleListItem',
     tags: ['autodocs'],
-    args: {},
+    args: {
+        article: mockArticle,
+    },
 } satisfies Meta<typeof ArticleListItem>;
 
 export default meta;
@@ -15,41 +17,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Big: Story = {
     args: {
-        article: {
-            createdAt: '23.05.2024',
-            title: 'Заголовок статьи',
-            type: [ArticleType.IT],
-            img: '',
-            id: '123',
-            blocks: [],
-            subtitle: 'Подзаголовок',
-            user: {
-                username: 'User',
-                avatar: '',
-                id: '1'
-            },
-            views: 123
-        },
-        view: ArticleView.BIG
+        view: ArticleView.BIG,
     },
 };
+
 export const Small: Story = {
     args: {
-        article: {
-            createdAt: '23.05.2024',
-            title: 'Заголовок статьи',
-            type: [ArticleType.IT],
-            img: '',
-            id: '123',
-            blocks: [],
-            subtitle: 'Подзаголовок',
-            user: {
-                username: 'User',
-                avatar: '',
-                id: '1'
-            },
-            views: 123
-        },
-        view: ArticleView.SMALL
+        view: ArticleView.SMALL,
     },
 };

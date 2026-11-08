@@ -48,9 +48,9 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     <div className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('login form')}/>
         {error && <Text theme={TextTheme.ERROR} title={error}/>}
-        <Input className={cls.input} placeholder="Введите username" autoFocus={true} onChange={onChangeUsername} value={username}/>
-        <Input className={cls.input} placeholder="Введите пароль" onChange={onChangePassword} value={password}/>
-        <Button disabled={isLoading} onClick={onLoginClick} theme={ButtonTheme.OUTLINE} className={cls.btn}>{t('Войти')}</Button>
+        <Input className={cls.input} placeholder={t('enter username')} autoFocus={true} onChange={onChangeUsername} value={username}/>
+        <Input className={cls.input} placeholder={t('enter password')} onChange={onChangePassword} value={password}/>
+        <Button disabled={isLoading} onClick={onLoginClick} theme={ButtonTheme.OUTLINE} className={cls.btn}>{t('enter')}</Button>
     </div>
   );
 });

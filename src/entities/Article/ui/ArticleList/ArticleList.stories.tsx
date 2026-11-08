@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react-webpack5';
 import {ArticleList} from './ArticleList';
-import {ArticleType} from "@/entities/Article";
-
+import {ArticleView} from "@/entities/Article";
+import {mockArticle, mockArticles} from "@/entities/Article/model/mocks/mockArticle";
 
 const meta = {
     component: ArticleList,
@@ -13,24 +13,39 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {
+export const Small: Story = {
     args: {
-        articles: [
-            {
-                createdAt: '23.05.2024',
-                title: 'Заголовок статьи',
-                type: [ArticleType.IT],
-                img: '',
-                id: '123',
-                blocks: [],
-                subtitle: 'Подзаголовок',
-                user: {
-                    username: 'User',
-                    avatar: '',
-                    id: '1'
-                },
-                views: 123
-            }
-        ]
+        articles: mockArticles,
+        view: ArticleView.SMALL,
+    },
+};
+
+export const Big: Story = {
+    args: {
+        articles: [mockArticle, {...mockArticle, id: '2'}],
+        view: ArticleView.BIG,
+    },
+};
+
+export const LoadingSmall: Story = {
+    args: {
+        articles: [],
+        isLoading: true,
+        view: ArticleView.SMALL,
+    },
+};
+
+export const LoadingBig: Story = {
+    args: {
+        articles: [],
+        isLoading: true,
+        view: ArticleView.BIG,
+    },
+};
+
+export const Empty: Story = {
+    args: {
+        articles: [],
+        isLoading: false,
     },
 };

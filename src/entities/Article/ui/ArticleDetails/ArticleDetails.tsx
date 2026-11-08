@@ -15,6 +15,7 @@ import {ArticleTextBlockComponent} from "./../ArticleTextBlockComponent/ArticleT
 import {ArticleImageBlockComponent} from "./../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import {HStack, VStack} from "@/shared/ui/Stack";
 import {getData, getError, getIsLoading} from "./../../model/selectors/selectors";
+import {useTranslation} from "react-i18next";
 import "./../../model/slice/articleDetailsSlice";
 
 interface ArticleDetailsProps {
@@ -24,6 +25,7 @@ interface ArticleDetailsProps {
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const {className, id} = props
+    const {t} = useTranslation('article-details')
     const dispatch = useAppDispatch()
     const isLoading =  useAppSelector(getIsLoading)
     const error =  useAppSelector(getError)
@@ -76,7 +78,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     if(error){
         return (
             <>
-                <Text title={'Something wrong'} text={'Article is not found'} theme={TextTheme.ERROR}/>
+                <Text title={t('Something wrong')} text={t('Article is not found')} theme={TextTheme.ERROR}/>
             </>
         )
     }

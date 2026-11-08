@@ -62,16 +62,16 @@ export const RatingCard = (props: RatingCardProps) => {
     <VStack gap={"32"}>
       <Text text={feedbackTitle} />
       <Input
-        placeholder={t("Ваш отзыв")}
+        placeholder={t("Your feedback")}
         value={feedback}
         onChange={setFeedback}
       />
       <HStack gap={"16"} justify={"end"}>
         <Button theme={ButtonTheme.OUTLINE_RED} onClick={cancelHandle}>
-          Закрыть
+          {t("Close")}
         </Button>
         <Button theme={ButtonTheme.OUTLINE} onClick={acceptHandler}>
-          Отправить
+          {t("Send")}
         </Button>
       </HStack>
     </VStack>
@@ -80,7 +80,7 @@ export const RatingCard = (props: RatingCardProps) => {
   return (
     <Card className={classNames(cls.RatingCard, {}, [className])}>
       <VStack align={"center"} gap={"8"}>
-        {title && <Text title={starsCount ? "Спасибо за оценку!" : title} />}
+        {title && <Text title={starsCount ? t("Thank you for rating") : title} />}
         <StarRating
           size={40}
           onSelect={onSelectStars}

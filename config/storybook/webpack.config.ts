@@ -42,6 +42,10 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
     config.module.rules ??= [];
 
     config.resolve.extensions.push(".ts", ".tsx");
+    config.resolve.alias = {
+        ...config.resolve.alias,
+        '@': paths.src
+    }
 
     config.module.rules = config.module.rules.map((rule) => {
         if (!rule || typeof rule !== "object" || !("test" in rule)) {

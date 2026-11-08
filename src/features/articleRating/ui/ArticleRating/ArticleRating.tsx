@@ -4,6 +4,7 @@ import {useAppSelector} from "@/shared/lib/store/hooks/hooks";
 import {getUserAuthData} from "@/entities/User";
 import {Skeleton} from "@/shared/ui/Skeleton/Skeleton";
 import {useCallback} from "react";
+import {useTranslation} from "react-i18next";
 
 interface ArticleRatingProps {
     className?: string;
@@ -12,6 +13,7 @@ interface ArticleRatingProps {
 
 export const ArticleRating = (props: ArticleRatingProps) => {
     const {articleId} = props;
+    const {t} = useTranslation('article-details')
     const userData = useAppSelector(getUserAuthData)
     const {data, isLoading} = useGetArticleRating({
         userId: userData?.id ?? '',
@@ -50,8 +52,8 @@ export const ArticleRating = (props: ArticleRatingProps) => {
 
     return (
         <RatingCard
-            title={'Оцените статью'}
-            feedbackTitle={'Оставьте отзыв о статье'}
+            title={t('Rate the article')}
+            feedbackTitle={t('Leave your feedback about the article')}
             rate={rating?.rate}
             onCancel={onCancel}
             onAccept={onAccept}

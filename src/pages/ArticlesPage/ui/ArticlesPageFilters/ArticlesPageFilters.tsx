@@ -16,6 +16,7 @@ import {useDebounce} from "@/shared/lib/hooks/useDebounce/useDebounce";
 import {ArticleType} from "@/entities/Article/model/types/article";
 import {getArticlePageType} from "./../../model/selectors/getArticlePageType/getArticlePageType";
 import {ArticleTypeTabs} from "@/entities/Article";
+import {useTranslation} from "react-i18next";
 
 interface ArticlesPageFiltersProps {
     className?: string;
@@ -24,6 +25,7 @@ interface ArticlesPageFiltersProps {
 export const ArticlesPageFilters = ({className}: ArticlesPageFiltersProps) => {
     const view = useAppSelector(getView)
     const dispatch = useAppDispatch()
+    const {t} = useTranslation()
 
     const onChangeView = useCallback((view: ArticleView) => {
         dispatch(articlePageActions.setView(view))
@@ -73,7 +75,7 @@ export const ArticlesPageFilters = ({className}: ArticlesPageFiltersProps) => {
                 <ArticleViewSelector view={view} onViewClick={onChangeView} />
             </div>
             <Card className={cls.search}>
-                <Input value={search} onChange={onChangeSearch} placeholder={'Поиск'}/>
+                <Input value={search} onChange={onChangeSearch} placeholder={t('Search')}/>
             </Card>
             <ArticleTypeTabs value={type} onChangeType={onChangeType} className={cls.tabs} />
         </div>

@@ -1,14 +1,16 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./NotFoundPage.module.scss";
 import {Page} from "@/widgets/Page/ui/Page";
+import {useTranslation} from "react-i18next";
 interface NotFoundPageProps {
   className?: string;
 }
 
 export const NotFoundPage = ({ className }: NotFoundPageProps) => {
+  const {t} = useTranslation();
   return (
     <Page className={classNames(cls.notFoundPage, {}, [className])}>
-        <h1>Page not found</h1>
+        <h1>{t('Page not found')}</h1>
     </Page>
   );
 };

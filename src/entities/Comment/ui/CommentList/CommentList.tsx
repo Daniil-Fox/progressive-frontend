@@ -4,6 +4,7 @@ import {Text} from "@/shared/ui";
 import {CommentCard} from "../CommentCard/CommentCard";
 import {Comment} from "./../../model/types/comments";
 import {VStack} from "@/shared/ui/Stack";
+import {useTranslation} from "react-i18next";
 
 interface CommentListProps {
     className?: string;
@@ -13,6 +14,7 @@ interface CommentListProps {
 
 export const CommentList = (props: CommentListProps) => {
     const {className, comments, isLoading} = props;
+    const {t} = useTranslation();
 
     if(isLoading){
         return (
@@ -29,7 +31,7 @@ export const CommentList = (props: CommentListProps) => {
             ? comments.map(comment => (
                 <CommentCard key={comment.id} className={cls.comment} comment={comment} isLoading={isLoading} />
                 ))
-            : <Text text={"Комментарии отсутствуют"}/>}
+            : <Text text={t("No comments")}/>}
         </VStack>
     );
 };

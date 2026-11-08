@@ -3,6 +3,7 @@ import cls from "./ArticleTypeTabs.module.scss";
 import {TabItem, Tabs} from "@/shared/ui/Tabs/Tabs";
 import {useCallback, useMemo} from "react";
 import {ArticleType} from "./../../model/types/article";
+import {useTranslation} from "react-i18next";
 
 interface ArticleTypeTabsProps {
     className?: string;
@@ -12,27 +13,28 @@ interface ArticleTypeTabsProps {
 
 export const ArticleTypeTabs = (props: ArticleTypeTabsProps) => {
     const {className, value, onChangeType} = props;
+    const {t} = useTranslation();
 
     const typeTabs = useMemo<TabItem[]>(() => {
         return [
             {
                 value: ArticleType.ALL,
-                content: 'Все'
+                content: t('ALL')
             },
             {
                 value: ArticleType.IT,
-                content: 'Айти'
+                content: t('IT')
             },
             {
                 value: ArticleType.ECONOMICS,
-                content: 'Экономика'
+                content: t('Economics')
             },
             {
                 value: ArticleType.SCIENCE,
-                content: 'Наука'
+                content: t('Science')
             }
         ]
-    }, [])
+    }, [t])
 
     const onTabClick = useCallback((tab: TabItem) => {
         onChangeType(tab.value as ArticleType)

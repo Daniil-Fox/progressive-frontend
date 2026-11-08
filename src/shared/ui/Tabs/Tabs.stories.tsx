@@ -1,11 +1,10 @@
 import type {Meta, StoryObj} from '@storybook/react-webpack5';
-import {Tabs} from './Tabs';
 import {action} from "storybook/actions";
-
+import {Tabs} from './Tabs';
 
 const meta = {
     component: Tabs,
-    title: 'entities/Tabs',
+    title: 'shared/Tabs',
     tags: ['autodocs'],
     args: {},
 } satisfies Meta<typeof Tabs>;
@@ -18,18 +17,18 @@ export const Normal: Story = {
         tabs: [
             {
                 value: 'tab1',
-                content: 'tab1'
+                content: 'tab1',
             },
             {
                 value: 'tab2',
-                content: 'tab2'
+                content: 'tab2',
             },
             {
                 value: 'tab3',
-                content: 'tab3'
-            }
+                content: 'tab3',
+            },
         ],
         value: 'tab2',
-        onTabClick: action('onTabCLick')
+        onTabClick: action('onTabClick'),
     },
 };
